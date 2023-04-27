@@ -11,13 +11,14 @@
 
 #include "irobot_create_msgs/action/dock.hpp"
 #include "irobot_create_msgs/action/undock.hpp"
-#include "irobot_create_msgs/msg/dock_status.hpp"
 #include "irobot_create_nodes/motion_control/behaviors_scheduler.hpp"
 #include "irobot_create_nodes/motion_control/simple_goal_controller.hpp"
-#include "nav_msgs/msg/odometry.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 #include "tf2_geometry_msgs/tf2_geometry_msgs.hpp"
+#include "capella_ros_service_interfaces/msg/charge_state.hpp"
+#include "geometry_msgs/msg/pose_stamped.hpp"
+#include "capella_ros_service_interfaces/msg/charge_marker_visible.hpp"
 
 namespace irobot_create_nodes
 {
@@ -45,11 +46,14 @@ private:
     const tf2::Transform & docked_robot_pose,
     const tf2::Transform & dock_pose);
 
-  void dock_status_callback(irobot_create_msgs::msg::DockStatus::ConstSharedPtr msg);
+  
+  // callback
+  void robot_pose_callback(geometry_msgs::msg::PoseStamped::ConstSharedPtr msg);
+  // void dock_pose_callback(geometry_msgs::msg::PoseStamped::ConstSharedPtr msg);
+  void dock_visible_callback(capella_ros_service_interfaces::msg::ChargeMarkerVisible::ConstSharedPtr msg);
+  void charge_state_callback(capella_ros_service_interfaces::msg::ChargeState::ConstSharedPtr msg);
 
-  void robot_pose_callback(nav_msgs::msg::Odometry::ConstSharedPtr msg);
 
-  void dock_pose_callback(nav_msgs::msg::Odometry::ConstSharedPtr msg);
 
   rclcpp_action::GoalResponse handle_dock_servo_goal(
     const rclcpp_action::GoalUUID & uuid,
@@ -88,9 +92,11 @@ private:
   rclcpp_action::Server<irobot_create_msgs::action::Dock>::SharedPtr docking_action_server_;
   rclcpp_action::Server<irobot_create_msgs::action::Undock>::SharedPtr undocking_action_server_;
 
-  rclcpp::Subscription<irobot_create_msgs::msg::DockStatus>::SharedPtr dock_status_sub_;
-  rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr robot_pose_sub_;
-  rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr dock_pose_sub_;
+
+  rclcpp::Subscription<capella_ros_service_interfaces::msg::ChargeMarkerVisible>::SharedPtr dock_visible_sub_;
+  rclcpp::Subscription<capella_ros_service_interfaces::msg::ChargeState>::SharedPtr charge_state_sub_;
+  rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr robot_pose_sub_;
+  // rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr dock_pose_sub_;
 
   rclcpp::Clock::SharedPtr clock_;
   rclcpp::Logger logger_;
@@ -107,7 +113,7 @@ private:
   const rclcpp::Duration max_action_runtime_;
   double last_docked_distance_offset_ {0.0};
   bool calibrated_offset_ {false};
-  const double MAX_DOCK_INTERMEDIATE_GOAL_OFFSET {0.5};
+  const double MAX_DOCK_INTERMEDIATE_GOAL_OFFSET {0.8};
   const double UNDOCK_GOAL_OFFSET {0.4};
   rclcpp::Time last_feedback_time_;
   const rclcpp::Duration report_feedback_interval_ {std::chrono::seconds(3)};

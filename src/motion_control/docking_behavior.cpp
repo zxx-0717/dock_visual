@@ -19,28 +19,37 @@ DockingBehavior::DockingBehavior(
   std::shared_ptr<BehaviorsScheduler> behavior_scheduler)
 : clock_(node_clock_interface->get_clock()),
   logger_(node_logging_interface->get_logger()),
-  max_action_runtime_(rclcpp::Duration(std::chrono::seconds(30)))
+  max_action_runtime_(rclcpp::Duration(std::chrono::seconds(180)))
 {
+  RCLCPP_INFO(logger_, "DockingBehavior constructor.");
   behavior_scheduler_ = behavior_scheduler;
   last_feedback_time_ = clock_->now();
 
-  dock_status_sub_ = rclcpp::create_subscription<irobot_create_msgs::msg::DockStatus>(
+  dock_visible_sub_ = rclcpp::create_subscription<capella_ros_service_interfaces::msg::ChargeMarkerVisible>(
     node_topics_interface,
-    "dock_status",
-    rclcpp::SensorDataQoS(),
-    std::bind(&DockingBehavior::dock_status_callback, this, _1));
+    "/marker_visible",
+    20,
+    std::bind(&DockingBehavior::dock_visible_callback, this, _1)
+  );
 
-  robot_pose_sub_ = rclcpp::create_subscription<nav_msgs::msg::Odometry>(
+  charge_state_sub_ = rclcpp::create_subscription<capella_ros_service_interfaces::msg::ChargeState>(
     node_topics_interface,
-    "sim_ground_truth_pose",
+    "charge/state",
+    20,
+    std::bind(&DockingBehavior::charge_state_callback, this, _1)
+  );
+
+  robot_pose_sub_ = rclcpp::create_subscription<geometry_msgs::msg::PoseStamped>(
+    node_topics_interface,
+    "/aruco_single/pose",
     rclcpp::SensorDataQoS(),
     std::bind(&DockingBehavior::robot_pose_callback, this, _1));
 
-  dock_pose_sub_ = rclcpp::create_subscription<nav_msgs::msg::Odometry>(
-    node_topics_interface,
-    "sim_ground_truth_dock_pose",
-    rclcpp::SensorDataQoS(),
-    std::bind(&DockingBehavior::dock_pose_callback, this, _1));
+  // dock_pose_sub_ = rclcpp::create_subscription<geometry_msgs::msg::PoseStamped>(
+  //   node_topics_interface,
+  //   "/aruco_single/Dockpose",
+  //   rclcpp::SensorDataQoS(),
+  //   std::bind(&DockingBehavior::dock_pose_callback, this, _1));
 
   docking_action_server_ = rclcpp_action::create_server<irobot_create_msgs::action::Dock>(
     node_base_interface,
@@ -65,10 +74,10 @@ DockingBehavior::DockingBehavior(
   last_robot_pose_.setIdentity();
   last_dock_pose_.setIdentity();
   tf2::Quaternion dock_rotation;
-  dock_rotation.setRPY(0, 0, M_PI);
+  dock_rotation.setRPY(0, 0, 0);
   last_dock_pose_.setRotation(dock_rotation);
   // Set number from observation, but will repopulate on undock with calibrated value
-  last_docked_distance_offset_ = 0.157;
+  last_docked_distance_offset_ = 0.45;
   action_start_time_ = clock_->now();
 }
 
@@ -121,11 +130,17 @@ void DockingBehavior::handle_dock_servo_accepted(
   {
     const std::lock_guard<std::mutex> lock(robot_pose_mutex_);
     robot_pose = last_robot_pose_;
+    auto position = robot_pose.getOrigin();
+    auto yaw = tf2::getYaw(robot_pose.getRotation());
+    RCLCPP_INFO(logger_, "robot_pose => x: %f, y: %f, angular: %f", position.getX(), position.getY(), yaw);
   }
   tf2::Transform dock_pose(tf2::Transform::getIdentity());
   {
     const std::lock_guard<std::mutex> lock(dock_pose_mutex_);
     dock_pose = last_dock_pose_;
+    auto position = dock_pose.getOrigin();
+    auto yaw = tf2::getYaw(dock_pose.getRotation());
+    RCLCPP_INFO(logger_, "dock_pose  => x: %f, y: %f, angular: %f", position.getX(), position.getY(), yaw);
   }
   // If robot is farther than 0.5 from dock, put offset point 0.5 in front of dock,
   // otherwise put in line with robot's current distance away from the dock
@@ -134,22 +149,29 @@ void DockingBehavior::handle_dock_servo_accepted(
   double dist_offset = std::hypot(
     dock_position.getX() - robot_position.getX(),
     dock_position.getY() - robot_position.getY());
+  RCLCPP_INFO(logger_, "dist_offset: %f", dist_offset);
   const double max_goal_offset = MAX_DOCK_INTERMEDIATE_GOAL_OFFSET + last_docked_distance_offset_;
   if (dist_offset > max_goal_offset) {
     dist_offset = max_goal_offset;
   }
+  RCLCPP_INFO(logger_, "dist_offset: %f", dist_offset);
   tf2::Transform dock_offset(tf2::Transform::getIdentity());
   tf2::Quaternion dock_rotation;
-  dock_rotation.setRPY(0, 0, M_PI);
+
+  std::cout << "dock_pose => x: " <<  dock_pose.getOrigin().getX()
+  << ", y: " << dock_pose.getOrigin().getY()
+  << ", yaw: " << tf2::getYaw(dock_pose.getRotation()) << std::endl;
+
+  dock_rotation.setRPY(0, 0, -M_PI);
   dock_offset.setOrigin(tf2::Vector3(dist_offset, 0, 0));
   dock_offset.setRotation(dock_rotation);
-  dock_path.emplace_back(dock_pose * dock_offset, 0.02, false);
+  dock_path.emplace_back(dock_pose * dock_offset, 0.06, true);
   dock_offset.setIdentity();
   dock_offset.setOrigin(tf2::Vector3(last_docked_distance_offset_, 0, 0));
   tf2::Transform face_dock(tf2::Transform::getIdentity());
   face_dock.setRotation(dock_rotation);
-  dock_path.emplace_back(dock_pose * dock_offset * face_dock, 0.005, false);
-  goal_controller_.initialize_goal(dock_path, M_PI / 4.0, 0.15);
+  dock_path.emplace_back(dock_pose * dock_offset * face_dock, 0.06, true);
+  goal_controller_.initialize_goal(dock_path, 0.2, 0.05);
   // Setup behavior to override other commanded motion
   BehaviorsScheduler::BehaviorsData data;
   data.run_func = std::bind(&DockingBehavior::execute_dock_servo, this, goal_handle, _1);
@@ -158,6 +180,7 @@ void DockingBehavior::handle_dock_servo_accepted(
   data.apply_backup_limits = false;
 
   const bool ret = behavior_scheduler_->set_behavior(data);
+  RCLCPP_INFO(logger_, "ret: %d", ret);
   if (!ret) {
     // for some reason we couldn't set the new behavior, treat this as a goal being cancelled
     RCLCPP_WARN(logger_, "Dock Servo behavior failed to start");
@@ -354,23 +377,31 @@ BehaviorsScheduler::optional_output_t DockingBehavior::execute_undock(
   return servo_cmd;
 }
 
-void DockingBehavior::dock_status_callback(irobot_create_msgs::msg::DockStatus::ConstSharedPtr msg)
+void DockingBehavior::dock_visible_callback(capella_ros_service_interfaces::msg::ChargeMarkerVisible::ConstSharedPtr msg)
 {
-  is_docked_ = msg->is_docked;
-  sees_dock_ = msg->dock_visible;
+  this->sees_dock_ = msg->marker_visible;
+  // RCLCPP_INFO(logger_, "sees_dock: %d", sees_dock_.load());
 }
 
-void DockingBehavior::robot_pose_callback(nav_msgs::msg::Odometry::ConstSharedPtr msg)
+void DockingBehavior::charge_state_callback(capella_ros_service_interfaces::msg::ChargeState::ConstSharedPtr msg)
+{
+  this->is_docked_ = msg->has_contact;
+}
+
+void DockingBehavior::robot_pose_callback(geometry_msgs::msg::PoseStamped::ConstSharedPtr msg)
 {
   const std::lock_guard<std::mutex> lock(robot_pose_mutex_);
-  tf2::convert(msg->pose.pose, last_robot_pose_);
+  tf2::convert(msg->pose, last_robot_pose_);
+  // auto position = last_robot_pose_.getOrigin();
+  // auto yaw = tf2::getYaw(last_robot_pose_.getRotation());
+  // RCLCPP_INFO(logger_, "robot_pose => x: %f, y: %f, angular: %f", position.getX(), position.getY(), yaw);
 }
 
-void DockingBehavior::dock_pose_callback(nav_msgs::msg::Odometry::ConstSharedPtr msg)
-{
-  const std::lock_guard<std::mutex> lock(dock_pose_mutex_);
-  tf2::convert(msg->pose.pose, last_dock_pose_);
-}
+// void DockingBehavior::dock_pose_callback(geometry_msgs::msg::PoseStamped::ConstSharedPtr msg)
+// {
+//   const std::lock_guard<std::mutex> lock(dock_pose_mutex_);
+//   tf2::convert(msg->pose, last_dock_pose_);
+// }
 
 void DockingBehavior::calibrate_docked_distance_offset(
   const tf2::Transform & docked_robot_pose,

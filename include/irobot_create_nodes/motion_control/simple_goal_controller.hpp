@@ -83,13 +83,35 @@ public:
       return servo_vel;
     }
     double current_angle = tf2::getYaw(current_pose.getRotation());
+
+    // correct angle to  right-orintation (pi/2,pi), left-orintation(-pi,-pi/2)
+    if (current_angle > -M_PI * 0.5 && current_angle < 0) // right
+    {
+      current_angle = M_PI * 0.5 + std::abs(current_angle);  // (0,-pi/2) => (pi/2,pi)
+      std::cout << "" << std::endl;
+    }
+    else if(current_angle < -M_PI * 0.5 && current_angle > -M_PI) // left
+    {
+      current_angle = -M_PI * 1.5 - current_angle ; // (-pi/2,-pi) => (-pi, -pi/2)
+    }
+
     const tf2::Vector3 & current_position = current_pose.getOrigin();
     // Generate velocity based on current position and next goal point looking for convergence
     // with goal point based on radius.
     switch (navigate_state_) {
       case NavigateStates::ANGLE_TO_GOAL:
         {
+          std::cout << "------------- ANGLE_TO_GOAL -------------\n";
           const GoalPoint & gp = goal_points_.front();
+
+          std::cout << "goal  => " 
+          // << " x: " << gp.x << " y: " << gp.y 
+          << " yaw: " << gp.theta << std::endl;
+          std::cout << "robot => " 
+          // << " x: " << current_pose.getOrigin().getX() 
+          // << " y: " << current_pose.getOrigin().getY()
+          << " yaw: " << current_angle << std::endl;
+
           double dist_to_goal = std::hypot(
             gp.x - current_position.getX(),
             gp.y - current_position.getY());
@@ -98,14 +120,19 @@ public:
             navigate_state_ = NavigateStates::GO_TO_GOAL_POSITION;
           } else {
             double ang = diff_angle(gp, current_position, current_angle);
+            std::cout << "diff 1 angle: " << ang << std::endl;
             if (gp.drive_backwards) {
               // Angle is 180 from travel direction
-              ang = angles::normalize_angle(ang + M_PI);
+              // ang = angles::normalize_angle(ang + M_PI);
+              // std::cout << "norm angle: " << ang << std::endl;
             }
             bound_rotation(ang);
+            std::cout << "bound angle: " << ang << std::endl;
+            std::cout << "--------------------------------\n";
             servo_vel = geometry_msgs::msg::Twist();
             if (std::abs(ang) < TO_GOAL_ANGLE_CONVERGED) {
               navigate_state_ = NavigateStates::GO_TO_GOAL_POSITION;
+            std::cout << " ******** change to state GO_TO_GOAL_POSITION ******** \n";
             } else {
               servo_vel->angular.z = ang;
             }
@@ -114,23 +141,31 @@ public:
         }
       case NavigateStates::GO_TO_GOAL_POSITION:
         {
+          std::cout << "------------- GO_TO_GOAL_POSITION -------------\n";
           const GoalPoint & gp = goal_points_.front();
           double dist_to_goal = std::hypot(
             gp.x - current_position.getX(),
             gp.y - current_position.getY());
           double ang = diff_angle(gp, current_position, current_angle);
+          std::cout << "robot => " 
+          // << " x: " << current_pose.getOrigin().getX() 
+          // << " y: " << current_pose.getOrigin().getY()
+          << " yaw: " << current_angle << std::endl;
+          std::cout << "diff 2 angle: " << ang << std::endl;
           double abs_ang = std::abs(ang);
           if (gp.drive_backwards) {
             // Angle is 180 from travel direction
-            abs_ang = angles::normalize_angle(abs_ang + M_PI);
+            // abs_ang = angles::normalize_angle(abs_ang + M_PI);
           }
           servo_vel = geometry_msgs::msg::Twist();
           // If robot is close enough to goal, move to final stage
           if (dist_to_goal < goal_points_.front().radius) {
             navigate_state_ = NavigateStates::GOAL_ANGLE;
+            std::cout << "******** change to state GOAL_ANGLE ********  \n";
             // If robot angle has deviated too much from path, reset
           } else if (abs_ang > GO_TO_GOAL_ANGLE_TOO_FAR) {
             navigate_state_ = NavigateStates::ANGLE_TO_GOAL;
+            std::cout << "******** change to state ANGLE_TO_GOAL ********  \n";
             // If niether of above conditions met, drive towards goal
           } else {
             double translate_velocity = dist_to_goal;
@@ -141,25 +176,34 @@ public:
               translate_velocity *= -1;
             }
             servo_vel->linear.x = translate_velocity;
+            std::cout << "linear_x: " << translate_velocity << std::endl;
             if (abs_ang > GO_TO_GOAL_APPLY_ROTATION_ANGLE) {
               servo_vel->angular.z = ang;
+              std::cout << "angle: " << ang << std::endl;
             }
           }
           break;
         }
       case NavigateStates::GOAL_ANGLE:
         {
+          std::cout << "***********************************\n";
+          std::cout << "***********************************\n";
+          std::cout << "------------- GOAL_ANGLE -------------\n";
+          std::cout << "robot angle: " << current_angle << std::endl;
           double ang =
             angles::shortest_angular_distance(current_angle, goal_points_.front().theta);
           bound_rotation(ang);
+          std::cout << "diff 3 angle: " << ang << std::endl;
           if (std::abs(ang) > GOAL_ANGLE_CONVERGED) {
             servo_vel = geometry_msgs::msg::Twist();
             servo_vel->angular.z = ang;
           } else {
             goal_points_.pop_front();
+            std::cout << "============ pop goal============" << std::endl;
             if (goal_points_.size() > 0) {
               servo_vel = geometry_msgs::msg::Twist();
               navigate_state_ = NavigateStates::ANGLE_TO_GOAL;
+              std::cout << "******** change to state ANGLE_TO_GOAL ********  \n";
             }
           }
           break;
@@ -198,10 +242,25 @@ private:
 
   double diff_angle(const GoalPoint & goal_pt, const tf2::Vector3 & cur_position, double cur_angle)
   {
-    return angles::shortest_angular_distance(
-      cur_angle, std::atan2(
-        goal_pt.y - cur_position.getY(),
-        goal_pt.x - cur_position.getX()));
+
+    double y = goal_pt.y - cur_position.getY();
+    double x = goal_pt.x - cur_position.getX();
+    double atan2_value = std::atan2(y, x);
+
+    double result = angles::shortest_angular_distance(cur_angle, atan2_value);
+
+    std::cout << "------caculate diff-------\n";
+
+    std::cout << " gp.x: " << goal_pt.x << " gp.y: " << goal_pt.y << std::endl   
+    << " cur.x: " << cur_position.getX() << " cur.y: " << cur_position.getY()<< std::endl;
+    
+    std::cout << "y       => " << y << std::endl;
+    std::cout << "x       => " << x << std::endl;
+    std::cout << "atan2   => " << atan2_value << std::endl;
+    std::cout << "cur_ang => " << cur_angle << std::endl;
+    std::cout << "dist    => " << result << std::endl;
+
+    return result;
   }
 
   std::mutex mutex_;
@@ -209,11 +268,14 @@ private:
   NavigateStates navigate_state_;
   double max_rotation_;
   double max_translation_;
-  const double MIN_ROTATION {0.1};
-  const double TO_GOAL_ANGLE_CONVERGED {0.03};
+  const double MIN_ROTATION {0.02};
+  // const double TO_GOAL_ANGLE_CONVERGED {0.03};
+  const double TO_GOAL_ANGLE_CONVERGED {0.15};
   const double GO_TO_GOAL_ANGLE_TOO_FAR {M_PI / 16.0};
-  const double GO_TO_GOAL_APPLY_ROTATION_ANGLE {0.02};
-  const double GOAL_ANGLE_CONVERGED {0.02};
+  // const double GO_TO_GOAL_APPLY_ROTATION_ANGLE {0.02};
+  const double GO_TO_GOAL_APPLY_ROTATION_ANGLE {0.1};
+  // const double GOAL_ANGLE_CONVERGED {0.02};
+  const double GOAL_ANGLE_CONVERGED {0.06};
 };
 
 }  // namespace irobot_create_nodes

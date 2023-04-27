@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(irobot_create_nodes)
+project(dock_visual)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
@@ -26,6 +26,8 @@ find_package(tf2 REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(Boost REQUIRED)
+find_package(capella_ros_service_interfaces REQUIRED)
+find_package(capella_ros_msg REQUIRED)
 
 #### Libraries
 
@@ -45,6 +47,8 @@ set(dependencies
   tf2_geometry_msgs
   tf2_ros
   Boost
+  capella_ros_service_interfaces
+  capella_ros_msg
 )
 
 # Hazards vector publisher
@@ -99,6 +103,22 @@ ament_target_dependencies(motion_control_lib
 rclcpp_components_register_node(motion_control_lib
   PLUGIN "irobot_create_nodes::MotionControlNode"
   EXECUTABLE motion_control)
+
+# DockingBehavior server
+add_library(docking_behavior SHARED)
+target_sources(
+  docking_behavior
+  PRIVATE
+    src/motion_control/docking_behavior.cpp
+)
+target_include_directories(docking_behavior PUBLIC include)
+ament_target_dependencies(docking_behavior
+  ${dependencies}
+)
+
+rclcpp_components_register_node(docking_behavior
+  PLUGIN "irobot_create_nodes::DockingBehaviorServer"
+  EXECUTABLE docking_behavior_server)
 
 # Wheel status publisher
 add_library(wheel_status_publisher_lib SHARED)

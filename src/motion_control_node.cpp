@@ -22,6 +22,7 @@ MotionControlNode::MotionControlNode(const rclcpp::NodeOptions & options)
   wheels_stop_threshold_(0.5s),
   repeat_print_(1s)
 {
+  RCLCPP_INFO(this->get_logger(), "motion_control node constructor.");
   // Declare ROS 2 parameters for robot safety.
   this->declare_safety_parameters();
   // Setup transform tools for frames at time
@@ -111,9 +112,9 @@ MotionControlNode::MotionControlNode(const rclcpp::NodeOptions & options)
     std::bind(&MotionControlNode::hazard_vector_callback, this, _1));
 
   // Create subscription to let other applications drive the robot
-  teleop_subscription_ = this->create_subscription<geometry_msgs::msg::Twist>(
-    "cmd_vel", rclcpp::SensorDataQoS(),
-    std::bind(&MotionControlNode::commanded_velocity_callback, this, _1));
+  // teleop_subscription_ = this->create_subscription<geometry_msgs::msg::Twist>(
+  //   "cmd_vel", rclcpp::SensorDataQoS(),
+  //   std::bind(&MotionControlNode::commanded_velocity_callback, this, _1));
 
   odom_pose_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
     "odom", rclcpp::SensorDataQoS(),
@@ -123,8 +124,11 @@ MotionControlNode::MotionControlNode(const rclcpp::NodeOptions & options)
     "kidnap_status", rclcpp::SensorDataQoS(),
     std::bind(&MotionControlNode::kidnap_callback, this, _1));
 
+  // cmd_vel_out_pub_ = this->create_publisher<geometry_msgs::msg::Twist>(
+  //   "diffdrive_controller/cmd_vel_unstamped", rclcpp::SystemDefaultsQoS());
+  
   cmd_vel_out_pub_ = this->create_publisher<geometry_msgs::msg::Twist>(
-    "diffdrive_controller/cmd_vel_unstamped", rclcpp::SystemDefaultsQoS());
+    "/cmd_vel", rclcpp::SystemDefaultsQoS());
 
   backup_limit_hazard_pub_ = this->create_publisher<irobot_create_msgs::msg::HazardDetection>(
     "_internal/backup_limit", rclcpp::SensorDataQoS().reliable());
@@ -228,6 +232,7 @@ void MotionControlNode::control_robot()
     allow_speed_param_change_ = false;
     RCLCPP_INFO(this->get_logger(), "Robot max speed is now %f m/s", max_speed_);
   }
+  // RCLCPP_INFO(this->get_logger(), "max_speed_: %f", max_speed_);
   // Handle behaviors
   BehaviorsScheduler::optional_output_t command;
   bool apply_backup_limits = true;
@@ -253,6 +258,8 @@ void MotionControlNode::control_robot()
       command = last_teleop_cmd_;
     }
   }
+
+  // RCLCPP_INFO(this->get_logger(), "x: %f, yaw: %f", command->linear.x, command->angular.z);
 
   // Create a null command if we don't have anything.
   // We also disable reflexes because the robot is in an idle state.
