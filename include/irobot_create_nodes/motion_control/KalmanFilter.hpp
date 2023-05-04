@@ -10,40 +10,41 @@
 #ifndef KALMAN_FILTER__HPP
 #define KALMAN_FILETER_HPP
 
-typedef struct Kalman_Filter{
-	float x_last;
-	float P_now;
-	float P_last;
-	float K;
-	float R_cov;
-	float Q_cov;
-    float x_out;
-}KF_Struct; 
-
-void KF_Struct_Init(KF_Struct* KFS)
+typedef struct Kalman_Filter
 {
-	KFS->x_last	=0;
-	KFS->P_now	=0;
-	KFS->P_last	=0.02;
-	KFS->K		=0;
-	KFS->Q_cov	=0.005;//过程激励噪声协方差,参数可调
-	KFS->R_cov	=0.5;//测量噪声协方差，与仪器测量的性质有关，参数可调
-	KFS->x_out	=0;
+    float x_last;
+    float P_now;
+    float P_last;
+    float K;
+    float R_cov;
+    float Q_cov;
+    float x_out;
+} KF_Struct;
+
+void KF_Struct_Init(KF_Struct *KFS)
+{
+    KFS->x_last = 0;
+    KFS->P_now = 0;
+    KFS->P_last = 0.02;
+    KFS->K = 0;
+    KFS->Q_cov = 0.005; // 过程激励噪声协方差,参数可调
+    KFS->R_cov = 0.5;   // 测量噪声协方差，与仪器测量的性质有关，参数可调
+    KFS->x_out = 0;
 }
 
 /*
-* @brief    卡尔曼滤波器
-* @param    KFS:卡尔曼滤波器结构体指针
-* @param    z:测量仪器的输入量
-* @return   当前时刻的最优估计值
-*/
-float KMFilter(KF_Struct* KFS,float z)
+ * @brief    卡尔曼滤波器
+ * @param    KFS:卡尔曼滤波器结构体指针
+ * @param    z:测量仪器的输入量
+ * @return   当前时刻的最优估计值
+ */
+float KMFilter(KF_Struct *KFS, float z)
 {
-	KFS->P_now = KFS->P_last + KFS->Q_cov;
-    KFS->K = KFS->P_now / (KFS->P_now + KFS->R_cov );
+    KFS->P_now = KFS->P_last + KFS->Q_cov;
+    KFS->K = KFS->P_now / (KFS->P_now + KFS->R_cov);
     KFS->x_out = KFS->x_out + KFS->K * (z - KFS->x_out);
-    KFS->P_last = (1.f - KFS->K)* KFS->P_now;
-    
+    KFS->P_last = (1.f - KFS->K) * KFS->P_now;
+
     return KFS->x_out;
 }
 
