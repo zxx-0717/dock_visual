@@ -1,0 +1,5671 @@
+dock_pose => x: 0, y: 0, yaw: 0
+
+------------- ANGLE_TO_GOAL -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.78994
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.78994
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.42252 cur.y: -0.0128148
+y       => 0.0128148
+x       => -1.22852
+atan2   => 3.13116
+cur_ang => 2.78994
+dist    => 0.341223
+diff 2 angle: 0.341223
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.79188
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.42017 cur.y: -0.0125731
+y       => 0.0125731
+x       => -1.22617
+atan2   => 3.13134
+cur_ang => 2.79188
+dist    => 0.339462
+diff 2 angle: 0.339462
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.7821
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.42195 cur.y: -0.0131063
+y       => 0.0131063
+x       => -1.22795
+atan2   => 3.13092
+cur_ang => 2.7821
+dist    => 0.348817
+diff 2 angle: 0.348817
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.78053
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.41687 cur.y: -0.0128221
+y       => 0.0128221
+x       => -1.22287
+atan2   => 3.13111
+cur_ang => 2.78053
+dist    => 0.350576
+diff 2 angle: 0.350576
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.78269
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.42001 cur.y: -0.0129434
+y       => 0.0129434
+x       => -1.22601
+atan2   => 3.13104
+cur_ang => 2.78269
+dist    => 0.348342
+diff 2 angle: 0.348342
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.7892
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.42125 cur.y: -0.0127602
+y       => 0.0127602
+x       => -1.22725
+atan2   => 3.1312
+cur_ang => 2.7892
+dist    => 0.341998
+diff 2 angle: 0.341998
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.78433
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.41771 cur.y: -0.012714
+y       => 0.012714
+x       => -1.22371
+atan2   => 3.1312
+cur_ang => 2.78433
+dist    => 0.346869
+diff 2 angle: 0.346869
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.78612
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.42172 cur.y: -0.0129185
+y       => 0.0129185
+x       => -1.22772
+atan2   => 3.13107
+cur_ang => 2.78612
+dist    => 0.344952
+diff 2 angle: 0.344952
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.76196
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.3951 cur.y: -0.0729279
+y       => 0.0729279
+x       => -1.2011
+atan2   => 3.08095
+cur_ang => 2.76196
+dist    => 0.318994
+diff 2 angle: 0.318994
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -2.60535
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.19066 cur.y: -0.107946
+y       => 0.107946
+x       => -0.996658
+atan2   => 3.03371
+cur_ang => -2.60535
+dist    => -0.644126
+diff 2 angle: -0.644126
+******** change to state ANGLE_TO_GOAL ********  
+cost 0 ms.
+
+------------- ANGLE_TO_GOAL -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.79415
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.26955 cur.y: -0.123973
+y       => 0.123973
+x       => -1.07555
+atan2   => 3.02683
+cur_ang => 2.79415
+dist    => 0.232686
+diff 1 angle: 0.232686
+bound angle: 0.1
+--------------------------------
+ ******** change to state GO_TO_GOAL_POSITION ******** 
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.82494
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.27435 cur.y: -0.137776
+y       => 0.137776
+x       => -1.08035
+atan2   => 3.01475
+cur_ang => 2.82494
+dist    => 0.189804
+diff 2 angle: 0.189804
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.82851
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.26623 cur.y: -0.175182
+y       => 0.175182
+x       => -1.07223
+atan2   => 2.97964
+cur_ang => 2.82851
+dist    => 0.151134
+diff 2 angle: 0.151134
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.82115
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.2481 cur.y: -0.195739
+y       => 0.195739
+x       => -1.0541
+atan2   => 2.95799
+cur_ang => 2.82115
+dist    => 0.136845
+diff 2 angle: 0.136845
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.8022
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.22727 cur.y: -0.18277
+y       => 0.18277
+x       => -1.03327
+atan2   => 2.96652
+cur_ang => 2.8022
+dist    => 0.164315
+diff 2 angle: 0.164315
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.79383
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.24371 cur.y: -0.163845
+y       => 0.163845
+x       => -1.04971
+atan2   => 2.98676
+cur_ang => 2.79383
+dist    => 0.192922
+diff 2 angle: 0.192922
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.75889
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.23193 cur.y: -0.149577
+y       => 0.149577
+x       => -1.03793
+atan2   => 2.99847
+cur_ang => 2.75889
+dist    => 0.239576
+diff 2 angle: 0.239576
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.74748
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.23154 cur.y: -0.135652
+y       => 0.135652
+x       => -1.03754
+atan2   => 3.01159
+cur_ang => 2.74748
+dist    => 0.264107
+diff 2 angle: 0.264107
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.73494
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.22604 cur.y: -0.126402
+y       => 0.126402
+x       => -1.03204
+atan2   => 3.01972
+cur_ang => 2.73494
+dist    => 0.284777
+diff 2 angle: 0.284777
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.73363
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.22765 cur.y: -0.126925
+y       => 0.126925
+x       => -1.03365
+atan2   => 3.01941
+cur_ang => 2.73363
+dist    => 0.285785
+diff 2 angle: 0.285785
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.77509
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.19886 cur.y: -0.14944
+y       => 0.14944
+x       => -1.00486
+atan2   => 2.99396
+cur_ang => 2.77509
+dist    => 0.218865
+diff 2 angle: 0.218865
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.84137
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.32607 cur.y: -0.185952
+y       => 0.185952
+x       => -1.13207
+atan2   => 2.97879
+cur_ang => 2.84137
+dist    => 0.137413
+diff 2 angle: 0.137413
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.80052
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.29669 cur.y: -0.198352
+y       => 0.198352
+x       => -1.10269
+atan2   => 2.96362
+cur_ang => 2.80052
+dist    => 0.163094
+diff 2 angle: 0.163094
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.78134
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.17234 cur.y: -0.21006
+y       => 0.21006
+x       => -0.978337
+atan2   => 2.93009
+cur_ang => 2.78134
+dist    => 0.148755
+diff 2 angle: 0.148755
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.81588
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.17921 cur.y: -0.232948
+y       => 0.232948
+x       => -0.985209
+atan2   => 2.90941
+cur_ang => 2.81588
+dist    => 0.0935347
+diff 2 angle: 0.0935347
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.85539
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.18911 cur.y: -0.250544
+y       => 0.250544
+x       => -0.995113
+atan2   => 2.89494
+cur_ang => 2.85539
+dist    => 0.039557
+diff 2 angle: 0.039557
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.87554
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.28845 cur.y: -0.278128
+y       => 0.278128
+x       => -1.09445
+atan2   => 2.89274
+cur_ang => 2.87554
+dist    => 0.0171963
+diff 2 angle: 0.0171963
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.91956
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.30515 cur.y: -0.305974
+y       => 0.305974
+x       => -1.11115
+atan2   => 2.87289
+cur_ang => 2.91956
+dist    => -0.0466756
+diff 2 angle: -0.0466756
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.81474
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.25207 cur.y: -0.2958
+y       => 0.2958
+x       => -1.05807
+atan2   => 2.86899
+cur_ang => 2.81474
+dist    => 0.0542458
+diff 2 angle: 0.0542458
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.85111
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.27444 cur.y: -0.3006
+y       => 0.3006
+x       => -1.08044
+atan2   => 2.87024
+cur_ang => 2.85111
+dist    => 0.019125
+diff 2 angle: 0.019125
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.85131
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.2404 cur.y: -0.296389
+y       => 0.296389
+x       => -1.0464
+atan2   => 2.86558
+cur_ang => 2.85131
+dist    => 0.0142712
+diff 2 angle: 0.0142712
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.82431
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.12335 cur.y: -0.281116
+y       => 0.281116
+x       => -0.929353
+atan2   => 2.84786
+cur_ang => 2.82431
+dist    => 0.0235481
+diff 2 angle: 0.0235481
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.81196
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.10727 cur.y: -0.279204
+y       => 0.279204
+x       => -0.913266
+atan2   => 2.8449
+cur_ang => 2.81196
+dist    => 0.0329363
+diff 2 angle: 0.0329363
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.85482
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.22795 cur.y: -0.296084
+y       => 0.296084
+x       => -1.03395
+atan2   => 2.86269
+cur_ang => 2.85482
+dist    => 0.00787695
+diff 2 angle: 0.00787695
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.86867
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.22374 cur.y: -0.296918
+y       => 0.296918
+x       => -1.02974
+atan2   => 2.86087
+cur_ang => 2.86867
+dist    => -0.00780408
+diff 2 angle: -0.00780408
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.84327
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.22361 cur.y: -0.298129
+y       => 0.298129
+x       => -1.02961
+atan2   => 2.85974
+cur_ang => 2.84327
+dist    => 0.0164713
+diff 2 angle: 0.0164713
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.7979
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.19843 cur.y: -0.295581
+y       => 0.295581
+x       => -1.00443
+atan2   => 2.85539
+cur_ang => 2.7979
+dist    => 0.0574962
+diff 2 angle: 0.0574962
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.78763
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.18181 cur.y: -0.292794
+y       => 0.292794
+x       => -0.987805
+atan2   => 2.85343
+cur_ang => 2.78763
+dist    => 0.0658006
+diff 2 angle: 0.0658006
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.85654
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.1981 cur.y: -0.296989
+y       => 0.296989
+x       => -1.0041
+atan2   => 2.85402
+cur_ang => 2.85654
+dist    => -0.0025235
+diff 2 angle: -0.0025235
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.79335
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.16225 cur.y: -0.293117
+y       => 0.293117
+x       => -0.968251
+atan2   => 2.84763
+cur_ang => 2.79335
+dist    => 0.05428
+diff 2 angle: 0.05428
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.78673
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.16437 cur.y: -0.29391
+y       => 0.29391
+x       => -0.970369
+atan2   => 2.84749
+cur_ang => 2.78673
+dist    => 0.0607592
+diff 2 angle: 0.0607592
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.8002
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.17907 cur.y: -0.296184
+y       => 0.296184
+x       => -0.985065
+atan2   => 2.84952
+cur_ang => 2.8002
+dist    => 0.049317
+diff 2 angle: 0.049317
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.8665
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.19216 cur.y: -0.299884
+y       => 0.299884
+x       => -0.998163
+atan2   => 2.84974
+cur_ang => 2.8665
+dist    => -0.0167675
+diff 2 angle: -0.0167675
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.81644
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.15621 cur.y: -0.29294
+y       => 0.29294
+x       => -0.962213
+atan2   => 2.84606
+cur_ang => 2.81644
+dist    => 0.0296226
+diff 2 angle: 0.0296226
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.82691
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.15001 cur.y: -0.293585
+y       => 0.293585
+x       => -0.95601
+atan2   => 2.84364
+cur_ang => 2.82691
+dist    => 0.0167264
+diff 2 angle: 0.0167264
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.83411
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.14945 cur.y: -0.2931
+y       => 0.2931
+x       => -0.955449
+atan2   => 2.84394
+cur_ang => 2.83411
+dist    => 0.0098327
+diff 2 angle: 0.0098327
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.79536
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.13253 cur.y: -0.291648
+y       => 0.291648
+x       => -0.938529
+atan2   => 2.8403
+cur_ang => 2.79536
+dist    => 0.0449424
+diff 2 angle: 0.0449424
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.8505
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.15208 cur.y: -0.297159
+y       => 0.297159
+x       => -0.958077
+atan2   => 2.84084
+cur_ang => 2.8505
+dist    => -0.00966337
+diff 2 angle: -0.00966337
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.83729
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.14539 cur.y: -0.296435
+y       => 0.296435
+x       => -0.95139
+atan2   => 2.83955
+cur_ang => 2.83729
+dist    => 0.00225488
+diff 2 angle: 0.00225488
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.85134
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.13074 cur.y: -0.292888
+y       => 0.292888
+x       => -0.936745
+atan2   => 2.83856
+cur_ang => 2.85134
+dist    => -0.0127832
+diff 2 angle: -0.0127832
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.80777
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.12708 cur.y: -0.296615
+y       => 0.296615
+x       => -0.93308
+atan2   => 2.83381
+cur_ang => 2.80777
+dist    => 0.0260339
+diff 2 angle: 0.0260339
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.80503
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.10926 cur.y: -0.295266
+y       => 0.295266
+x       => -0.915258
+atan2   => 2.82953
+cur_ang => 2.80503
+dist    => 0.0244947
+diff 2 angle: 0.0244947
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.78968
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.08996 cur.y: -0.29224
+y       => 0.29224
+x       => -0.89596
+atan2   => 2.8263
+cur_ang => 2.78968
+dist    => 0.0366176
+diff 2 angle: 0.0366176
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.82024
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.10948 cur.y: -0.296742
+y       => 0.296742
+x       => -0.91548
+atan2   => 2.82814
+cur_ang => 2.82024
+dist    => 0.00790492
+diff 2 angle: 0.00790492
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.82615
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.10647 cur.y: -0.295791
+y       => 0.295791
+x       => -0.91247
+atan2   => 2.82812
+cur_ang => 2.82615
+dist    => 0.00196661
+diff 2 angle: 0.00196661
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.98388
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.19389 cur.y: -0.309641
+y       => 0.309641
+x       => -0.999894
+atan2   => 2.84128
+cur_ang => 2.98388
+dist    => -0.142599
+diff 2 angle: -0.142599
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.80927
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.10698 cur.y: -0.299018
+y       => 0.299018
+x       => -0.912983
+atan2   => 2.82509
+cur_ang => 2.80927
+dist    => 0.0158103
+diff 2 angle: 0.0158103
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.85553
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.09665 cur.y: -0.298852
+y       => 0.298852
+x       => -0.90265
+atan2   => 2.82187
+cur_ang => 2.85553
+dist    => -0.0336597
+diff 2 angle: -0.0336597
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.81496
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.06491 cur.y: -0.294337
+y       => 0.294337
+x       => -0.870911
+atan2   => 2.81568
+cur_ang => 2.81496
+dist    => 0.000723285
+diff 2 angle: 0.000723285
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.81789
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.06584 cur.y: -0.29438
+y       => 0.29438
+x       => -0.871841
+atan2   => 2.81596
+cur_ang => 2.81789
+dist    => -0.00192855
+diff 2 angle: -0.00192855
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.81309
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.06584 cur.y: -0.294639
+y       => 0.294639
+x       => -0.871835
+atan2   => 2.81569
+cur_ang => 2.81309
+dist    => 0.00260046
+diff 2 angle: 0.00260046
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.81955
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.06557 cur.y: -0.298605
+y       => 0.298605
+x       => -0.871573
+atan2   => 2.81152
+cur_ang => 2.81955
+dist    => -0.00803191
+diff 2 angle: -0.00803191
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.84863
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.07159 cur.y: -0.298399
+y       => 0.298399
+x       => -0.877591
+atan2   => 2.81384
+cur_ang => 2.84863
+dist    => -0.0347915
+diff 2 angle: -0.0347915
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.82919
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.04381 cur.y: -0.29575
+y       => 0.29575
+x       => -0.849808
+atan2   => 2.80668
+cur_ang => 2.82919
+dist    => -0.022507
+diff 2 angle: -0.022507
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.85471
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.04394 cur.y: -0.296622
+y       => 0.296622
+x       => -0.849938
+atan2   => 2.80582
+cur_ang => 2.85471
+dist    => -0.048898
+diff 2 angle: -0.048898
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.83308
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.03498 cur.y: -0.295764
+y       => 0.295764
+x       => -0.840982
+atan2   => 2.80341
+cur_ang => 2.83308
+dist    => -0.0296698
+diff 2 angle: -0.0296698
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.80458
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.02182 cur.y: -0.296552
+y       => 0.296552
+x       => -0.827819
+atan2   => 2.7976
+cur_ang => 2.80458
+dist    => -0.00697587
+diff 2 angle: -0.00697587
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.99331
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.11641 cur.y: -0.310964
+y       => 0.310964
+x       => -0.922412
+atan2   => 2.81644
+cur_ang => 2.99331
+dist    => -0.176875
+diff 2 angle: -0.176875
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.90933
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.0744 cur.y: -0.305457
+y       => 0.305457
+x       => -0.8804
+atan2   => 2.80764
+cur_ang => 2.90933
+dist    => -0.101691
+diff 2 angle: -0.101691
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.97254
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.08201 cur.y: -0.308764
+y       => 0.308764
+x       => -0.888011
+atan2   => 2.80697
+cur_ang => 2.97254
+dist    => -0.165577
+diff 2 angle: -0.165577
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.02319
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.16798 cur.y: -0.320444
+y       => 0.320444
+x       => -0.973984
+atan2   => 2.82374
+cur_ang => -3.02319
+dist    => -0.43625
+diff 2 angle: -0.43625
+******** change to state ANGLE_TO_GOAL ********  
+cost 0 ms.
+
+------------- ANGLE_TO_GOAL -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.99256
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.0822 cur.y: -0.307851
+y       => 0.307851
+x       => -0.888196
+atan2   => 2.80795
+cur_ang => 2.99256
+dist    => -0.184615
+diff 1 angle: -0.184615
+bound angle: -0.1
+--------------------------------
+ ******** change to state GO_TO_GOAL_POSITION ******** 
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.83469
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.01075 cur.y: -0.283999
+y       => 0.283999
+x       => -0.816752
+atan2   => 2.80695
+cur_ang => 2.83469
+dist    => -0.027737
+diff 2 angle: -0.027737
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.99289
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.08399 cur.y: -0.297425
+y       => 0.297425
+x       => -0.889993
+atan2   => 2.81907
+cur_ang => 2.99289
+dist    => -0.173822
+diff 2 angle: -0.173822
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.9281
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.05305 cur.y: -0.291182
+y       => 0.291182
+x       => -0.859049
+atan2   => 2.81479
+cur_ang => 2.9281
+dist    => -0.11331
+diff 2 angle: -0.11331
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.93513
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.04773 cur.y: -0.263883
+y       => 0.263883
+x       => -0.853732
+atan2   => 2.84181
+cur_ang => 2.93513
+dist    => -0.0933113
+diff 2 angle: -0.0933113
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.94458
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.07035 cur.y: -0.259536
+y       => 0.259536
+x       => -0.87635
+atan2   => 2.85367
+cur_ang => 2.94458
+dist    => -0.0909082
+diff 2 angle: -0.0909082
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.92786
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.04705 cur.y: -0.242506
+y       => 0.242506
+x       => -0.853047
+atan2   => 2.86462
+cur_ang => 2.92786
+dist    => -0.06324
+diff 2 angle: -0.06324
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.75714
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.97654 cur.y: -0.237018
+y       => 0.237018
+x       => -0.782538
+atan2   => 2.84749
+cur_ang => 2.75714
+dist    => 0.0903497
+diff 2 angle: 0.0903497
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.82018
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.9952 cur.y: -0.241281
+y       => 0.241281
+x       => -0.801199
+atan2   => 2.84908
+cur_ang => 2.82018
+dist    => 0.0289022
+diff 2 angle: 0.0289022
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.83207
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.9946 cur.y: -0.23865
+y       => 0.23865
+x       => -0.800599
+atan2   => 2.85189
+cur_ang => 2.83207
+dist    => 0.0198161
+diff 2 angle: 0.0198161
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.03409
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.10785 cur.y: -0.202608
+y       => 0.202608
+x       => -0.913854
+atan2   => 2.92341
+cur_ang => -3.03409
+dist    => -0.325678
+diff 2 angle: -0.325678
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.86424
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.02642 cur.y: -0.177169
+y       => 0.177169
+x       => -0.832421
+atan2   => 2.93189
+cur_ang => 2.86424
+dist    => 0.0676449
+diff 2 angle: 0.0676449
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.88964
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.00737 cur.y: -0.173138
+y       => 0.173138
+x       => -0.813371
+atan2   => 2.93186
+cur_ang => 2.88964
+dist    => 0.0422158
+diff 2 angle: 0.0422158
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.90333
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.02753 cur.y: -0.175984
+y       => 0.175984
+x       => -0.833525
+atan2   => 2.93352
+cur_ang => 2.90333
+dist    => 0.0301871
+diff 2 angle: 0.0301871
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.76102
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.934 cur.y: -0.158926
+y       => 0.158926
+x       => -0.740003
+atan2   => 2.93004
+cur_ang => 2.76102
+dist    => 0.169019
+diff 2 angle: 0.169019
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.78023
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.93593 cur.y: -0.137696
+y       => 0.137696
+x       => -0.741933
+atan2   => 2.95809
+cur_ang => 2.78023
+dist    => 0.177863
+diff 2 angle: 0.177863
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.75449
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.93443 cur.y: -0.122361
+y       => 0.122361
+x       => -0.740429
+atan2   => 2.97782
+cur_ang => 2.75449
+dist    => 0.223325
+diff 2 angle: 0.223325
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.90554
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 2.00049 cur.y: -0.133444
+y       => 0.133444
+x       => -0.806495
+atan2   => 2.97762
+cur_ang => 2.90554
+dist    => 0.0720781
+diff 2 angle: 0.0720781
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.86181
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.98046 cur.y: -0.136522
+y       => 0.136522
+x       => -0.786459
+atan2   => 2.96971
+cur_ang => 2.86181
+dist    => 0.107908
+diff 2 angle: 0.107908
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.74001
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.9009 cur.y: -0.14286
+y       => 0.14286
+x       => -0.706905
+atan2   => 2.94219
+cur_ang => 2.74001
+dist    => 0.202176
+diff 2 angle: 0.202176
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.75993
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.89075 cur.y: -0.160333
+y       => 0.160333
+x       => -0.696754
+atan2   => 2.91542
+cur_ang => 2.75993
+dist    => 0.155488
+diff 2 angle: 0.155488
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.78355
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.89255 cur.y: -0.175456
+y       => 0.175456
+x       => -0.698549
+atan2   => 2.89551
+cur_ang => 2.78355
+dist    => 0.111964
+diff 2 angle: 0.111964
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.85277
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.93058 cur.y: -0.182988
+y       => 0.182988
+x       => -0.736584
+atan2   => 2.89809
+cur_ang => 2.85277
+dist    => 0.045321
+diff 2 angle: 0.045321
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.88562
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.95619 cur.y: -0.189938
+y       => 0.189938
+x       => -0.762189
+atan2   => 2.89737
+cur_ang => 2.88562
+dist    => 0.0117461
+diff 2 angle: 0.0117461
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.72492
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.85606 cur.y: -0.202222
+y       => 0.202222
+x       => -0.662056
+atan2   => 2.84515
+cur_ang => 2.72492
+dist    => 0.120231
+diff 2 angle: 0.120231
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.00539
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.95718 cur.y: -0.226678
+y       => 0.226678
+x       => -0.763176
+atan2   => 2.85287
+cur_ang => 3.00539
+dist    => -0.152517
+diff 2 angle: -0.152517
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.9531
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.94496 cur.y: -0.236641
+y       => 0.236641
+x       => -0.75096
+atan2   => 2.83632
+cur_ang => 2.9531
+dist    => -0.116775
+diff 2 angle: -0.116775
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.00317
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.95985 cur.y: -0.239601
+y       => 0.239601
+x       => -0.765852
+atan2   => 2.83838
+cur_ang => 3.00317
+dist    => -0.164786
+diff 2 angle: -0.164786
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.79266
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.85379 cur.y: -0.227525
+y       => 0.227525
+x       => -0.65979
+atan2   => 2.80952
+cur_ang => 2.79266
+dist    => 0.0168582
+diff 2 angle: 0.0168582
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.9146
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.91349 cur.y: -0.233842
+y       => 0.233842
+x       => -0.719495
+atan2   => 2.82735
+cur_ang => 2.9146
+dist    => -0.0872525
+diff 2 angle: -0.0872525
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.0426
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.98287 cur.y: -0.226747
+y       => 0.226747
+x       => -0.788867
+atan2   => 2.8617
+cur_ang => -3.0426
+dist    => -0.378881
+diff 2 angle: -0.378881
+******** change to state ANGLE_TO_GOAL ********  
+cost 0 ms.
+
+------------- ANGLE_TO_GOAL -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.88301
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.88124 cur.y: -0.219016
+y       => 0.219016
+x       => -0.687236
+atan2   => 2.83308
+cur_ang => 2.88301
+dist    => -0.0499371
+diff 1 angle: -0.0499371
+bound angle: -0.0499371
+--------------------------------
+ ******** change to state GO_TO_GOAL_POSITION ******** 
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08957
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.9526 cur.y: -0.215581
+y       => 0.215581
+x       => -0.758598
+atan2   => 2.86471
+cur_ang => 3.08957
+dist    => -0.224861
+diff 2 angle: -0.224861
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.93236
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.90171 cur.y: -0.214579
+y       => 0.214579
+x       => -0.707713
+atan2   => 2.8472
+cur_ang => 2.93236
+dist    => -0.0851563
+diff 2 angle: -0.0851563
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.14159
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.96002 cur.y: -0.224037
+y       => 0.224037
+x       => -0.766016
+atan2   => 2.85706
+cur_ang => 3.14159
+dist    => -0.284534
+diff 2 angle: -0.284534
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.14159
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.96002 cur.y: -0.219955
+y       => 0.219955
+x       => -0.766016
+atan2   => 2.86197
+cur_ang => 3.14159
+dist    => -0.279619
+diff 2 angle: -0.279619
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.94056
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.90042 cur.y: -0.19441
+y       => 0.19441
+x       => -0.706419
+atan2   => 2.87304
+cur_ang => 2.94056
+dist    => -0.0675267
+diff 2 angle: -0.0675267
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.89253
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.88154 cur.y: -0.1572
+y       => 0.1572
+x       => -0.687536
+atan2   => 2.91681
+cur_ang => 2.89253
+dist    => 0.0242819
+diff 2 angle: 0.0242819
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.87052
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.89019 cur.y: -0.137224
+y       => 0.137224
+x       => -0.696191
+atan2   => 2.94698
+cur_ang => 2.87052
+dist    => 0.0764594
+diff 2 angle: 0.0764594
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.86037
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.88718 cur.y: -0.10766
+y       => 0.10766
+x       => -0.693177
+atan2   => 2.98751
+cur_ang => 2.86037
+dist    => 0.12714
+diff 2 angle: 0.12714
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.86471
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.88434 cur.y: -0.0949959
+y       => 0.0949959
+x       => -0.690345
+atan2   => 3.00485
+cur_ang => 2.86471
+dist    => 0.140136
+diff 2 angle: 0.140136
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.8684
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.88338 cur.y: -0.0986994
+y       => 0.0986994
+x       => -0.689384
+atan2   => 2.99939
+cur_ang => 2.8684
+dist    => 0.130992
+diff 2 angle: 0.130992
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -2.9806
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.93714 cur.y: -0.0979716
+y       => 0.0979716
+x       => -0.74314
+atan2   => 3.01051
+cur_ang => -2.9806
+dist    => -0.292067
+diff 2 angle: -0.292067
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09469
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.93481 cur.y: -0.0988536
+y       => 0.0988536
+x       => -0.740813
+atan2   => 3.00894
+cur_ang => 3.09469
+dist    => -0.0857507
+diff 2 angle: -0.0857507
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.0648
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.9217 cur.y: -0.0979901
+y       => 0.0979901
+x       => -0.727699
+atan2   => 3.00774
+cur_ang => 3.0648
+dist    => -0.0570608
+diff 2 angle: -0.0570608
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.78556
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.83393 cur.y: -0.0959474
+y       => 0.0959474
+x       => -0.639927
+atan2   => 2.99277
+cur_ang => 2.78556
+dist    => 0.207205
+diff 2 angle: 0.207205
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.87604
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.83174 cur.y: -0.0886207
+y       => 0.0886207
+x       => -0.637738
+atan2   => 3.00352
+cur_ang => 2.87604
+dist    => 0.127479
+diff 2 angle: 0.127479
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.09768
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.87711 cur.y: -0.0778979
+y       => 0.0778979
+x       => -0.683109
+atan2   => 3.02805
+cur_ang => -3.09768
+dist    => -0.157454
+diff 2 angle: -0.157454
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11861
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.86659 cur.y: -0.0676688
+y       => 0.0676688
+x       => -0.67259
+atan2   => 3.04132
+cur_ang => 3.11861
+dist    => -0.0772848
+diff 2 angle: -0.0772848
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.0672
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.88201 cur.y: -0.057117
+y       => 0.057117
+x       => -0.688011
+atan2   => 3.05877
+cur_ang => 3.0672
+dist    => -0.00843983
+diff 2 angle: -0.00843983
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.01943
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.85073 cur.y: -0.0544524
+y       => 0.0544524
+x       => -0.656727
+atan2   => 3.05887
+cur_ang => 3.01943
+dist    => 0.0394388
+diff 2 angle: 0.0394388
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.83531
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.81632 cur.y: -0.0452936
+y       => 0.0452936
+x       => -0.622324
+atan2   => 3.06894
+cur_ang => 2.83531
+dist    => 0.233632
+diff 2 angle: 0.233632
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.96593
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.87904 cur.y: -0.0433421
+y       => 0.0433421
+x       => -0.685036
+atan2   => 3.07841
+cur_ang => 2.96593
+dist    => 0.112473
+diff 2 angle: 0.112473
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.14159
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.88315 cur.y: -0.0446033
+y       => 0.0446033
+x       => -0.689152
+atan2   => 3.07696
+cur_ang => 3.14159
+dist    => -0.0646318
+diff 2 angle: -0.0646318
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11052
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.83445 cur.y: -0.0444462
+y       => 0.0444462
+x       => -0.64045
+atan2   => 3.07231
+cur_ang => 3.11052
+dist    => -0.0382131
+diff 2 angle: -0.0382131
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10096
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.8267 cur.y: -0.0633587
+y       => 0.0633587
+x       => -0.632696
+atan2   => 3.04178
+cur_ang => 3.10096
+dist    => -0.0591798
+diff 2 angle: -0.0591798
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.84318
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.7795 cur.y: -0.0712709
+y       => 0.0712709
+x       => -0.585503
+atan2   => 3.02046
+cur_ang => 2.84318
+dist    => 0.177279
+diff 2 angle: 0.177279
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.08742
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.85644 cur.y: -0.0835398
+y       => 0.0835398
+x       => -0.662442
+atan2   => 3.01615
+cur_ang => -3.08742
+dist    => -0.179615
+diff 2 angle: -0.179615
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.14159
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.84694 cur.y: -0.0985241
+y       => 0.0985241
+x       => -0.652938
+atan2   => 2.99183
+cur_ang => 3.14159
+dist    => -0.149764
+diff 2 angle: -0.149764
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.14159
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.84694 cur.y: -0.0985241
+y       => 0.0985241
+x       => -0.652938
+atan2   => 2.99183
+cur_ang => 3.14159
+dist    => -0.149764
+diff 2 angle: -0.149764
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13381
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.79987 cur.y: -0.104513
+y       => 0.104513
+x       => -0.605866
+atan2   => 2.97077
+cur_ang => 3.13381
+dist    => -0.163043
+diff 2 angle: -0.163043
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.05248
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.82614 cur.y: -0.127738
+y       => 0.127738
+x       => -0.632142
+atan2   => 2.94221
+cur_ang => 3.05248
+dist    => -0.110278
+diff 2 angle: -0.110278
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.11126
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.77466 cur.y: -0.122407
+y       => 0.122407
+x       => -0.580665
+atan2   => 2.93383
+cur_ang => -3.11126
+dist    => -0.238093
+diff 2 angle: -0.238093
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.94285
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.76799 cur.y: -0.118863
+y       => 0.118863
+x       => -0.573988
+atan2   => 2.9374
+cur_ang => 2.94285
+dist    => -0.0054559
+diff 2 angle: -0.0054559
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.8862
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.7498 cur.y: -0.0955625
+y       => 0.0955625
+x       => -0.555799
+atan2   => 2.97132
+cur_ang => 2.8862
+dist    => 0.085122
+diff 2 angle: 0.085122
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.14112
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.77195 cur.y: -0.0815701
+y       => 0.0815701
+x       => -0.577951
+atan2   => 3.00138
+cur_ang => 3.14112
+dist    => -0.139736
+diff 2 angle: -0.139736
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.13486
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.7785 cur.y: -0.0817566
+y       => 0.0817566
+x       => -0.584503
+atan2   => 3.00262
+cur_ang => -3.13486
+dist    => -0.145707
+diff 2 angle: -0.145707
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.87743
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.73439 cur.y: -0.0716042
+y       => 0.0716042
+x       => -0.540388
+atan2   => 3.00986
+cur_ang => 2.87743
+dist    => 0.132427
+diff 2 angle: 0.132427
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.70036
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.66192 cur.y: -0.0706778
+y       => 0.0706778
+x       => -0.467919
+atan2   => 2.99168
+cur_ang => 2.70036
+dist    => 0.291316
+diff 2 angle: 0.291316
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.88738
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.71551 cur.y: -0.073793
+y       => 0.073793
+x       => -0.521515
+atan2   => 3.00103
+cur_ang => 2.88738
+dist    => 0.113644
+diff 2 angle: 0.113644
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.91217
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.71262 cur.y: -0.0752536
+y       => 0.0752536
+x       => -0.518622
+atan2   => 2.9975
+cur_ang => 2.91217
+dist    => 0.0853263
+diff 2 angle: 0.0853263
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.8162
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.69437 cur.y: -0.072723
+y       => 0.072723
+x       => -0.500372
+atan2   => 2.99727
+cur_ang => 2.8162
+dist    => 0.181063
+diff 2 angle: 0.181063
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.86415
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.7174 cur.y: -0.073839
+y       => 0.073839
+x       => -0.523396
+atan2   => 3.00144
+cur_ang => 2.86415
+dist    => 0.137288
+diff 2 angle: 0.137288
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.02701
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.7122 cur.y: -0.0763421
+y       => 0.0763421
+x       => -0.518205
+atan2   => 2.99532
+cur_ang => 3.02701
+dist    => -0.0316819
+diff 2 angle: -0.0316819
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.89638
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.67705 cur.y: -0.0848929
+y       => 0.0848929
+x       => -0.483047
+atan2   => 2.96762
+cur_ang => 2.89638
+dist    => 0.0712437
+diff 2 angle: 0.0712437
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.91874
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.70352 cur.y: -0.0886938
+y       => 0.0886938
+x       => -0.50952
+atan2   => 2.96925
+cur_ang => 2.91874
+dist    => 0.0505042
+diff 2 angle: 0.0505042
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.99394
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.6882 cur.y: -0.0942785
+y       => 0.0942785
+x       => -0.494196
+atan2   => 2.95309
+cur_ang => 2.99394
+dist    => -0.0408533
+diff 2 angle: -0.0408533
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.87394
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.66509 cur.y: -0.0915026
+y       => 0.0915026
+x       => -0.471092
+atan2   => 2.94975
+cur_ang => 2.87394
+dist    => 0.0758099
+diff 2 angle: 0.0758099
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.8868
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.65381 cur.y: -0.0941224
+y       => 0.0941224
+x       => -0.459814
+atan2   => 2.93969
+cur_ang => 2.8868
+dist    => 0.0528872
+diff 2 angle: 0.0528872
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.87002
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.6348 cur.y: -0.0936934
+y       => 0.0936934
+x       => -0.440795
+atan2   => 2.93215
+cur_ang => 2.87002
+dist    => 0.0621393
+diff 2 angle: 0.0621393
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.97401
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.67839 cur.y: -0.0970963
+y       => 0.0970963
+x       => -0.484387
+atan2   => 2.94376
+cur_ang => 2.97401
+dist    => -0.0302425
+diff 2 angle: -0.0302425
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.91941
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.65168 cur.y: -0.0951979
+y       => 0.0951979
+x       => -0.457685
+atan2   => 2.93652
+cur_ang => 2.91941
+dist    => 0.0171094
+diff 2 angle: 0.0171094
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13917
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.67466 cur.y: -0.0936738
+y       => 0.0936738
+x       => -0.480656
+atan2   => 2.94912
+cur_ang => 3.13917
+dist    => -0.190053
+diff 2 angle: -0.190053
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12934
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.671 cur.y: -0.0935053
+y       => 0.0935053
+x       => -0.477003
+atan2   => 2.94802
+cur_ang => 3.12934
+dist    => -0.181321
+diff 2 angle: -0.181321
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.11712
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.6537 cur.y: -0.0932627
+y       => 0.0932627
+x       => -0.459702
+atan2   => 2.94143
+cur_ang => -3.11712
+dist    => -0.22463
+diff 2 angle: -0.22463
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13613
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.64642 cur.y: -0.0929612
+y       => 0.0929612
+x       => -0.452415
+atan2   => 2.93894
+cur_ang => 3.13613
+dist    => -0.197191
+diff 2 angle: -0.197191
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12289
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.6463 cur.y: -0.0855984
+y       => 0.0855984
+x       => -0.452299
+atan2   => 2.95455
+cur_ang => 3.12289
+dist    => -0.168339
+diff 2 angle: -0.168339
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11122
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.63517 cur.y: -0.0746751
+y       => 0.0746751
+x       => -0.441171
+atan2   => 2.97392
+cur_ang => 3.11122
+dist    => -0.137306
+diff 2 angle: -0.137306
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.82882
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.58462 cur.y: -0.0687851
+y       => 0.0687851
+x       => -0.390625
+atan2   => 2.96729
+cur_ang => 2.82882
+dist    => 0.138465
+diff 2 angle: 0.138465
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13553
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.6482 cur.y: -0.0586628
+y       => 0.0586628
+x       => -0.454198
+atan2   => 3.01315
+cur_ang => 3.13553
+dist    => -0.122384
+diff 2 angle: -0.122384
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.1189
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.61241 cur.y: -0.0375367
+y       => 0.0375367
+x       => -0.418406
+atan2   => 3.05212
+cur_ang => 3.1189
+dist    => -0.066777
+diff 2 angle: -0.066777
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13618
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.61392 cur.y: -0.0202843
+y       => 0.0202843
+x       => -0.419922
+atan2   => 3.09333
+cur_ang => 3.13618
+dist    => -0.042854
+diff 2 angle: -0.042854
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.06998
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.60232 cur.y: -0.0137354
+y       => 0.0137354
+x       => -0.408316
+atan2   => 3.10797
+cur_ang => 3.06998
+dist    => 0.0379907
+diff 2 angle: 0.0379907
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08217
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.60451 cur.y: -0.0107151
+y       => 0.0107151
+x       => -0.410513
+atan2   => 3.1155
+cur_ang => 3.08217
+dist    => 0.033327
+diff 2 angle: 0.033327
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.01636
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.59313 cur.y: -0.0106441
+y       => 0.0106441
+x       => -0.399134
+atan2   => 3.11493
+cur_ang => 3.01636
+dist    => 0.098571
+diff 2 angle: 0.098571
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 2.99971
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.59885 cur.y: -0.00768201
+y       => 0.00768201
+x       => -0.404855
+atan2   => 3.12262
+cur_ang => 2.99971
+dist    => 0.122907
+diff 2 angle: 0.122907
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.0929
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.61241 cur.y: -0.00130541
+y       => 0.00130541
+x       => -0.418408
+atan2   => 3.13847
+cur_ang => 3.0929
+dist    => 0.0455715
+diff 2 angle: 0.0455715
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08766
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.56694 cur.y: 0.0196569
+y       => -0.0196569
+x       => -0.372936
+atan2   => -3.08893
+cur_ang => 3.08766
+dist    => 0.106591
+diff 2 angle: 0.106591
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10094
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.55775 cur.y: 0.0205948
+y       => -0.0205948
+x       => -0.363748
+atan2   => -3.08503
+cur_ang => 3.10094
+dist    => 0.0972154
+diff 2 angle: 0.0972154
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.06229
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.55322 cur.y: 0.0203868
+y       => -0.0203868
+x       => -0.359217
+atan2   => -3.0849
+cur_ang => 3.06229
+dist    => 0.135995
+diff 2 angle: 0.135995
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.07568
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.55413 cur.y: 0.0202724
+y       => -0.0202724
+x       => -0.360126
+atan2   => -3.08536
+cur_ang => 3.07568
+dist    => 0.122147
+diff 2 angle: 0.122147
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.06882
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.54886 cur.y: 0.0205436
+y       => -0.0205436
+x       => -0.354861
+atan2   => -3.08377
+cur_ang => 3.06882
+dist    => 0.130605
+diff 2 angle: 0.130605
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08539
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.53835 cur.y: 0.0199169
+y       => -0.0199169
+x       => -0.344347
+atan2   => -3.08382
+cur_ang => 3.08539
+dist    => 0.11398
+diff 2 angle: 0.11398
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09384
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.53559 cur.y: 0.0194937
+y       => -0.0194937
+x       => -0.341587
+atan2   => -3.08459
+cur_ang => 3.09384
+dist    => 0.104757
+diff 2 angle: 0.104757
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09085
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.53366 cur.y: 0.0195601
+y       => -0.0195601
+x       => -0.339658
+atan2   => -3.08407
+cur_ang => 3.09085
+dist    => 0.108269
+diff 2 angle: 0.108269
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.06982
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.52638 cur.y: 0.0194774
+y       => -0.0194774
+x       => -0.332384
+atan2   => -3.08306
+cur_ang => 3.06982
+dist    => 0.130307
+diff 2 angle: 0.130307
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09392
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.5119 cur.y: 0.0184866
+y       => -0.0184866
+x       => -0.317898
+atan2   => -3.08351
+cur_ang => 3.09392
+dist    => 0.105761
+diff 2 angle: 0.105761
+linear_x: -0.05
+cost 1 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08042
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.51288 cur.y: 0.0176442
+y       => -0.0176442
+x       => -0.31888
+atan2   => -3.08632
+cur_ang => 3.08042
+dist    => 0.116447
+diff 2 angle: 0.116447
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08215
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.50663 cur.y: 0.018412
+y       => -0.018412
+x       => -0.312629
+atan2   => -3.08277
+cur_ang => 3.08215
+dist    => 0.118271
+diff 2 angle: 0.118271
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.1414
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.47413 cur.y: 0.0182936
+y       => -0.0182936
+x       => -0.280125
+atan2   => -3.07638
+cur_ang => -3.1414
+dist    => 0.0650167
+diff 2 angle: 0.0650167
+linear_x: -0.05
+cost 3 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13991
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.46767 cur.y: 0.0184875
+y       => -0.0184875
+x       => -0.273671
+atan2   => -3.07414
+cur_ang => 3.13991
+dist    => 0.0691369
+diff 2 angle: 0.0691369
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03569
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.49073 cur.y: 0.01817
+y       => -0.01817
+x       => -0.296733
+atan2   => -3.08044
+cur_ang => 3.03569
+dist    => 0.167064
+diff 2 angle: 0.167064
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11724
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.48738 cur.y: 0.0177229
+y       => -0.0177229
+x       => -0.293376
+atan2   => -3.08126
+cur_ang => 3.11724
+dist    => 0.0846932
+diff 2 angle: 0.0846932
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13427
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.45162 cur.y: 0.0156626
+y       => -0.0156626
+x       => -0.257621
+atan2   => -3.08087
+cur_ang => 3.13427
+dist    => 0.0680456
+diff 2 angle: 0.0680456
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08053
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.47041 cur.y: 0.0169616
+y       => -0.0169616
+x       => -0.27641
+atan2   => -3.08031
+cur_ang => 3.08053
+dist    => 0.122352
+diff 2 angle: 0.122352
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08201
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.46591 cur.y: 0.0149519
+y       => -0.0149519
+x       => -0.271906
+atan2   => -3.08666
+cur_ang => 3.08201
+dist    => 0.114518
+diff 2 angle: 0.114518
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10822
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.46013 cur.y: 0.0106412
+y       => -0.0106412
+x       => -0.266129
+atan2   => -3.10163
+cur_ang => 3.10822
+dist    => 0.0733361
+diff 2 angle: 0.0733361
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.13724
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.42799 cur.y: 0.00782506
+y       => -0.00782506
+x       => -0.233987
+atan2   => -3.10816
+cur_ang => -3.13724
+dist    => 0.0290799
+diff 2 angle: 0.0290799
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.11941
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.41604 cur.y: 0.00846437
+y       => -0.00846437
+x       => -0.222039
+atan2   => -3.10349
+cur_ang => -3.11941
+dist    => 0.0159201
+diff 2 angle: 0.0159201
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13289
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.41893 cur.y: 0.0080542
+y       => -0.0080542
+x       => -0.224929
+atan2   => -3.1058
+cur_ang => 3.13289
+dist    => 0.044496
+diff 2 angle: 0.044496
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09961
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.44182 cur.y: 0.00955295
+y       => -0.00955295
+x       => -0.247821
+atan2   => -3.10306
+cur_ang => 3.09961
+dist    => 0.0805158
+diff 2 angle: 0.0805158
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.0833
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.42525 cur.y: 0.0095441
+y       => -0.0095441
+x       => -0.231254
+atan2   => -3.10034
+cur_ang => 3.0833
+dist    => 0.09954
+diff 2 angle: 0.09954
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12575
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.39689 cur.y: 0.00795578
+y       => -0.00795578
+x       => -0.202887
+atan2   => -3.1024
+cur_ang => 3.12575
+dist    => 0.0550327
+diff 2 angle: 0.0550327
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13836
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.38728 cur.y: 0.00848305
+y       => -0.00848305
+x       => -0.193276
+atan2   => -3.09773
+cur_ang => 3.13836
+dist    => 0.0470928
+diff 2 angle: 0.0470928
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10549
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.41163 cur.y: 0.0106727
+y       => -0.0106727
+x       => -0.217628
+atan2   => -3.09259
+cur_ang => 3.10549
+dist    => 0.0851092
+diff 2 angle: 0.0851092
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13276
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.40616 cur.y: 0.0101971
+y       => -0.0101971
+x       => -0.212156
+atan2   => -3.09357
+cur_ang => 3.13276
+dist    => 0.0568647
+diff 2 angle: 0.0568647
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.13223
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.37597 cur.y: 0.00887849
+y       => -0.00887849
+x       => -0.181967
+atan2   => -3.09284
+cur_ang => -3.13223
+dist    => 0.0393934
+diff 2 angle: 0.0393934
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12972
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.36461 cur.y: 0.00813539
+y       => -0.00813539
+x       => -0.17061
+atan2   => -3.09394
+cur_ang => 3.12972
+dist    => 0.0595171
+diff 2 angle: 0.0595171
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12109
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.36139 cur.y: 0.00835823
+y       => -0.00835823
+x       => -0.167393
+atan2   => -3.0917
+cur_ang => 3.12109
+dist    => 0.0703902
+diff 2 angle: 0.0703902
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13149
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.36274 cur.y: 0.00862831
+y       => -0.00862831
+x       => -0.168739
+atan2   => -3.0905
+cur_ang => 3.13149
+dist    => 0.0611874
+diff 2 angle: 0.0611874
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13436
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.35425 cur.y: 0.00873096
+y       => -0.00873096
+x       => -0.160253
+atan2   => -3.08716
+cur_ang => 3.13436
+dist    => 0.0616599
+diff 2 angle: 0.0616599
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.1334
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.34862 cur.y: 0.0084431
+y       => -0.0084431
+x       => -0.154619
+atan2   => -3.08704
+cur_ang => 3.1334
+dist    => 0.0627479
+diff 2 angle: 0.0627479
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09344
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.36135 cur.y: 0.010351
+y       => -0.010351
+x       => -0.16735
+atan2   => -3.07982
+cur_ang => 3.09344
+dist    => 0.109925
+diff 2 angle: 0.109925
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13429
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.33563 cur.y: 0.00830923
+y       => -0.00830923
+x       => -0.141625
+atan2   => -3.08299
+cur_ang => 3.13429
+dist    => 0.0659059
+diff 2 angle: 0.0659059
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12599
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.33807 cur.y: 0.00835329
+y       => -0.00835329
+x       => -0.144068
+atan2   => -3.08368
+cur_ang => 3.12599
+dist    => 0.0735213
+diff 2 angle: 0.0735213
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13382
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.32382 cur.y: 0.00858505
+y       => -0.00858505
+x       => -0.129816
+atan2   => -3.07556
+cur_ang => 3.13382
+dist    => 0.0738072
+diff 2 angle: 0.0738072
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.0857
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.34218 cur.y: 0.0103113
+y       => -0.0103113
+x       => -0.148177
+atan2   => -3.07212
+cur_ang => 3.0857
+dist    => 0.125364
+diff 2 angle: 0.125364
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.07134
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.33497 cur.y: 0.0105745
+y       => -0.0105745
+x       => -0.140968
+atan2   => -3.06672
+cur_ang => 3.07134
+dist    => 0.145121
+diff 2 angle: 0.145121
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10621
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.30758 cur.y: 0.00841831
+y       => -0.00841831
+x       => -0.113579
+atan2   => -3.06761
+cur_ang => 3.10621
+dist    => 0.109368
+diff 2 angle: 0.109368
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.12257
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.29942 cur.y: 0.00882626
+y       => -0.00882626
+x       => -0.105416
+atan2   => -3.05806
+cur_ang => -3.12257
+dist    => 0.0645117
+diff 2 angle: 0.0645117
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12767
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.29658 cur.y: 0.00838647
+y       => -0.00838647
+x       => -0.102581
+atan2   => -3.06002
+cur_ang => 3.12767
+dist    => 0.0954961
+diff 2 angle: 0.0954961
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.06714
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.31069 cur.y: 0.00969484
+y       => -0.00969484
+x       => -0.116691
+atan2   => -3.0587
+cur_ang => 3.06714
+dist    => 0.157348
+diff 2 angle: 0.157348
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12565
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.28359 cur.y: 0.00809957
+y       => -0.00809957
+x       => -0.0895906
+atan2   => -3.05143
+cur_ang => 3.12565
+dist    => 0.106103
+diff 2 angle: 0.106103
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12259
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.28367 cur.y: 0.00859501
+y       => -0.00859501
+x       => -0.0896684
+atan2   => -3.04603
+cur_ang => 3.12259
+dist    => 0.114564
+diff 2 angle: 0.114564
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03629
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.31455 cur.y: 0.0103685
+y       => -0.0103685
+x       => -0.120552
+atan2   => -3.0558
+cur_ang => 3.03629
+dist    => 0.191104
+diff 2 angle: 0.191104
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.07915
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.28484 cur.y: 0.00719947
+y       => -0.00719947
+x       => -0.0908426
+atan2   => -3.06251
+cur_ang => 3.07915
+dist    => 0.141525
+diff 2 angle: 0.141525
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.12884
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.26321 cur.y: -0.00235348
+y       => 0.00235348
+x       => -0.0692079
+atan2   => 3.1076
+cur_ang => -3.12884
+dist    => -0.0467446
+diff 2 angle: -0.0467446
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08527
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.27142 cur.y: -0.00760003
+y       => 0.00760003
+x       => -0.0774167
+atan2   => 3.04374
+cur_ang => 3.08527
+dist    => -0.0415314
+diff 2 angle: -0.0415314
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11869
+------caculate diff-------
+ gp.x: 1.194 gp.y: 0
+ cur.x: 1.24085 cur.y: -0.0157916
+y       => 0.0157916
+x       => -0.0468501
+atan2   => 2.81649
+cur_ang => 3.11869
+dist    => -0.302201
+diff 2 angle: -0.302201
+******** change to state GOAL_ANGLE ********  
+cost 0 ms.
+
+***********************************
+***********************************
+------------- GOAL_ANGLE -------------
+goal  =>  x: 1.194 y: 0 yaw: -3.14159
+robot =>  x: 1.24286 y: -0.0181345 yaw: 3.13307
+diff 3 angle: 0.00852502
+============ pop goal============
+******** change to state ANGLE_TO_GOAL ********  
+cost 0 ms.
+
+------------- ANGLE_TO_GOAL -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12433
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11938
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.24453 cur.y: -0.0162008
+y       => 0.0162008
+x       => -0.850535
+atan2   => 3.12255
+cur_ang => 3.11938
+dist    => 0.00317003
+diff 2 angle: 0.00317003
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12769
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.24231 cur.y: -0.021658
+y       => 0.021658
+x       => -0.848311
+atan2   => 3.11607
+cur_ang => 3.12769
+dist    => -0.0116269
+diff 2 angle: -0.0116269
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08913
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.23728 cur.y: -0.0262889
+y       => 0.0262889
+x       => -0.843276
+atan2   => 3.11043
+cur_ang => 3.08913
+dist    => 0.0212977
+diff 2 angle: 0.0212977
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11984
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.23789 cur.y: -0.0275583
+y       => 0.0275583
+x       => -0.843887
+atan2   => 3.10895
+cur_ang => 3.11984
+dist    => -0.0108891
+diff 2 angle: -0.0108891
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10759
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.23596 cur.y: -0.0273788
+y       => 0.0273788
+x       => -0.84196
+atan2   => 3.10909
+cur_ang => 3.10759
+dist    => 0.00149161
+diff 2 angle: 0.00149161
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.13629
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.22309 cur.y: -0.0280709
+y       => 0.0280709
+x       => -0.829089
+atan2   => 3.10775
+cur_ang => -3.13629
+dist    => -0.0391433
+diff 2 angle: -0.0391433
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13597
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.21996 cur.y: -0.0286307
+y       => 0.0286307
+x       => -0.825961
+atan2   => 3.10694
+cur_ang => 3.13597
+dist    => -0.0290283
+diff 2 angle: -0.0290283
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.10842
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.21966 cur.y: -0.0482107
+y       => 0.0482107
+x       => -0.825663
+atan2   => 3.08327
+cur_ang => -3.10842
+dist    => -0.0914999
+diff 2 angle: -0.0914999
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10445
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.2263 cur.y: -0.0627401
+y       => 0.0627401
+x       => -0.8323
+atan2   => 3.06635
+cur_ang => 3.10445
+dist    => -0.0380961
+diff 2 angle: -0.0380961
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09441
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.24368 cur.y: -0.078488
+y       => 0.078488
+x       => -0.849678
+atan2   => 3.04948
+cur_ang => 3.09441
+dist    => -0.0449275
+diff 2 angle: -0.0449275
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.10851
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.22522 cur.y: -0.0880048
+y       => 0.0880048
+x       => -0.831218
+atan2   => 3.03611
+cur_ang => -3.10851
+dist    => -0.138567
+diff 2 angle: -0.138567
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.08682
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.2028 cur.y: -0.0871632
+y       => 0.0871632
+x       => -0.808799
+atan2   => 3.03424
+cur_ang => -3.08682
+dist    => -0.16213
+diff 2 angle: -0.16213
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.08395
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.19592 cur.y: -0.0880095
+y       => 0.0880095
+x       => -0.801923
+atan2   => 3.03228
+cur_ang => -3.08395
+dist    => -0.166955
+diff 2 angle: -0.166955
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.10228
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.20411 cur.y: -0.087937
+y       => 0.087937
+x       => -0.81011
+atan2   => 3.03347
+cur_ang => -3.10228
+dist    => -0.147437
+diff 2 angle: -0.147437
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11798
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.22126 cur.y: -0.0893873
+y       => 0.0893873
+x       => -0.827265
+atan2   => 3.03396
+cur_ang => 3.11798
+dist    => -0.0840229
+diff 2 angle: -0.0840229
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.10484
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.18933 cur.y: -0.0782733
+y       => 0.0782733
+x       => -0.795333
+atan2   => 3.04349
+cur_ang => -3.10484
+dist    => -0.13485
+diff 2 angle: -0.13485
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.11702
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.18516 cur.y: -0.0656679
+y       => 0.0656679
+x       => -0.791158
+atan2   => 3.05878
+cur_ang => -3.11702
+dist    => -0.10738
+diff 2 angle: -0.10738
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.0757
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.20055 cur.y: -0.0583423
+y       => 0.0583423
+x       => -0.806549
+atan2   => 3.06938
+cur_ang => 3.0757
+dist    => -0.0063195
+diff 2 angle: -0.0063195
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10398
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.19465 cur.y: -0.0518506
+y       => 0.0518506
+x       => -0.800649
+atan2   => 3.07692
+cur_ang => 3.10398
+dist    => -0.0270612
+diff 2 angle: -0.0270612
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10989
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.1868 cur.y: -0.0461005
+y       => 0.0461005
+x       => -0.792798
+atan2   => 3.08351
+cur_ang => 3.10989
+dist    => -0.0263832
+diff 2 angle: -0.0263832
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09628
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.17957 cur.y: -0.0475089
+y       => 0.0475089
+x       => -0.785568
+atan2   => 3.08119
+cur_ang => 3.09628
+dist    => -0.0150915
+diff 2 angle: -0.0150915
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12783
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.15312 cur.y: -0.0475447
+y       => 0.0475447
+x       => -0.759121
+atan2   => 3.07904
+cur_ang => 3.12783
+dist    => -0.0487839
+diff 2 angle: -0.0487839
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.14125
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.14822 cur.y: -0.04763
+y       => 0.04763
+x       => -0.754221
+atan2   => 3.07853
+cur_ang => 3.14125
+dist    => -0.0627239
+diff 2 angle: -0.0627239
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.12143
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.14636 cur.y: -0.0476887
+y       => 0.0476887
+x       => -0.752363
+atan2   => 3.07829
+cur_ang => -3.12143
+dist    => -0.083463
+diff 2 angle: -0.083463
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09385
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.1544 cur.y: -0.0477111
+y       => 0.0477111
+x       => -0.760397
+atan2   => 3.07893
+cur_ang => 3.09385
+dist    => -0.0149212
+diff 2 angle: -0.0149212
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.12017
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.12762 cur.y: -0.0479324
+y       => 0.0479324
+x       => -0.73362
+atan2   => 3.07635
+cur_ang => -3.12017
+dist    => -0.0866686
+diff 2 angle: -0.0866686
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11847
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.14589 cur.y: -0.0481257
+y       => 0.0481257
+x       => -0.751888
+atan2   => 3.07767
+cur_ang => 3.11847
+dist    => -0.0407999
+diff 2 angle: -0.0407999
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.12397
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.12077 cur.y: -0.0483493
+y       => 0.0483493
+x       => -0.726768
+atan2   => 3.07516
+cur_ang => -3.12397
+dist    => -0.0840469
+diff 2 angle: -0.0840469
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11162
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.13465 cur.y: -0.0487157
+y       => 0.0487157
+x       => -0.740648
+atan2   => 3.07591
+cur_ang => 3.11162
+dist    => -0.0357092
+diff 2 angle: -0.0357092
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10934
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.12405 cur.y: -0.0486027
+y       => 0.0486027
+x       => -0.73005
+atan2   => 3.07512
+cur_ang => 3.10934
+dist    => -0.0342272
+diff 2 angle: -0.0342272
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13817
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.10198 cur.y: -0.0487185
+y       => 0.0487185
+x       => -0.707981
+atan2   => 3.07289
+cur_ang => 3.13817
+dist    => -0.0652825
+diff 2 angle: -0.0652825
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.13287
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.09757 cur.y: -0.0487826
+y       => 0.0487826
+x       => -0.703575
+atan2   => 3.07237
+cur_ang => -3.13287
+dist    => -0.0779483
+diff 2 angle: -0.0779483
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11896
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.11139 cur.y: -0.0490347
+y       => 0.0490347
+x       => -0.717387
+atan2   => 3.07335
+cur_ang => 3.11896
+dist    => -0.0456149
+diff 2 angle: -0.0456149
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09417
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.09913 cur.y: -0.0486531
+y       => 0.0486531
+x       => -0.705129
+atan2   => 3.0727
+cur_ang => 3.09417
+dist    => -0.0214661
+diff 2 angle: -0.0214661
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11561
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.09464 cur.y: -0.0487141
+y       => 0.0487141
+x       => -0.700643
+atan2   => 3.07218
+cur_ang => 3.11561
+dist    => -0.043438
+diff 2 angle: -0.043438
+linear_x: -0.05
+cost 0 ms.
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: -3.12069
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.06882 cur.y: -0.0488172
+y       => 0.0488172
+x       => -0.674818
+atan2   => 3.06938
+cur_ang => -3.12069
+dist    => -0.0931169
+diff 2 angle: -0.0931169
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12499
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.08499 cur.y: -0.0489666
+y       => 0.0489666
+x       => -0.690992
+atan2   => 3.07085
+cur_ang => 3.12499
+dist    => -0.0541418
+diff 2 angle: -0.0541418
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11276
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.07792 cur.y: -0.0489032
+y       => 0.0489032
+x       => -0.683923
+atan2   => 3.07021
+cur_ang => 3.11276
+dist    => -0.0425487
+diff 2 angle: -0.0425487
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11918
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.07552 cur.y: -0.0492704
+y       => 0.0492704
+x       => -0.681518
+atan2   => 3.06942
+cur_ang => 3.11918
+dist    => -0.0497558
+diff 2 angle: -0.0497558
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11582
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.06055 cur.y: -0.0488628
+y       => 0.0488628
+x       => -0.666553
+atan2   => 3.06842
+cur_ang => 3.11582
+dist    => -0.047408
+diff 2 angle: -0.047408
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10611
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.05752 cur.y: -0.0494228
+y       => 0.0494228
+x       => -0.663516
+atan2   => 3.06724
+cur_ang => 3.10611
+dist    => -0.038862
+diff 2 angle: -0.038862
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10631
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.05129 cur.y: -0.0490038
+y       => 0.0490038
+x       => -0.65729
+atan2   => 3.06718
+cur_ang => 3.10631
+dist    => -0.0391376
+diff 2 angle: -0.0391376
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09872
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.04944 cur.y: -0.0494052
+y       => 0.0494052
+x       => -0.655437
+atan2   => 3.06636
+cur_ang => 3.09872
+dist    => -0.0323653
+diff 2 angle: -0.0323653
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09343
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.04207 cur.y: -0.0506835
+y       => 0.0506835
+x       => -0.648066
+atan2   => 3.06354
+cur_ang => 3.09343
+dist    => -0.0298883
+diff 2 angle: -0.0298883
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09601
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.04167 cur.y: -0.0507262
+y       => 0.0507262
+x       => -0.647674
+atan2   => 3.06343
+cur_ang => 3.09601
+dist    => -0.0325772
+diff 2 angle: -0.0325772
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08901
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.02948 cur.y: -0.0507688
+y       => 0.0507688
+x       => -0.635482
+atan2   => 3.06187
+cur_ang => 3.08901
+dist    => -0.0271355
+diff 2 angle: -0.0271355
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10684
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.02184 cur.y: -0.0506397
+y       => 0.0506397
+x       => -0.62784
+atan2   => 3.06111
+cur_ang => 3.10684
+dist    => -0.0457332
+diff 2 angle: -0.0457332
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11317
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.02014 cur.y: -0.0505918
+y       => 0.0505918
+x       => -0.626139
+atan2   => 3.06097
+cur_ang => 3.11317
+dist    => -0.0522029
+diff 2 angle: -0.0522029
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09507
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.01561 cur.y: -0.0502256
+y       => 0.0502256
+x       => -0.621609
+atan2   => 3.06097
+cur_ang => 3.09507
+dist    => -0.0340975
+diff 2 angle: -0.0340975
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11421
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 1.00685 cur.y: -0.0509469
+y       => 0.0509469
+x       => -0.612846
+atan2   => 3.05865
+cur_ang => 3.11421
+dist    => -0.0555566
+diff 2 angle: -0.0555566
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10732
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.99747 cur.y: -0.0507419
+y       => 0.0507419
+x       => -0.60347
+atan2   => 3.05771
+cur_ang => 3.10732
+dist    => -0.0496151
+diff 2 angle: -0.0496151
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10189
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.990295 cur.y: -0.0510519
+y       => 0.0510519
+x       => -0.596295
+atan2   => 3.05619
+cur_ang => 3.10189
+dist    => -0.0457015
+diff 2 angle: -0.0457015
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11465
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.986282 cur.y: -0.0508774
+y       => 0.0508774
+x       => -0.592282
+atan2   => 3.0559
+cur_ang => 3.11465
+dist    => -0.0587426
+diff 2 angle: -0.0587426
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.0878
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.978916 cur.y: -0.0508103
+y       => 0.0508103
+x       => -0.584916
+atan2   => 3.05494
+cur_ang => 3.0878
+dist    => -0.0328563
+diff 2 angle: -0.0328563
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09766
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.973036 cur.y: -0.0504293
+y       => 0.0504293
+x       => -0.579036
+atan2   => 3.05472
+cur_ang => 3.09766
+dist    => -0.042943
+diff 2 angle: -0.042943
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10293
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.968694 cur.y: -0.0506934
+y       => 0.0506934
+x       => -0.574694
+atan2   => 3.05361
+cur_ang => 3.10293
+dist    => -0.0493181
+diff 2 angle: -0.0493181
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10621
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.967937 cur.y: -0.0505473
+y       => 0.0505473
+x       => -0.573937
+atan2   => 3.05375
+cur_ang => 3.10621
+dist    => -0.0524631
+diff 2 angle: -0.0524631
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10046
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.959672 cur.y: -0.0506037
+y       => 0.0506037
+x       => -0.565672
+atan2   => 3.05237
+cur_ang => 3.10046
+dist    => -0.048091
+diff 2 angle: -0.048091
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10174
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.950195 cur.y: -0.0506699
+y       => 0.0506699
+x       => -0.556195
+atan2   => 3.05074
+cur_ang => 3.10174
+dist    => -0.0509942
+diff 2 angle: -0.0509942
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09418
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.944325 cur.y: -0.0506494
+y       => 0.0506494
+x       => -0.550325
+atan2   => 3.04982
+cur_ang => 3.09418
+dist    => -0.0443606
+diff 2 angle: -0.0443606
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08559
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.935893 cur.y: -0.0505561
+y       => 0.0505561
+x       => -0.541893
+atan2   => 3.04857
+cur_ang => 3.08559
+dist    => -0.0370214
+diff 2 angle: -0.0370214
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09511
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.930454 cur.y: -0.0507045
+y       => 0.0507045
+x       => -0.536454
+atan2   => 3.04735
+cur_ang => 3.09511
+dist    => -0.0477573
+diff 2 angle: -0.0477573
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09968
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.923601 cur.y: -0.0507173
+y       => 0.0507173
+x       => -0.529601
+atan2   => 3.04612
+cur_ang => 3.09968
+dist    => -0.0535597
+diff 2 angle: -0.0535597
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09037
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.918157 cur.y: -0.0506199
+y       => 0.0506199
+x       => -0.524157
+atan2   => 3.04532
+cur_ang => 3.09037
+dist    => -0.0450558
+diff 2 angle: -0.0450558
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.13291
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.914681 cur.y: -0.0504172
+y       => 0.0504172
+x       => -0.520681
+atan2   => 3.04506
+cur_ang => 3.13291
+dist    => -0.0878506
+diff 2 angle: -0.0878506
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10945
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.909054 cur.y: -0.0506169
+y       => 0.0506169
+x       => -0.515054
+atan2   => 3.04363
+cur_ang => 3.10945
+dist    => -0.0658214
+diff 2 angle: -0.0658214
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11796
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.904488 cur.y: -0.0504319
+y       => 0.0504319
+x       => -0.510488
+atan2   => 3.04312
+cur_ang => 3.11796
+dist    => -0.0748404
+diff 2 angle: -0.0748404
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11796
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.895288 cur.y: -0.0504921
+y       => 0.0504921
+x       => -0.501288
+atan2   => 3.04121
+cur_ang => 3.11796
+dist    => -0.0767502
+diff 2 angle: -0.0767502
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11639
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.890259 cur.y: -0.0505672
+y       => 0.0505672
+x       => -0.496259
+atan2   => 3.04005
+cur_ang => 3.11639
+dist    => -0.0763481
+diff 2 angle: -0.0763481
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09252
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.886125 cur.y: -0.0504103
+y       => 0.0504103
+x       => -0.492125
+atan2   => 3.03951
+cur_ang => 3.09252
+dist    => -0.0530009
+diff 2 angle: -0.0530009
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10318
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.87753 cur.y: -0.0502767
+y       => 0.0502767
+x       => -0.48353
+atan2   => 3.03799
+cur_ang => 3.10318
+dist    => -0.065197
+diff 2 angle: -0.065197
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10898
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.870496 cur.y: -0.0503808
+y       => 0.0503808
+x       => -0.476496
+atan2   => 3.03625
+cur_ang => 3.10898
+dist    => -0.072729
+diff 2 angle: -0.072729
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09599
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.86316 cur.y: -0.0505263
+y       => 0.0505263
+x       => -0.46916
+atan2   => 3.03431
+cur_ang => 3.09599
+dist    => -0.0616763
+diff 2 angle: -0.0616763
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.0885
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.85736 cur.y: -0.050615
+y       => 0.050615
+x       => -0.46336
+atan2   => 3.03279
+cur_ang => 3.0885
+dist    => -0.0557073
+diff 2 angle: -0.0557073
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12536
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.853184 cur.y: -0.050301
+y       => 0.050301
+x       => -0.459184
+atan2   => 3.03248
+cur_ang => 3.12536
+dist    => -0.0928763
+diff 2 angle: -0.0928763
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08913
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.84752 cur.y: -0.0505183
+y       => 0.0505183
+x       => -0.45352
+atan2   => 3.03066
+cur_ang => 3.08913
+dist    => -0.0584684
+diff 2 angle: -0.0584684
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.0926
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.843512 cur.y: -0.0504788
+y       => 0.0504788
+x       => -0.449512
+atan2   => 3.02976
+cur_ang => 3.0926
+dist    => -0.0628354
+diff 2 angle: -0.0628354
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11788
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.834142 cur.y: -0.0503145
+y       => 0.0503145
+x       => -0.440142
+atan2   => 3.02777
+cur_ang => 3.11788
+dist    => -0.0901033
+diff 2 angle: -0.0901033
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10777
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.826981 cur.y: -0.0504417
+y       => 0.0504417
+x       => -0.432981
+atan2   => 3.02562
+cur_ang => 3.10777
+dist    => -0.0821515
+diff 2 angle: -0.0821515
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11653
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.821125 cur.y: -0.0504991
+y       => 0.0504991
+x       => -0.427125
+atan2   => 3.02391
+cur_ang => 3.11653
+dist    => -0.0926181
+diff 2 angle: -0.0926181
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12754
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.817255 cur.y: -0.0504368
+y       => 0.0504368
+x       => -0.423255
+atan2   => 3.02299
+cur_ang => 3.12754
+dist    => -0.10455
+diff 2 angle: -0.10455
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12217
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.810257 cur.y: -0.0504576
+y       => 0.0504576
+x       => -0.416257
+atan2   => 3.02096
+cur_ang => 3.12217
+dist    => -0.101205
+diff 2 angle: -0.101205
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12197
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.806302 cur.y: -0.0504869
+y       => 0.0504869
+x       => -0.412302
+atan2   => 3.01975
+cur_ang => 3.12197
+dist    => -0.102227
+diff 2 angle: -0.102227
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09514
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.799318 cur.y: -0.0506016
+y       => 0.0506016
+x       => -0.405318
+atan2   => 3.01739
+cur_ang => 3.09514
+dist    => -0.0777535
+diff 2 angle: -0.0777535
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09982
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.792181 cur.y: -0.0506852
+y       => 0.0506852
+x       => -0.398181
+atan2   => 3.01498
+cur_ang => 3.09982
+dist    => -0.0848355
+diff 2 angle: -0.0848355
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11361
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.786257 cur.y: -0.0502823
+y       => 0.0502823
+x       => -0.392257
+atan2   => 3.0141
+cur_ang => 3.11361
+dist    => -0.0995085
+diff 2 angle: -0.0995085
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10313
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.77907 cur.y: -0.0505158
+y       => 0.0505158
+x       => -0.38507
+atan2   => 3.01115
+cur_ang => 3.10313
+dist    => -0.0919743
+diff 2 angle: -0.0919743
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09791
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.776176 cur.y: -0.050858
+y       => 0.050858
+x       => -0.382176
+atan2   => 3.0093
+cur_ang => 3.09791
+dist    => -0.0886148
+diff 2 angle: -0.0886148
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.12603
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.768543 cur.y: -0.0504389
+y       => 0.0504389
+x       => -0.374543
+atan2   => 3.00773
+cur_ang => 3.12603
+dist    => -0.118297
+diff 2 angle: -0.118297
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.1011
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.76228 cur.y: -0.0508812
+y       => 0.0508812
+x       => -0.36828
+atan2   => 3.0043
+cur_ang => 3.1011
+dist    => -0.0967994
+diff 2 angle: -0.0967994
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10841
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.757767 cur.y: -0.0510745
+y       => 0.0510745
+x       => -0.363767
+atan2   => 3.0021
+cur_ang => 3.10841
+dist    => -0.106312
+diff 2 angle: -0.106312
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10912
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.752152 cur.y: -0.0510663
+y       => 0.0510663
+x       => -0.358152
+atan2   => 2.99996
+cur_ang => 3.10912
+dist    => -0.109153
+diff 2 angle: -0.109153
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.11529
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.746252 cur.y: -0.0510448
+y       => 0.0510448
+x       => -0.352252
+atan2   => 2.99768
+cur_ang => 3.11529
+dist    => -0.117608
+diff 2 angle: -0.117608
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10536
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.740004 cur.y: -0.0516231
+y       => 0.0516231
+x       => -0.346004
+atan2   => 2.99349
+cur_ang => 3.10536
+dist    => -0.111871
+diff 2 angle: -0.111871
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10404
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.731992 cur.y: -0.0517617
+y       => 0.0517617
+x       => -0.337992
+atan2   => 2.98963
+cur_ang => 3.10404
+dist    => -0.114415
+diff 2 angle: -0.114415
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.1024
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.727092 cur.y: -0.0518131
+y       => 0.0518131
+x       => -0.333092
+atan2   => 2.98728
+cur_ang => 3.1024
+dist    => -0.115121
+diff 2 angle: -0.115121
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10054
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.723681 cur.y: -0.0516122
+y       => 0.0516122
+x       => -0.329681
+atan2   => 2.9863
+cur_ang => 3.10054
+dist    => -0.11424
+diff 2 angle: -0.11424
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09562
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.714882 cur.y: -0.0519872
+y       => 0.0519872
+x       => -0.320882
+atan2   => 2.98097
+cur_ang => 3.09562
+dist    => -0.114641
+diff 2 angle: -0.114641
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.0921
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.711342 cur.y: -0.051898
+y       => 0.051898
+x       => -0.317342
+atan2   => 2.97949
+cur_ang => 3.0921
+dist    => -0.11261
+diff 2 angle: -0.11261
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10852
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.703204 cur.y: -0.051555
+y       => 0.051555
+x       => -0.309204
+atan2   => 2.97638
+cur_ang => 3.10852
+dist    => -0.132147
+diff 2 angle: -0.132147
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09241
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.698198 cur.y: -0.0520252
+y       => 0.0520252
+x       => -0.304198
+atan2   => 2.97221
+cur_ang => 3.09241
+dist    => -0.120206
+diff 2 angle: -0.120206
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09666
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.693958 cur.y: -0.051945
+y       => 0.051945
+x       => -0.299958
+atan2   => 2.97012
+cur_ang => 3.09666
+dist    => -0.126544
+diff 2 angle: -0.126544
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10138
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.684487 cur.y: -0.0520398
+y       => 0.0520398
+x       => -0.290487
+atan2   => 2.96433
+cur_ang => 3.10138
+dist    => -0.137055
+diff 2 angle: -0.137055
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10977
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.67826 cur.y: -0.0519514
+y       => 0.0519514
+x       => -0.28426
+atan2   => 2.96083
+cur_ang => 3.10977
+dist    => -0.148944
+diff 2 angle: -0.148944
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09641
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.672434 cur.y: -0.0518577
+y       => 0.0518577
+x       => -0.278434
+atan2   => 2.95745
+cur_ang => 3.09641
+dist    => -0.138956
+diff 2 angle: -0.138956
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10683
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.668444 cur.y: -0.0520038
+y       => 0.0520038
+x       => -0.274444
+atan2   => 2.95432
+cur_ang => 3.10683
+dist    => -0.152506
+diff 2 angle: -0.152506
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10012
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.662107 cur.y: -0.05202
+y       => 0.05202
+x       => -0.268107
+atan2   => 2.94995
+cur_ang => 3.10012
+dist    => -0.150174
+diff 2 angle: -0.150174
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10278
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.6558 cur.y: -0.0521446
+y       => 0.0521446
+x       => -0.2618
+atan2   => 2.94499
+cur_ang => 3.10278
+dist    => -0.157791
+diff 2 angle: -0.157791
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09472
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.653942 cur.y: -0.0521215
+y       => 0.0521215
+x       => -0.259942
+atan2   => 2.9437
+cur_ang => 3.09472
+dist    => -0.151011
+diff 2 angle: -0.151011
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10112
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.645781 cur.y: -0.0520745
+y       => 0.0520745
+x       => -0.251781
+atan2   => 2.93764
+cur_ang => 3.10112
+dist    => -0.163476
+diff 2 angle: -0.163476
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10216
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.64397 cur.y: -0.0520985
+y       => 0.0520985
+x       => -0.24997
+atan2   => 2.93612
+cur_ang => 3.10216
+dist    => -0.166044
+diff 2 angle: -0.166044
+linear_x: -0.05
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.10292
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.63364 cur.y: -0.0439664
+y       => 0.0439664
+x       => -0.23964
+atan2   => 2.96014
+cur_ang => 3.10292
+dist    => -0.142782
+diff 2 angle: -0.142782
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.09382
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.625604 cur.y: -0.0290366
+y       => 0.0290366
+x       => -0.231604
+atan2   => 3.01687
+cur_ang => 3.09382
+dist    => -0.076953
+diff 2 angle: -0.076953
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08787
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.620008 cur.y: -0.0219832
+y       => 0.0219832
+x       => -0.226008
+atan2   => 3.04463
+cur_ang => 3.08787
+dist    => -0.0432414
+diff 2 angle: -0.0432414
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.05585
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.613748 cur.y: -0.0144376
+y       => 0.0144376
+x       => -0.219748
+atan2   => 3.07599
+cur_ang => 3.05585
+dist    => 0.0201388
+diff 2 angle: 0.0201388
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.05347
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.608248 cur.y: -0.00668852
+y       => 0.00668852
+x       => -0.214248
+atan2   => 3.11038
+cur_ang => 3.05347
+dist    => 0.0569121
+diff 2 angle: 0.0569121
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.06228
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.603899 cur.y: 0.00203627
+y       => -0.00203627
+x       => -0.209899
+atan2   => -3.13189
+cur_ang => 3.06228
+dist    => 0.0890097
+diff 2 angle: 0.0890097
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.02551
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.598002 cur.y: 0.00424803
+y       => -0.00424803
+x       => -0.204002
+atan2   => -3.12077
+cur_ang => 3.02551
+dist    => 0.136905
+diff 2 angle: 0.136905
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.05027
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.592153 cur.y: 0.00423523
+y       => -0.00423523
+x       => -0.198153
+atan2   => -3.12022
+cur_ang => 3.05027
+dist    => 0.112695
+diff 2 angle: 0.112695
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03005
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.585827 cur.y: 0.00368731
+y       => -0.00368731
+x       => -0.191827
+atan2   => -3.12237
+cur_ang => 3.03005
+dist    => 0.130761
+diff 2 angle: 0.130761
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.04363
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.580303 cur.y: 0.00426754
+y       => -0.00426754
+x       => -0.186303
+atan2   => -3.11869
+cur_ang => 3.04363
+dist    => 0.120866
+diff 2 angle: 0.120866
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.05034
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.574756 cur.y: 0.00415341
+y       => -0.00415341
+x       => -0.180756
+atan2   => -3.11862
+cur_ang => 3.05034
+dist    => 0.114226
+diff 2 angle: 0.114226
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.04472
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.567933 cur.y: 0.00409735
+y       => -0.00409735
+x       => -0.173933
+atan2   => -3.11804
+cur_ang => 3.04472
+dist    => 0.120429
+diff 2 angle: 0.120429
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.0392
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.564191 cur.y: 0.00401392
+y       => -0.00401392
+x       => -0.170191
+atan2   => -3.11801
+cur_ang => 3.0392
+dist    => 0.125975
+diff 2 angle: 0.125975
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03672
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.558798 cur.y: 0.00382054
+y       => -0.00382054
+x       => -0.164798
+atan2   => -3.11841
+cur_ang => 3.03672
+dist    => 0.128051
+diff 2 angle: 0.128051
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03134
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.550803 cur.y: 0.0032216
+y       => -0.0032216
+x       => -0.156803
+atan2   => -3.12105
+cur_ang => 3.03134
+dist    => 0.130793
+diff 2 angle: 0.130793
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03722
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.548269 cur.y: 0.00369677
+y       => -0.00369677
+x       => -0.154269
+atan2   => -3.11763
+cur_ang => 3.03722
+dist    => 0.128331
+diff 2 angle: 0.128331
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.04596
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.539015 cur.y: 0.00345573
+y       => -0.00345573
+x       => -0.145015
+atan2   => -3.11777
+cur_ang => 3.04596
+dist    => 0.119455
+diff 2 angle: 0.119455
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03487
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.535643 cur.y: 0.00353776
+y       => -0.00353776
+x       => -0.141643
+atan2   => -3.11662
+cur_ang => 3.03487
+dist    => 0.131695
+diff 2 angle: 0.131695
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.04003
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.530161 cur.y: 0.00331647
+y       => -0.00331647
+x       => -0.136161
+atan2   => -3.11724
+cur_ang => 3.04003
+dist    => 0.125911
+diff 2 angle: 0.125911
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.05021
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.522015 cur.y: 0.00381048
+y       => -0.00381048
+x       => -0.128015
+atan2   => -3.11184
+cur_ang => 3.05021
+dist    => 0.121139
+diff 2 angle: 0.121139
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03642
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.516288 cur.y: 0.00338898
+y       => -0.00338898
+x       => -0.122288
+atan2   => -3.11389
+cur_ang => 3.03642
+dist    => 0.132882
+diff 2 angle: 0.132882
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03502
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.513003 cur.y: 0.00367423
+y       => -0.00367423
+x       => -0.119003
+atan2   => -3.11073
+cur_ang => 3.03502
+dist    => 0.13744
+diff 2 angle: 0.13744
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.04044
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.509245 cur.y: 0.00420295
+y       => -0.00420295
+x       => -0.115245
+atan2   => -3.10514
+cur_ang => 3.04044
+dist    => 0.13761
+diff 2 angle: 0.13761
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.05603
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.501108 cur.y: 0.00419914
+y       => -0.00419914
+x       => -0.107108
+atan2   => -3.10241
+cur_ang => 3.05603
+dist    => 0.124744
+diff 2 angle: 0.124744
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.04434
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.496661 cur.y: 0.00389056
+y       => -0.00389056
+x       => -0.102661
+atan2   => -3.10371
+cur_ang => 3.04434
+dist    => 0.135134
+diff 2 angle: 0.135134
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03652
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.488263 cur.y: 0.00327552
+y       => -0.00327552
+x       => -0.0942634
+atan2   => -3.10686
+cur_ang => 3.03652
+dist    => 0.139803
+diff 2 angle: 0.139803
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03865
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.480801 cur.y: 0.00348275
+y       => -0.00348275
+x       => -0.0868011
+atan2   => -3.10149
+cur_ang => 3.03865
+dist    => 0.143041
+diff 2 angle: 0.143041
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.04639
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.476906 cur.y: 0.00389461
+y       => -0.00389461
+x       => -0.0829059
+atan2   => -3.09465
+cur_ang => 3.04639
+dist    => 0.142146
+diff 2 angle: 0.142146
+linear_x: -0.05
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.04266
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.469373 cur.y: 0.00395257
+y       => -0.00395257
+x       => -0.0753727
+atan2   => -3.0892
+cur_ang => 3.04266
+dist    => 0.151324
+diff 2 angle: 0.151324
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03725
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.465657 cur.y: 0.00368971
+y       => -0.00368971
+x       => -0.071657
+atan2   => -3.09015
+cur_ang => 3.03725
+dist    => 0.155793
+diff 2 angle: 0.155793
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03649
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.459261 cur.y: 0.00372649
+y       => -0.00372649
+x       => -0.0652613
+atan2   => -3.08455
+cur_ang => 3.03649
+dist    => 0.16214
+diff 2 angle: 0.16214
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03631
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.451321 cur.y: 0.00334797
+y       => -0.00334797
+x       => -0.0573211
+atan2   => -3.08325
+cur_ang => 3.03631
+dist    => 0.163628
+diff 2 angle: 0.163628
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.04547
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.445057 cur.y: 0.00373822
+y       => -0.00373822
+x       => -0.0510572
+atan2   => -3.06851
+cur_ang => 3.04547
+dist    => 0.169206
+diff 2 angle: 0.169206
+linear_x: -0.05
+angle: 0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03537
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.437348 cur.y: -0.000905109
+y       => 0.000905109
+x       => -0.0433477
+atan2   => 3.12072
+cur_ang => 3.03537
+dist    => 0.0853416
+diff 2 angle: 0.0853416
+linear_x: -0.0433571
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.03721
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.432632 cur.y: -0.0024266
+y       => 0.0024266
+x       => -0.038632
+atan2   => 3.07886
+cur_ang => 3.03721
+dist    => 0.0416567
+diff 2 angle: 0.0416567
+linear_x: -0.0387081
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.04693
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.422258 cur.y: -0.00678106
+y       => 0.00678106
+x       => -0.0282578
+atan2   => 2.90607
+cur_ang => 3.04693
+dist    => -0.140852
+diff 2 angle: -0.140852
+linear_x: -0.0290601
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.05885
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.417369 cur.y: -0.00797781
+y       => 0.00797781
+x       => -0.0233686
+atan2   => 2.81261
+cur_ang => 3.05885
+dist    => -0.246241
+diff 2 angle: -0.246241
+linear_x: -0.0246928
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.05711
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.408203 cur.y: -0.0144864
+y       => 0.0144864
+x       => -0.0142032
+atan2   => 2.34632
+cur_ang => 3.05711
+dist    => -0.710789
+diff 2 angle: -0.710789
+linear_x: -0.0202876
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.08687
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.404914 cur.y: -0.014194
+y       => 0.014194
+x       => -0.0109144
+atan2   => 2.22631
+cur_ang => 3.08687
+dist    => -0.860557
+diff 2 angle: -0.860557
+linear_x: -0.0179052
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.06408
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.402422 cur.y: -0.0156459
+y       => 0.0156459
+x       => -0.00842168
+atan2   => 2.06459
+cur_ang => 3.06408
+dist    => -0.999489
+diff 2 angle: -0.999489
+linear_x: -0.0177685
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.05784
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.39593 cur.y: -0.0109777
+y       => 0.0109777
+x       => -0.00192963
+atan2   => 1.7448
+cur_ang => 3.05784
+dist    => -1.31304
+diff 2 angle: -1.31304
+linear_x: -0.0111461
+angle: -0.1
+cost 0 ms.
+
+------------- GO_TO_GOAL_POSITION -------------
+goal  =>  yaw: -3.14159
+robot =>  yaw: 3.05641
+------caculate diff-------
+ gp.x: 0.394 gp.y: 0
+ cur.x: 0.394212 cur.y: -0.00446279
+y       => 0.00446279
+x       => -0.000211829
+atan2   => 1.61823
+cur_ang => 3.05641
+dist    => -1.43818
+diff 2 angle: -1.43818
+******** change to state GOAL_ANGLE ********  
+cost 0 ms.
+
+***********************************
+***********************************
+------------- GOAL_ANGLE -------------
+goal  =>  x: 0.394 y: 0 yaw: -3.14159
+robot =>  x: 0.393604 y: -0.000220743 yaw: 3.04878
+diff 3 angle: 0.092813
+============ pop goal============
+cost 0 ms.

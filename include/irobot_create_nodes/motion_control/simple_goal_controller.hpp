@@ -294,12 +294,12 @@ private:
   double max_translation_;
   const double MIN_ROTATION {0.02};
   // const double TO_GOAL_ANGLE_CONVERGED {0.03};
-  const double TO_GOAL_ANGLE_CONVERGED {0.30};
-  const double GO_TO_GOAL_ANGLE_TOO_FAR {0.35};
+  const double TO_GOAL_ANGLE_CONVERGED {0.15};
+  const double GO_TO_GOAL_ANGLE_TOO_FAR {0.20};
   // const double GO_TO_GOAL_APPLY_ROTATION_ANGLE {0.02};
   const double GO_TO_GOAL_APPLY_ROTATION_ANGLE {0.15};
   // const double GOAL_ANGLE_CONVERGED {0.02};
-  const double GOAL_ANGLE_CONVERGED {0.15};
+  const double GOAL_ANGLE_CONVERGED {0.05};
 
   std::chrono::high_resolution_clock::time_point time_start;
   std::chrono::high_resolution_clock::time_point time_end;

@@ -78,7 +78,7 @@ DockingBehavior::DockingBehavior(
   dock_rotation.setRPY(0, 0, 0);
   last_dock_pose_.setRotation(dock_rotation);
   // Set number from observation, but will repopulate on undock with calibrated value
-  last_docked_distance_offset_ = 0.394;
+  last_docked_distance_offset_ = 0.385;
   action_start_time_ = clock_->now();
 }
 
@@ -171,7 +171,7 @@ void DockingBehavior::handle_dock_servo_accepted(
   dock_offset.setOrigin(tf2::Vector3(last_docked_distance_offset_, 0, 0));
   tf2::Transform face_dock(tf2::Transform::getIdentity());
   face_dock.setRotation(dock_rotation);
-  dock_path.emplace_back(dock_pose * dock_offset * face_dock, 0.06, true);
+  dock_path.emplace_back(dock_pose * dock_offset * face_dock, 0.005, true);
   goal_controller_.initialize_goal(dock_path, 0.1, 0.05);
   // Setup behavior to override other commanded motion
   BehaviorsScheduler::BehaviorsData data;
