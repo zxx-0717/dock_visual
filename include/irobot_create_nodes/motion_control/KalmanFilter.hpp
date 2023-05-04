@@ -7,8 +7,8 @@
 // x_last = x_last + K * (z - x_last);
 // P_last = (1 - K) * P_now;
 
-#ifndef KALMAN_FILTER__HPP
-#define KALMAN_FILETER_HPP
+#ifndef KALMAN_FILTER__HPP_
+#define KALMAN_FILTER__HPP_
 
 typedef struct Kalman_Filter
 {
@@ -48,4 +48,4 @@ float KMFilter(KF_Struct *KFS, float z)
     return KFS->x_out;
 }
 
-#endif // KALMAN_FILTER_HPP
+#endif // KALMAN_FILTER_HPP_

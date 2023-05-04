@@ -2,6 +2,7 @@
 // @author Justin Kearns (jkearns@irobot.com)
 
 #include <irobot_create_nodes/motion_control/docking_behavior.hpp>
+#include "irobot_create_nodes/motion_control/KalmanFilter.hpp"
 
 #include <memory>
 
@@ -77,7 +78,7 @@ DockingBehavior::DockingBehavior(
   dock_rotation.setRPY(0, 0, 0);
   last_dock_pose_.setRotation(dock_rotation);
   // Set number from observation, but will repopulate on undock with calibrated value
-  last_docked_distance_offset_ = 0.45;
+  last_docked_distance_offset_ = 0.394;
   action_start_time_ = clock_->now();
 }
 
@@ -171,7 +172,7 @@ void DockingBehavior::handle_dock_servo_accepted(
   tf2::Transform face_dock(tf2::Transform::getIdentity());
   face_dock.setRotation(dock_rotation);
   dock_path.emplace_back(dock_pose * dock_offset * face_dock, 0.06, true);
-  goal_controller_.initialize_goal(dock_path, 0.2, 0.05);
+  goal_controller_.initialize_goal(dock_path, 0.1, 0.05);
   // Setup behavior to override other commanded motion
   BehaviorsScheduler::BehaviorsData data;
   data.run_func = std::bind(&DockingBehavior::execute_dock_servo, this, goal_handle, _1);
@@ -392,6 +393,32 @@ void DockingBehavior::robot_pose_callback(geometry_msgs::msg::PoseStamped::Const
 {
   const std::lock_guard<std::mutex> lock(robot_pose_mutex_);
   tf2::convert(msg->pose, last_robot_pose_);
+
+  // kalman_filter process
+  // float x, y, z;
+  // double roll, pitch, yaw;
+  // tf2::Vector3 position;
+  // KF_Struct kfs_x, kfs_y, kfs_z, kfs_roll, kfs_pitch, kfs_yaw;
+  // KF_Struct_Init(&kfs_x);
+  // KF_Struct_Init(&kfs_y);
+  // KF_Struct_Init(&kfs_z);
+  // KF_Struct_Init(&kfs_roll);
+  // KF_Struct_Init(&kfs_pitch);
+  // KF_Struct_Init(&kfs_yaw);
+  // position = last_robot_pose_.getOrigin();
+  // tf2::Quaternion rotation = last_robot_pose_.getRotation();
+  // x = KMFilter(&kfs_x, position.getX());
+  // y = KMFilter(&kfs_y, position.getY());
+  // z = KMFilter(&kfs_z, position.getZ());
+  // tf2::getEulerYPR(rotation, yaw, pitch, roll);
+  // yaw = KMFilter(&kfs_yaw, yaw);
+  // pitch = KMFilter(&kfs_pitch, pitch);
+  // roll = KMFilter(&kfs_roll, roll);
+  // tf2::Quaternion rotation_kf;
+  // rotation_kf.setRPY(roll, pitch, yaw);
+  // last_robot_pose_.setOrigin(tf2::Vector3(x,y,z));
+  // last_robot_pose_.setRotation(rotation_kf);
+  
   // auto position = last_robot_pose_.getOrigin();
   // auto yaw = tf2::getYaw(last_robot_pose_.getRotation());
   // RCLCPP_INFO(logger_, "robot_pose => x: %f, y: %f, angular: %f", position.getX(), position.getY(), yaw);
