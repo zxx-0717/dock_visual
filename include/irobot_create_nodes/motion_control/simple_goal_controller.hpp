@@ -113,6 +113,12 @@ public:
     // Generate velocity based on current position and next goal point looking for convergence
     // with goal point based on radius.
     switch (navigate_state_) {
+      case NavigateStates::LOOKUP_ARUCO_MARKER:
+      {
+        std::cout << "------------- LOOKUP_ARUCO_MARKER -------------\n";
+        
+        break;
+      }
       case NavigateStates::ANGLE_TO_GOAL:
         {
           std::cout << "------------- ANGLE_TO_GOAL -------------\n";
@@ -253,6 +259,7 @@ private:
     ANGLE_TO_GOAL,
     GO_TO_GOAL_POSITION,
     GOAL_ANGLE,
+    LOOKUP_ARUCO_MARKER
   };
 
   struct GoalPoint
