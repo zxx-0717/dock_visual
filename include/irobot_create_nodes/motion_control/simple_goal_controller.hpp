@@ -88,15 +88,26 @@ public:
     double current_angle = tf2::getYaw(current_pose.getRotation());
 
     // correct angle to  right-orintation (pi/2,pi), left-orintation(-pi,-pi/2)
-    if (current_angle > -M_PI * 0.5 && current_angle < 0) // right
+    // if (current_angle > -M_PI * 0.5 && current_angle < 0) // right
+    // {
+    //   current_angle = M_PI * 0.5 + std::abs(current_angle);  // (0,-pi/2) => (pi/2,pi)
+    //   std::cout << "" << std::endl;
+    // }
+    // else if(current_angle < -M_PI * 0.5 && current_angle > -M_PI) // left
+    // {
+    //   current_angle = -M_PI * 1.5 - current_angle ; // (-pi/2,-pi) => (-pi, -pi/2)
+    // }
+
+    // correct angle to right-orintation (pi/2-pi), left-orintation (-pi, -pi/2)
+    if (current_angle > M_PI * 0.5 && current_angle < M_PI) // left
     {
-      current_angle = M_PI * 0.5 + std::abs(current_angle);  // (0,-pi/2) => (pi/2,pi)
-      std::cout << "" << std::endl;
+      current_angle = M_PI * 1.5 - current_angle;  // (pi, pi/2) => (pi/2, pi)
     }
-    else if(current_angle < -M_PI * 0.5 && current_angle > -M_PI) // left
+    else if (current_angle > 0 && current_angle < M_PI * 0.5)
     {
-      current_angle = -M_PI * 1.5 - current_angle ; // (-pi/2,-pi) => (-pi, -pi/2)
+      current_angle = -M_PI * 0.5 - current_angle; // (pi/2, 0) => (-pi, -pi/2)
     }
+
 
     const tf2::Vector3 & current_position = current_pose.getOrigin();
     // Generate velocity based on current position and next goal point looking for convergence
