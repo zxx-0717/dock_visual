@@ -61,7 +61,7 @@ public:
       gp.radius = cmd_path[i].radius;
       gp.drive_backwards = cmd_path[i].drive_backwards;
     }
-    navigate_state_ = NavigateStates::ANGLE_TO_GOAL;
+    navigate_state_ = NavigateStates::LOOKUP_ARUCO_MARKER;
     max_rotation_ = max_rotation;
     max_translation_ = max_translation;
   }
@@ -77,45 +77,53 @@ public:
   // with goal point based on radius.
   // \return empty optional if no goal or velocity command to get to next goal point
   BehaviorsScheduler::optional_output_t get_velocity_for_position(
-    const tf2::Transform & current_pose)
+    const tf2::Transform & current_pose, bool sees_dock, bool is_docked, bool robot_pose_init)
   {
     time_start = std::chrono::high_resolution_clock::now();
     BehaviorsScheduler::optional_output_t servo_vel;
     const std::lock_guard<std::mutex> lock(mutex_);
+    if (is_docked)
+    {
+      std::cout << "*************** is docked *************" << std::endl << std::endl;;
+      goal_points_.clear();
+    }
     if (goal_points_.size() == 0) {
       return servo_vel;
     }
     double current_angle = tf2::getYaw(current_pose.getRotation());
 
-    // correct angle to  right-orintation (pi/2,pi), left-orintation(-pi,-pi/2)
-    // if (current_angle > -M_PI * 0.5 && current_angle < 0) // right
-    // {
-    //   current_angle = M_PI * 0.5 + std::abs(current_angle);  // (0,-pi/2) => (pi/2,pi)
-    //   std::cout << "" << std::endl;
-    // }
-    // else if(current_angle < -M_PI * 0.5 && current_angle > -M_PI) // left
-    // {
-    //   current_angle = -M_PI * 1.5 - current_angle ; // (-pi/2,-pi) => (-pi, -pi/2)
-    // }
-
-    // correct angle to right-orintation (pi/2-pi), left-orintation (-pi, -pi/2)
-    if (current_angle > M_PI * 0.5 && current_angle < M_PI) // left
-    {
-      current_angle = M_PI * 1.5 - current_angle;  // (pi, pi/2) => (pi/2, pi)
-    }
-    else if (current_angle > 0 && current_angle < M_PI * 0.5)
-    {
-      current_angle = -M_PI * 0.5 - current_angle; // (pi/2, 0) => (-pi, -pi/2)
-    }
-
-
     const tf2::Vector3 & current_position = current_pose.getOrigin();
+
+    if (!sees_dock)
+    {
+      navigate_state_ = NavigateStates::LOOKUP_ARUCO_MARKER;
+    }
+    else if (sees_dock && navigate_state_ == NavigateStates::LOOKUP_ARUCO_MARKER)
+    {
+      navigate_state_ = NavigateStates::ANGLE_TO_GOAL;
+    }
+    else if(!sees_dock && !robot_pose_init)
+    {
+      servo_vel = geometry_msgs::msg::Twist();
+      servo_vel->angular.z = -0.1;
+      return servo_vel;
+    }
+
     // Generate velocity based on current position and next goal point looking for convergence
     // with goal point based on radius.
     switch (navigate_state_) {
       case NavigateStates::LOOKUP_ARUCO_MARKER:
       {
         std::cout << "------------- LOOKUP_ARUCO_MARKER -------------\n";
+        servo_vel = geometry_msgs::msg::Twist();
+        double dist_angle = angles::shortest_angular_distance(current_angle, M_PI * 0.5);
+        std::cout << "current_angel: " << current_angle << std::endl;
+        std::cout << "dist_angle: " << dist_angle << std::endl;
+        bound_rotation(dist_angle);
+        std::cout << "bound angle: " << dist_angle << std::endl;
+
+        servo_vel = geometry_msgs::msg::Twist();
+        servo_vel->angular.z = dist_angle;
         
         break;
       }
@@ -125,7 +133,7 @@ public:
           const GoalPoint & gp = goal_points_.front();
 
           std::cout << "goal  => " 
-          // << " x: " << gp.x << " y: " << gp.y 
+          << " x: " << gp.x << " y: " << gp.y 
           << " yaw: " << gp.theta << std::endl;
           std::cout << "robot => " 
           // << " x: " << current_pose.getOrigin().getX() 
@@ -166,7 +174,7 @@ public:
           std::cout << "------------- GO_TO_GOAL_POSITION -------------\n";
           const GoalPoint & gp = goal_points_.front();
           std::cout << "goal  => " 
-          // << " x: " << gp.x << " y: " << gp.y 
+          << " x: " << gp.x << " y: " << gp.y 
           << " yaw: " << gp.theta << std::endl;
           std::cout << "robot => " 
           // << " x: " << current_pose.getOrigin().getX() 
@@ -312,12 +320,13 @@ private:
   double max_translation_;
   const double MIN_ROTATION {0.02};
   // const double TO_GOAL_ANGLE_CONVERGED {0.03};
-  const double TO_GOAL_ANGLE_CONVERGED {0.15};
-  const double GO_TO_GOAL_ANGLE_TOO_FAR {0.20};
+  const double TO_GOAL_ANGLE_CONVERGED {0.20};
+  const double GO_TO_GOAL_ANGLE_TOO_FAR {0.25};
   // const double GO_TO_GOAL_APPLY_ROTATION_ANGLE {0.02};
-  const double GO_TO_GOAL_APPLY_ROTATION_ANGLE {0.15};
+  const double GO_TO_GOAL_APPLY_ROTATION_ANGLE {0.20};
   // const double GOAL_ANGLE_CONVERGED {0.02};
-  const double GOAL_ANGLE_CONVERGED {0.05};
+  const double GOAL_ANGLE_CONVERGED {0.15};
+  const double LOOKUP_MARKER_CONVERGED {0.1};
 
   std::chrono::high_resolution_clock::time_point time_start;
   std::chrono::high_resolution_clock::time_point time_end;
