@@ -78,7 +78,7 @@ DockingBehavior::DockingBehavior(
   dock_rotation.setRPY(0, 0, 0);
   last_dock_pose_.setRotation(dock_rotation);
   // Set number from observation, but will repopulate on undock with calibrated value
-  last_docked_distance_offset_ = 0.15;
+  last_docked_distance_offset_ = 0.32;
   action_start_time_ = clock_->now();
 }
 
