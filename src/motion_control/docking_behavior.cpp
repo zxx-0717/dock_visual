@@ -33,10 +33,13 @@ DockingBehavior::DockingBehavior(
     std::bind(&DockingBehavior::dock_visible_callback, this, _1)
   );
 
+  rclcpp::QoS charger_state_qos(1);
+  charger_state_qos.reliability(rclcpp::ReliabilityPolicy::Reliable);
+  charger_state_qos.durability(rclcpp::DurabilityPolicy::TransientLocal);
   charge_state_sub_ = rclcpp::create_subscription<capella_ros_service_interfaces::msg::ChargeState>(
     node_topics_interface,
     "charger/state",
-    20,
+    charger_state_qos,
     std::bind(&DockingBehavior::charge_state_callback, this, _1)
   );
 
@@ -78,7 +81,7 @@ DockingBehavior::DockingBehavior(
   dock_rotation.setRPY(0, 0, 0);
   last_dock_pose_.setRotation(dock_rotation);
   // Set number from observation, but will repopulate on undock with calibrated value
-  last_docked_distance_offset_ = 0.32;
+  last_docked_distance_offset_ = 0.10;
   action_start_time_ = clock_->now();
 }
 
@@ -221,6 +224,10 @@ BehaviorsScheduler::optional_output_t DockingBehavior::execute_dock_servo(
     robot_pose = last_robot_pose_;
   }
   servo_cmd = goal_controller_.get_velocity_for_position(robot_pose, sees_dock_, is_docked_, robot_pose_init_);
+  if(this->is_docked_)
+  {
+    RCLCPP_INFO(logger_, "zero cmd time => sec: %f", this->clock_.get()->now().seconds());
+  }
   if (!servo_cmd || exceeded_runtime) {
     auto result = std::make_shared<irobot_create_msgs::action::Dock::Result>();
     if (is_docked_) {
@@ -386,6 +393,14 @@ void DockingBehavior::dock_visible_callback(capella_ros_service_interfaces::msg:
 
 void DockingBehavior::charge_state_callback(capella_ros_service_interfaces::msg::ChargeState::ConstSharedPtr msg)
 {
+  if(!this->is_docked_ && msg->has_contact)
+  {
+    rclcpp::Time contact_time = this->clock_.get()->now();
+    RCLCPP_INFO(logger_, "First receive contact msg => sec: %f, nanosec: %ld ",
+    contact_time.seconds(), contact_time.nanoseconds() % 1000000000);
+    RCLCPP_INFO(logger_, "First send contact msg    => sec: %d, nanosec: %d ",
+    msg->stamp.sec, msg->stamp.nanosec);
+  }
   this->is_docked_ = msg->has_contact;
 }
 

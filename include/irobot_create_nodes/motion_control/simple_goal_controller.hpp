@@ -17,6 +17,7 @@
 #include "tf2_geometry_msgs/tf2_geometry_msgs.hpp"
 #include <chrono>
 #include <time.h>
+#include <rclcpp/time.hpp>
 
 namespace irobot_create_nodes
 {
@@ -84,7 +85,7 @@ public:
     const std::lock_guard<std::mutex> lock(mutex_);
     if (is_docked)
     {
-      std::cout << "*************** is docked *************" << std::endl << std::endl;;
+      std::cout << "*************** is docked *************" << std::endl << std::endl;
       goal_points_.clear();
     }
     if (goal_points_.size() == 0) {
@@ -210,8 +211,18 @@ public:
             if (gp.drive_backwards) {
               translate_velocity *= -1;
             }
+            if (std::abs(current_position.getX()) < NEAR_POSITION_X)
+            {
+              translate_velocity = -NEAR_LINEAR_X;
+            }
             servo_vel->linear.x = translate_velocity;
             std::cout << "linear_x: " << translate_velocity << std::endl;
+            double angle_dist = angles::shortest_angular_distance(current_angle, 0);
+            if(std::abs(current_position.getX()) < NEAR_POSITION_X && std::abs(angle_dist) > NEAR_ANGULAR)
+            {
+              servo_vel->angular.z = angle_dist;
+              std::cout << "angle: " << angle_dist << std::endl;
+            } else 
             if (abs_ang > GO_TO_GOAL_APPLY_ROTATION_ANGLE) {
               bound_rotation(ang);
               servo_vel->angular.z = ang;
@@ -254,10 +265,10 @@ public:
     time_end = std::chrono::high_resolution_clock::now();
     time_cost = std::chrono::duration_cast<std::chrono::milliseconds>(time_end - time_start).count();
     std::cout << "cost " << time_cost  << " ms." << std::endl;
-    if(time_cost < time_interval)
-    {
-      usleep((time_interval- time_cost) * 1000);
-    }
+    // if(time_cost < time_interval)
+    // {
+    //   usleep((time_interval- time_cost) * 1000);
+    // }
     return servo_vel;
   }
 
@@ -320,10 +331,10 @@ private:
   double max_translation_;
   const double MIN_ROTATION {0.02};
   // const double TO_GOAL_ANGLE_CONVERGED {0.03};
-  const double TO_GOAL_ANGLE_CONVERGED {0.20};
-  const double GO_TO_GOAL_ANGLE_TOO_FAR {0.25};
+  const double TO_GOAL_ANGLE_CONVERGED {0.10};
+  const double GO_TO_GOAL_ANGLE_TOO_FAR {0.15};
   // const double GO_TO_GOAL_APPLY_ROTATION_ANGLE {0.02};
-  const double GO_TO_GOAL_APPLY_ROTATION_ANGLE {0.20};
+  const double GO_TO_GOAL_APPLY_ROTATION_ANGLE {0.10};
   // const double GOAL_ANGLE_CONVERGED {0.02};
   const double GOAL_ANGLE_CONVERGED {0.15};
   const double LOOKUP_MARKER_CONVERGED {0.1};
@@ -331,10 +342,14 @@ private:
   std::chrono::high_resolution_clock::time_point time_start;
   std::chrono::high_resolution_clock::time_point time_end;
   int64_t time_cost;
-  int64_t time_interval = 100;
+  // int64_t time_interval = 100;
 
   double DIS_ERROR = 0.05;
   double DIS_ERROR2 = 0.3;
+  double NEAR_POSITION_X = 0.55;
+  double NEAR_ANGULAR = 0.04;
+  double NEAR_LINEAR_X = 0.02;
+
 
 };
 

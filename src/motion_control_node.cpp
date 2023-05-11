@@ -285,6 +285,10 @@ void MotionControlNode::control_robot()
   if (!e_stop_engaged_) {
     *cmd_out_msg = *command;
   }
+  if(cmd_out_msg->linear.x == 0 && cmd_out_msg->angular.z == 0)
+  {
+      // RCLCPP_INFO(this->get_logger(), "pub cmd time: %f", this->get_clock()->now().seconds());
+  }
   cmd_vel_out_pub_->publish(std::move(cmd_out_msg));
   auto wheel_status_msg = std::make_unique<irobot_create_msgs::msg::WheelStatus>();
   wheel_status_msg->header.stamp = this->now();

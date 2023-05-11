@@ -19,6 +19,7 @@
 #include "capella_ros_service_interfaces/msg/charge_state.hpp"
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "capella_ros_service_interfaces/msg/charge_marker_visible.hpp"
+#include "rclcpp/qos.hpp"
 
 namespace irobot_create_nodes
 {
