@@ -235,7 +235,7 @@ BehaviorsScheduler::optional_output_t DockingBehavior::execute_dock_servo(
 		const std::lock_guard<std::mutex> lock(robot_pose_mutex_);
 		robot_pose = last_robot_pose_;
 	}
-	servo_cmd = goal_controller_.get_velocity_for_position(robot_pose, sees_dock_, is_docked_, robot_pose_init_,
+	servo_cmd = goal_controller_.get_velocity_for_position(robot_pose, sees_dock_, is_docked_,
 	                                                       raw_vel_msg, clock_);
 	if(this->is_docked_)
 	{
@@ -373,7 +373,7 @@ BehaviorsScheduler::optional_output_t DockingBehavior::execute_undock(
 		robot_pose = last_robot_pose_;
 	}
 	servo_cmd = goal_controller_.get_velocity_for_position(robot_pose, sees_dock_,
-	                                                       is_docked_, robot_pose_init_, raw_vel_msg, clock_);
+	                                                       is_docked_,  raw_vel_msg, clock_);
 
 	bool exceeded_runtime = false;
 	if (clock_->now() - action_start_time_ > max_action_runtime_) {
@@ -422,7 +422,6 @@ void DockingBehavior::robot_pose_callback(geometry_msgs::msg::PoseStamped::Const
 {
 	const std::lock_guard<std::mutex> lock(robot_pose_mutex_);
 	tf2::convert(msg->pose, last_robot_pose_);
-	robot_pose_init_ = true;
 
 	// kalman_filter process
 	// float x, y, z;

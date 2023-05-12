@@ -83,7 +83,7 @@ void reset()
 // with goal point based on radius.
 // \return empty optional if no goal or velocity command to get to next goal point
 BehaviorsScheduler::optional_output_t get_velocity_for_position(
-	const tf2::Transform & current_pose, bool sees_dock, bool is_docked, bool robot_pose_init,
+	const tf2::Transform & current_pose, bool sees_dock, bool is_docked,
 	capella_ros_msg::msg::Velocities raw_vel_msg, rclcpp::Clock::SharedPtr clock_)
 {
 	time_start = std::chrono::high_resolution_clock::now();
@@ -106,21 +106,6 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		current_angle = tf2::getYaw(current_pose.getRotation());
 		current_position = current_pose.getOrigin();
 	}
-
-	// if (!sees_dock)
-	// {
-	// 	navigate_state_ = NavigateStates::LOOKUP_ARUCO_MARKER;
-	// }
-	// else if (sees_dock && navigate_state_ == NavigateStates::LOOKUP_ARUCO_MARKER)
-	// {
-	// 	navigate_state_ = NavigateStates::ANGLE_TO_GOAL;
-	// }
-	// else if(!sees_dock && !robot_pose_init)
-	// {
-	// 	servo_vel = geometry_msgs::msg::Twist();
-	// 	servo_vel->angular.z = -0.1;
-	// 	return servo_vel;
-	// }
 
 	// Generate velocity based on current position and next goal point looking for convergence
 	// with goal point based on radius.
