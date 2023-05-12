@@ -19,6 +19,7 @@
 #include "capella_ros_service_interfaces/msg/charge_state.hpp"
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "capella_ros_service_interfaces/msg/charge_marker_visible.hpp"
+#include "capella_ros_msg/msg/velocities.hpp"
 #include "rclcpp/qos.hpp"
 
 namespace irobot_create_nodes
@@ -97,6 +98,7 @@ private:
   rclcpp::Subscription<capella_ros_service_interfaces::msg::ChargeMarkerVisible>::SharedPtr dock_visible_sub_;
   rclcpp::Subscription<capella_ros_service_interfaces::msg::ChargeState>::SharedPtr charge_state_sub_;
   rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr robot_pose_sub_;
+  rclcpp::Subscription<capella_ros_msg::msg::Velocities>::SharedPtr raw_vel_sub_;
   // rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr dock_pose_sub_;
 
   rclcpp::Clock::SharedPtr clock_;
@@ -114,11 +116,14 @@ private:
   const rclcpp::Duration max_action_runtime_;
   double last_docked_distance_offset_ {0.1};
   bool calibrated_offset_ {false};
-  const double MAX_DOCK_INTERMEDIATE_GOAL_OFFSET {0.8};
+  const double MAX_DOCK_INTERMEDIATE_GOAL_OFFSET {0.3};
   const double UNDOCK_GOAL_OFFSET {0.5};
   rclcpp::Time last_feedback_time_;
   const rclcpp::Duration report_feedback_interval_ {std::chrono::seconds(3)};
   bool robot_pose_init_ = false;
+  capella_ros_msg::msg::Velocities raw_vel_msg;
+
+  void raw_vel_sub_callback(capella_ros_msg::msg::Velocities);
 };
 
 }  // namespace irobot_create_nodes
