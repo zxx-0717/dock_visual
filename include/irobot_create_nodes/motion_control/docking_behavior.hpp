@@ -114,9 +114,9 @@ private:
   tf2::Transform last_dock_pose_;
   rclcpp::Time action_start_time_;
   const rclcpp::Duration max_action_runtime_;
-  double last_docked_distance_offset_ {0.1};
+  double last_docked_distance_offset_ {0.32};
   bool calibrated_offset_ {false};
-  const double MAX_DOCK_INTERMEDIATE_GOAL_OFFSET {0.3};
+  const double MAX_DOCK_INTERMEDIATE_GOAL_OFFSET {0.6}; // 0.5 + 0.1
   const double UNDOCK_GOAL_OFFSET {0.5};
   rclcpp::Time last_feedback_time_;
   const rclcpp::Duration report_feedback_interval_ {std::chrono::seconds(3)};

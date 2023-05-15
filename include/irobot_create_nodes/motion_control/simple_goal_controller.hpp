@@ -124,12 +124,29 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 			now_time = clock_->now().seconds();
 			if (now_time - first_sees_dock_time > 2.0)
 			{
-				realtime_y = current_pose.getOrigin().getY();
-				realtime_yaw = tf2::getYaw(current_pose.getRotation());
-				cout << "realtime_y: " << realtime_y << endl;
-				cout << "realtime_yaw: " << realtime_yaw << endl;
-				pre_time = clock_->now().seconds();
-				navigate_state_ = NavigateStates::ANGLE_TO_X_AXIS;
+				double robot_x = current_pose.getOrigin().getX();
+				double robot_y = current_pose.getOrigin().getY();
+				double theta = std::atan2(std::abs(robot_y), std::abs(robot_x - 0.92));
+				cout << "robot_x: " << robot_x << endl;
+				cout << "theta: " << theta << endl;
+				cout << "thr_angle_diff: " << thre_angle_diff << endl;
+				if (theta < thre_angle_diff && std::abs(robot_x) > (0.32 + 0.1 + 0.7)) // 0.7 <= 0.5 + 0.2(x_error)
+				{
+					navigate_state_ = NavigateStates::ANGLE_TO_GOAL;
+				}
+				else
+				{
+					dist_buffer_point = std::hypot(robot_x - buffer_goal_point_x, robot_y - buffer_goal_point_y);
+					robot_current_yaw = tf2::getYaw(current_pose.getRotation());
+					robot_angle_to_buffer_point_yaw = std::atan2(buffer_goal_point_y - robot_y, buffer_goal_point_x - robot_x);
+					dist_buffer_point_yaw = angles::shortest_angular_distance(robot_current_yaw,
+					                                                          robot_angle_to_buffer_point_yaw);
+					cout << "dist_buffer_point: " << dist_buffer_point << endl;
+					cout << "dist_buffer_point_yaw: " << dist_buffer_point_yaw << endl;
+					pre_time = clock_->now().seconds();
+					navigate_state_ = NavigateStates::ANGLE_TO_BUFFER_POINT;
+				}
+
 
 			}
 		}
@@ -139,9 +156,9 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		}
 		break;
 	}
-	case NavigateStates::ANGLE_TO_X_AXIS:
+	case NavigateStates::ANGLE_TO_BUFFER_POINT:
 	{
-		std::cout << "------------- ANGLE_TO_X_AXIS -------------\n";
+		std::cout << "------------- ANGLE_TO_BUFFER_POINT -------------\n";
 		servo_vel = geometry_msgs::msg::Twist();
 		now_time = clock_->now().seconds();
 		double dt = now_time - pre_time;
@@ -150,15 +167,17 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		cout << "dt: " << dt << endl;
 		cout << "raw_angular.z: " << raw_vel_msg.angular_z << endl;
 		cout << "delta_angular: " << raw_vel_msg.angular_z * dt << endl;
-		cout << "realtime_yaw pre: " << realtime_yaw << endl;
-		realtime_yaw += raw_vel_msg.angular_z * dt;
-		cout << "realtime_yaw now: " << realtime_yaw << endl;
-		double angle_dist = angles::shortest_angular_distance(realtime_yaw, -M_PI * 0.5);
+		cout << "dist_buffer_point_yaw pre: " << dist_buffer_point_yaw << endl;
+		robot_current_yaw += raw_vel_msg.angular_z * dt;
+		dist_buffer_point_yaw = angles::shortest_angular_distance(robot_current_yaw, robot_angle_to_buffer_point_yaw);
+		cout << "dist_buffer_point_yaw now: " << dist_buffer_point_yaw << endl;
+		// double angle_dist = angles::shortest_angular_distance(dist_buffer_point_yaw, -M_PI * 0.5);
+		double angle_dist = dist_buffer_point_yaw;
 		cout << "angle_dist: " << angle_dist << endl;
 		pre_time = now_time;
 		if(std::abs(angle_dist) < 0.05)
 		{
-			navigate_state_ = NavigateStates::MOVE_TO_X_AXIS;
+			navigate_state_ = NavigateStates::MOVE_TO_BUFFER_POINT;
 		}
 		else
 		{
@@ -172,20 +191,20 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		}
 		break;
 	}
-	case NavigateStates::MOVE_TO_X_AXIS:
+	case NavigateStates::MOVE_TO_BUFFER_POINT:
 	{
-		std::cout << "------------- MOVE_TO_X_AXIS -------------\n";
+		std::cout << "------------- MOVE_TO_BUFFER_POINT -------------\n";
 		servo_vel = geometry_msgs::msg::Twist();
 		now_time = clock_->now().seconds();
 		double dt = now_time - pre_time;
-		// cout << "realtime_y pre: " << realtime_y << endl;
-		double delta_y = dt * raw_vel_msg.linear_x;
-		realtime_y += dt * raw_vel_msg.linear_x;
+		// cout << "dist_buffer_point pre: " << dist_buffer_point << endl;
+		// double delta_y = dt * raw_vel_msg.linear_x;
+		dist_buffer_point += dt * raw_vel_msg.linear_x;
 		pre_time = now_time;
-		double dist_y = 0. - realtime_y;
+		double dist_y = dist_buffer_point;
 		cout << "raw_vel.linear_x: " << raw_vel_msg.linear_x << endl;
 		cout << "dt: " << dt << endl;
-		cout << "realtime_y now: " << realtime_y << endl;
+		cout << "dist_buffer_point now: " << dist_buffer_point << endl;
 		cout << "dist_y: " << dist_y << endl;
 		if (std::abs(dist_y) < 0.05)
 		{
@@ -197,7 +216,7 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 			if (std::abs(translate_velocity) > max_translation_) {
 				translate_velocity = max_translation_;
 			}
-			servo_vel->linear.x = std::copysign(translate_velocity, dist_y);
+			servo_vel->linear.x = -translate_velocity;
 			cout << "linear.x: " << translate_velocity << endl;
 		}
 		break;
@@ -208,9 +227,10 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		servo_vel = geometry_msgs::msg::Twist();
 		now_time = clock_->now().seconds();
 		double dt = now_time - pre_time;
-		realtime_yaw += realtime_yaw * dt;
+		// dist_buffer_point_yaw += dist_buffer_point_yaw * dt;
+		robot_current_yaw += raw_vel_msg.angular_z * dt;
 		pre_time = now_time;
-		double dist_yaw = angles::shortest_angular_distance(realtime_yaw, 0);
+		double dist_yaw = angles::shortest_angular_distance(robot_current_yaw, 0);
 		if(std::abs(dist_yaw) < 0.05)
 		{
 			navigate_state_ = NavigateStates::ANGLE_TO_GOAL;
@@ -377,8 +397,8 @@ private:
 enum class NavigateStates
 {
 	LOOKUP_ARUCO_MARKER,
-	ANGLE_TO_X_AXIS,
-	MOVE_TO_X_AXIS,
+	ANGLE_TO_BUFFER_POINT,
+	MOVE_TO_BUFFER_POINT,
 	ANGLE_TO_X_POSITIVE_ORIENTATION,
 	ANGLE_TO_GOAL,
 	GO_TO_GOAL_POSITION,
@@ -450,16 +470,24 @@ int64_t time_cost;
 
 double DIS_ERROR = 0.05;
 double DIS_ERROR2 = 0.3;
-double NEAR_POSITION_X = 0.55;
+double NEAR_POSITION_X = 0.32 + 0.10;
 double NEAR_ANGULAR = 0.05;
 double NEAR_LINEAR_X = 0.02;
 
-double realtime_y;
-double realtime_yaw;
+double dist_buffer_point;
+double dist_buffer_point_yaw;
 double pre_time;
 double now_time;
 double first_sees_dock_time;
 bool first_sees_dock = true;
+double thre_angle_diff = 0.30; // 0.4461565280195475968735605160853 <= tan(32-arctan2(0.12/(0.32+0.1+0.5))
+
+// buffer_goal_point
+double buffer_goal_point_x = -(0.32 + 0.1 + 0.5 + 1); // docked,low_vel_dist,first_goal_dist, buffer_goal_dist
+double buffer_goal_point_y = 0.0;
+double buffer_goal_point_theta = 0;
+double robot_angle_to_buffer_point_yaw;
+double robot_current_yaw;
 };
 
 }  // namespace irobot_create_nodes
