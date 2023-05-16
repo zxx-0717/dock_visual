@@ -28,6 +28,7 @@ find_package(tf2_ros REQUIRED)
 find_package(Boost REQUIRED)
 find_package(capella_ros_service_interfaces REQUIRED)
 find_package(capella_ros_msg REQUIRED)
+find_package(std_srvs REQUIRED)
 
 #### Libraries
 
@@ -49,6 +50,7 @@ set(dependencies
   Boost
   capella_ros_service_interfaces
   capella_ros_msg
+  std_srvs
 )
 
 # Hazards vector publisher
@@ -103,6 +105,15 @@ ament_target_dependencies(motion_control_lib
 rclcpp_components_register_node(motion_control_lib
   PLUGIN "irobot_create_nodes::MotionControlNode"
   EXECUTABLE motion_control)
+
+# test_dock_susscess_rate
+add_executable(test_dock_node src/test_dock_node.cpp src/motion_control/test_dock.cpp)
+target_include_directories(test_dock_node PUBLIC include)
+ament_target_dependencies(test_dock_node
+  ${dependencies}
+)
+install(TARGETS test_dock_node 
+  DESTINATION lib/${PROJECT_NAME})
 
 # DockingBehavior server
 add_library(docking_behavior SHARED)
