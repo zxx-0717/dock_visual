@@ -126,8 +126,9 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 			{
 				double robot_x = current_pose.getOrigin().getX();
 				double robot_y = current_pose.getOrigin().getY();
-				double theta = std::atan2(std::abs(robot_y), std::abs(robot_x - 0.92));
+				double theta = std::atan2(std::abs(robot_y), std::abs(robot_x) - 0.92);
 				cout << "robot_x: " << robot_x << endl;
+				cout << "robot_y: " << robot_y << endl;
 				cout << "theta: " << theta << endl;
 				cout << "thr_angle_diff: " << thre_angle_diff << endl;
 				if (theta < thre_angle_diff && std::abs(robot_x) > (0.32 + 0.1 + 0.7)) // 0.7 <= 0.5 + 0.2(x_error)

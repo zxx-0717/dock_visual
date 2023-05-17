@@ -113,7 +113,10 @@ private:
   rclcpp::Publisher<irobot_create_msgs::msg::HazardDetection>::SharedPtr backup_limit_hazard_pub_;
   rclcpp::Publisher<irobot_create_msgs::msg::WheelStatus>::SharedPtr wheel_status_pub_;
   rclcpp::TimerBase::SharedPtr control_timer_ {nullptr};
+  rclcpp::TimerBase::SharedPtr start_control_timer {nullptr};
   rclcpp::TimerBase::SharedPtr backup_limit_timer_ {nullptr};
+
+  void start_control_timer_callback();
 
   std::shared_ptr<tf2_ros::Buffer> tf_buffer_ {nullptr};
   std::shared_ptr<tf2_ros::TransformListener> tf_listener_ {nullptr};

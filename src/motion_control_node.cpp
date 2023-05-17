@@ -146,11 +146,18 @@ MotionControlNode::MotionControlNode(const rclcpp::NodeOptions & options)
   last_teleop_ts_ = this->now();
   // Create timer to periodically execute behaviors and control the robot
   constexpr auto control_period = std::chrono::duration<double>(1.0 / 40.0);
-  control_timer_ = rclcpp::create_timer(
+  // control_timer_ = rclcpp::create_timer(
+  //   this,
+  //   this->get_clock(),
+  //   rclcpp::Duration(control_period),
+  //   std::bind(&MotionControlNode::control_robot, this));
+
+  start_control_timer = rclcpp::create_timer(
     this,
     this->get_clock(),
     rclcpp::Duration(control_period),
-    std::bind(&MotionControlNode::control_robot, this));
+    std::bind(&MotionControlNode::start_control_timer_callback, this));
+
   constexpr auto backup_pub_period = std::chrono::duration<double>(1.0 / 62.0);
   backup_limit_timer_ = rclcpp::create_timer(
     this,
@@ -222,6 +229,26 @@ rcl_interfaces::msg::SetParametersResult MotionControlNode::set_parameters_callb
   }
 
   return result;
+}
+
+void MotionControlNode::start_control_timer_callback()
+{
+  if(scheduler_->has_behavior())
+  {
+    if(!control_timer_)
+    {
+      constexpr auto control_period = std::chrono::duration<double>(1.0 / 40.0);
+      control_timer_ = rclcpp::create_timer(
+      this,
+      this->get_clock(),
+      rclcpp::Duration(control_period),
+      std::bind(&MotionControlNode::control_robot, this));
+    }
+  }
+  else
+  {
+    control_timer_.reset();
+  }
 }
 
 void MotionControlNode::control_robot()
