@@ -17,6 +17,11 @@ TestDock::TestDock(std::string name, GoalRect goal_rect) : Node(name)
         sub_opt_raw_vel.callback_group = cb_group_sub_raw_vel_;
         raw_vel_sub_ = this->create_subscription<capella_ros_msg::msg::Velocities>("/raw_vel", 5, std::bind(&TestDock::raw_vel_sub_callback, this, _1), sub_opt_raw_vel);
         
+        cb_group_sub_charger_state_ = this->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
+        auto sub_opt_charger_state = rclcpp::SubscriptionOptions();
+        sub_opt_charger_state.callback_group = cb_group_sub_charger_state_;
+        charger_state_sub_ = this->create_subscription<capella_ros_service_interfaces::msg::ChargeState>("/charger/state", 1, std::bind(&TestDock::charger_state_callback, this, _1), sub_opt_charger_state);
+
         cb_group_sub_robot_pose_ = this->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
         auto sub_opt_robot_pose = rclcpp::SubscriptionOptions();
         sub_opt_robot_pose.callback_group = cb_group_sub_robot_pose_;
@@ -24,7 +29,8 @@ TestDock::TestDock(std::string name, GoalRect goal_rect) : Node(name)
         
         cmd_vel_pub_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
         // --ros-args -p test_count:=10
-        test_count = this->get_parameter_or("test_count", 6);
+        this->declare_parameter<int>("test_count", 5);
+        this->get_parameter_or<int>("test_count", test_count, 5);
         cout << "test_count: " << test_count << endl;
         this->goal_rect = goal_rect;
 
@@ -92,6 +98,7 @@ bool TestDock::get_robot_pose()
 // https://blog.csdn.net/onion23/article/details/118558454
 double TestDock::generate_random(int a, int b)
 {
+        srand(time(0));
         return ((rand() % (b - a + 1)) + a) / 100.0;
 }
 
@@ -180,7 +187,32 @@ DockStatus TestDock::start_docking()
 {
         dock_end = false;
 
-        if(dock_success)
+        // wait for /marker_visible msg
+        while(!sees_dock_sub)
+        {
+                sleep(1);
+        }
+
+        if(sees_dock)
+        {
+                sleep(2);
+                while(!robot_current_pose_sub_sub)
+                {
+                        sleep(1);
+                }
+        }
+
+        // wait for sub msg(/charger/state )
+        while(!has_contact_sub)
+        {
+                sleep(1);
+        }
+
+        if(dock_success || has_contact 
+                || (sees_dock && robot_current_pose_sub_sub
+                && ((robot_current_pose_sub.x < -0.30 && robot_current_pose_sub.x > -0.45)
+                && (robot_current_pose_sub.y > -0.15 && robot_current_pose_sub.y < 0.15)))
+        )
         {
                 RCLCPP_INFO(this->get_logger(), "********** undock **********");
                 this->pub_vel_msg = geometry_msgs::msg::Twist();
@@ -263,7 +295,7 @@ void TestDock::run()
 
         double success_rate = success_count * 100 / (float)test_count;
         RCLCPP_INFO(this->get_logger(), "Test count: %d, success: %d, fail: %d, success rate: %.2f%%", test_count, success_count, fail_count, success_rate);
-        RCLCPP_INFO(this->get_logger(), "********************************************************************************");
+        RCLCPP_INFO(this->get_logger(), "****************************************");
 }
 
 double TestDock::bound_rotation(double z)
@@ -320,6 +352,7 @@ void TestDock::dock_visible_sub_callback(capella_ros_service_interfaces::msg::Ch
 {
         // cout << "charge visible callback" << endl;
         sees_dock = msg.marker_visible;
+        sees_dock_sub = true;
 }
 
 void TestDock::raw_vel_sub_callback(capella_ros_msg::msg::Velocities msg)
@@ -346,6 +379,13 @@ void TestDock::robot_pose_sub_callback(geometry_msgs::msg::PoseStamped msg)
         robot_current_pose_sub.x = transform.getOrigin().getX();
         robot_current_pose_sub.y = transform.getOrigin().getY();
         robot_current_pose_sub.theta = tf2::getYaw(transform.getRotation());
+        robot_current_pose_sub_sub = true;
+}
+
+void TestDock::charger_state_callback(capella_ros_service_interfaces::msg::ChargeState msg)
+{
+        this->has_contact = msg.has_contact;
+        this->has_contact_sub = true;
 }
 
 void TestDock::timer_pub_vel_callback()

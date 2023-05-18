@@ -16,6 +16,8 @@
 #include "irobot_create_msgs/action/dock.hpp"
 #include "angles/angles.h"
 #include <thread>
+#include <ctime>
+#include "capella_ros_service_interfaces/msg/charge_state.hpp"
 
 using namespace std::chrono_literals;
 
@@ -59,11 +61,14 @@ public:
 	rclcpp::Subscription<capella_ros_service_interfaces::msg::ChargeMarkerVisible>::SharedPtr dock_visible_sub_;
 	rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr robot_pose_sub_;
 	rclcpp::Subscription<capella_ros_msg::msg::Velocities>::SharedPtr raw_vel_sub_;
+	rclcpp::Subscription<capella_ros_service_interfaces::msg::ChargeState>::SharedPtr charger_state_sub_;
+
 	rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_pub_;
 
 	rclcpp::CallbackGroup::SharedPtr cb_group_sub_dock_visible_;
 	rclcpp::CallbackGroup::SharedPtr cb_group_sub_robot_pose_;
 	rclcpp::CallbackGroup::SharedPtr cb_group_sub_raw_vel_;
+	rclcpp::CallbackGroup::SharedPtr cb_group_sub_charger_state_;
 
 	std::shared_ptr<std::thread> __th_process_;
 
@@ -72,6 +77,7 @@ public:
 	void robot_pose_sub_callback(geometry_msgs::msg::PoseStamped msg);
 	void timer_pub_vel_callback();
 	void dock_result_callback(const GoalHandleDock::WrappedResult &result);
+	void charger_state_callback(capella_ros_service_interfaces::msg::ChargeState msg);
 
 	rclcpp_action::Client<Dock>::SharedPtr client_action_dock_;
 
@@ -79,9 +85,11 @@ public:
 	double bound_linear(double);
 
 	bool sees_dock = false;
+	bool sees_dock_sub = false;
 	bool success = false;
 	robotPose robot_current_pose;
 	robotPose robot_current_pose_sub;
+	bool robot_current_pose_sub_sub = false;
 	robotPose goal_pose;
 	std::queue<capella_ros_msg::msg::Velocities> queue_raw_vel;
 	int queue_raw_vel_size = 5;
@@ -93,10 +101,12 @@ public:
 	int success_count = 0;
 	int fail_count = 0;
 	bool dock_success = false;
+	bool has_contact = false;
+	bool has_contact_sub = false;
 	bool dock_end = false;
 	double time_start;
 	double time_end;
-	double time_max = 25.0; // seconds
+	double time_max = 25.0; // seconds (to find charger)
 
 	rclcpp::TimerBase::SharedPtr timer_pub_vel;
 	geometry_msgs::msg::Twist pub_vel_msg;
