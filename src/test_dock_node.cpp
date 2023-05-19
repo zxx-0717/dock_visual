@@ -8,7 +8,7 @@ int y_min = -70;
 int y_max = 100;
 
 int x_max = -70;
-int x_min = -300;
+int x_min = -200;
 
 size_t test_count = 100;
 
