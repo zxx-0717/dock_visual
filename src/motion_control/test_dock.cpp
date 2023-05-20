@@ -265,9 +265,9 @@ DockStatus TestDock::start_docking()
 void TestDock::run()
 {
         current_number = 0;
-        for (; current_number < test_count; current_number++)
+        for (; current_number < test_count; ++current_number)
         {
-                RCLCPP_INFO(this->get_logger(), "---------------- Number %3d ---------------- ", current_number);
+                RCLCPP_INFO(this->get_logger(), "--------------- Number %d / %d --------------- ", current_number + 1, test_count);
                 DockStatus result = start_docking();
                 switch (result)
                 {
@@ -289,13 +289,13 @@ void TestDock::run()
                 default:
                         break;
                 }
+                double success_rate = success_count * 100 / (float)(current_number + 1);        
+                RCLCPP_INFO(this->get_logger(), "Test count: %d, success: %d, fail: %d, success rate: %.2f%%", test_count, success_count, fail_count, success_rate);       
                 cout << endl; // SPACE
                 sleep(5);
         }
 
-        double success_rate = success_count * 100 / (float)test_count;
-        RCLCPP_INFO(this->get_logger(), "Test count: %d, success: %d, fail: %d, success rate: %.2f%%", test_count, success_count, fail_count, success_rate);
-        RCLCPP_INFO(this->get_logger(), "****************************************");
+        
 }
 
 double TestDock::bound_rotation(double z)
