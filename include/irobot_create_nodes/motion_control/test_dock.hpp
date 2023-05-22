@@ -119,4 +119,10 @@ public:
 	double time_undock = 5; // seconds
 
 	DockStatus status_;
+
+	// dicide robot drive back or drive forawrd
+	double theta_positive;
+	double theta_negative;
+	bool drive_back = true;
+
 };

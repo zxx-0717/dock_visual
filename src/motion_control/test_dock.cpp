@@ -117,8 +117,29 @@ void TestDock::move_to_goal_pose()
         double dt_y, dt_x;
         dt_y = goal_pose.y - robot_current_pose.y;
         dt_x = goal_pose.x - robot_current_pose.x;
-        dist_yaw = angles::shortest_angular_distance(robot_current_pose.theta,
-                                                     std::atan2(dt_y, dt_x));
+        
+        // decide drive back or not
+        double theta_to_goal = std::atan2(dt_y, dt_x);
+        theta_negative = angles::shortest_angular_distance(robot_current_pose.theta, theta_to_goal);
+        theta_positive = angles::shortest_angular_distance(
+                angles::normalize_angle(robot_current_pose.theta + M_PI),
+                theta_to_goal
+        );
+
+        cout << "theta_positive: " << theta_positive << endl;
+        cout << "theta_negative: " << theta_negative << endl;
+
+        if(std::abs(theta_positive) < std::abs(theta_negative))
+        {
+                drive_back = false;
+                dist_yaw = theta_positive;
+        }
+        else
+        {
+                drive_back = true;
+                dist_yaw = theta_negative;
+        }
+        cout << "dist_yaw: " << dist_yaw << endl;
         dist_linear = std::hypot(dt_y, dt_x);
 
         // cout << "robot pose => x: " << robot_current_pose.x << ", y: " << robot_current_pose.y << endl;
@@ -158,7 +179,12 @@ void TestDock::move_to_goal_pose()
 
         // move to goal;
         this->pub_vel_msg = geometry_msgs::msg::Twist();
-        this->pub_vel_msg.linear.x = -bound_linear(dist_linear);
+        double vel_x = bound_linear(dist_linear);
+        if(drive_back)
+        {
+                vel_x *= -1;
+        }
+        this->pub_vel_msg.linear.x = vel_x;
         timer_pub_vel = this->create_wall_timer(100ms, std::bind(&TestDock::timer_pub_vel_callback, this));
         while (std::abs(dist_linear) > 0.05)
         {
@@ -177,6 +203,45 @@ void TestDock::move_to_goal_pose()
                         // cout << "dt: " << dt << endl;
                         // cout << "linear_x: " << linear_x << endl;
                         // cout << "dist_linear: " << dist_linear << endl;
+                }
+                usleep(30 * 1000);
+        }
+        timer_pub_vel.reset();
+
+        // make camera angle to marker
+        double camera_theta;
+        if (drive_back)
+        {
+                camera_theta = theta_to_goal;
+        }
+        else
+        {
+                camera_theta = angles::normalize_angle(theta_to_goal + M_PI);
+        }
+        dist_yaw = angles::shortest_angular_distance(camera_theta, std::atan2(goal_pose.y - 0, goal_pose.x - 0));
+
+        this->pub_vel_msg = geometry_msgs::msg::Twist();
+        this->pub_vel_msg.angular.z = bound_rotation(dist_yaw);
+        timer_pub_vel = this->create_wall_timer(100ms, std::bind(&TestDock::timer_pub_vel_callback, this));
+        pre_time = this->get_clock()->now().seconds();
+        while (std::abs(dist_yaw) > 0.05)
+        {
+                {
+                        const std::lock_guard<std::mutex> lock(queue_raw_vel_mutex);
+                        now_time = this->get_clock()->now().seconds();
+                        dt = now_time - pre_time;
+                        pre_time = now_time;
+                        double angular_z = 0.;
+                        if (queue_raw_vel.size() > 0)
+                        {
+                                angular_z = queue_raw_vel.front().angular_z;
+                                queue_raw_vel.pop();
+                        }
+                        dist_yaw -= dt * angular_z;
+                        // cout << "queue size: " << queue_raw_vel.size() << endl;
+                        // cout << "dt: " << dt << endl;
+                        // cout << "angular_z: " << angular_z << endl;
+                        // cout << "dist yaw: " << dist_yaw << endl;
                 }
                 usleep(30 * 1000);
         }
