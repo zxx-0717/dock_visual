@@ -140,8 +140,28 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 					dist_buffer_point = std::hypot(robot_x - buffer_goal_point_x, robot_y - buffer_goal_point_y);
 					robot_current_yaw = tf2::getYaw(current_pose.getRotation());
 					robot_angle_to_buffer_point_yaw = std::atan2(buffer_goal_point_y - robot_y, buffer_goal_point_x - robot_x);
-					dist_buffer_point_yaw = angles::shortest_angular_distance(robot_current_yaw,
-					                                                          robot_angle_to_buffer_point_yaw);
+					
+					// decide drive back or not
+					theta_positive = angles::shortest_angular_distance(
+						angles::normalize_angle(robot_current_yaw + M_PI),
+						robot_angle_to_buffer_point_yaw
+					);
+					theta_negative = angles::shortest_angular_distance(robot_current_yaw, robot_angle_to_buffer_point_yaw);
+					if (std::abs(theta_positive) < std::abs(theta_negative))
+					{
+						drive_back = false;
+						dist_buffer_point_yaw = theta_positive;
+					}
+					else
+					{
+						drive_back = true;
+						dist_buffer_point_yaw = theta_negative;
+					}
+					
+					cout << "robot_current_yaw: " << robot_current_yaw << endl;
+					cout << "robot_angle_to_buffer_point_yaw: " << robot_angle_to_buffer_point_yaw << endl;
+					cout << "theta_negative: " << theta_negative << endl;
+					cout << "theta_positive: " << theta_positive << endl;
 					cout << "dist_buffer_point: " << dist_buffer_point << endl;
 					cout << "dist_buffer_point_yaw: " << dist_buffer_point_yaw << endl;
 					pre_time = clock_->now().seconds();
@@ -169,10 +189,8 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		cout << "raw_angular.z: " << raw_vel_msg.angular_z << endl;
 		cout << "delta_angular: " << raw_vel_msg.angular_z * dt << endl;
 		cout << "dist_buffer_point_yaw pre: " << dist_buffer_point_yaw << endl;
-		robot_current_yaw = raw_vel_msg.angular_z * dt;
-		cout << "robot_angle_to_buffer_point_yaw: " << robot_angle_to_buffer_point_yaw << endl;
-		cout << "robot_current_yaw: " << robot_current_yaw << endl;
-		dist_buffer_point_yaw = angles::shortest_angular_distance(robot_current_yaw, robot_angle_to_buffer_point_yaw);
+		dist_buffer_point_yaw -= raw_vel_msg.angular_z * dt;
+		robot_current_yaw += raw_vel_msg.angular_z * dt;		
 		cout << "dist_buffer_point_yaw now: " << dist_buffer_point_yaw << endl;
 		// double angle_dist = angles::shortest_angular_distance(dist_buffer_point_yaw, -M_PI * 0.5);
 		double angle_dist = dist_buffer_point_yaw;
@@ -185,9 +203,9 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		else
 		{
 			bound_rotation(angle_dist);
-			if(std::abs(angle_dist) < 0.1) // 0.1 => 0.8 => raw_vel output 0
+			if(std::abs(angle_dist) < 0.12) // 0.1 => 0.8 => raw_vel output 0
 			{
-				angle_dist = std::copysign(0.1, angle_dist);
+				angle_dist = std::copysign(0.12, angle_dist);
 			}
 			servo_vel->angular.z = angle_dist;
 			std::cout << "angular.z: " << angle_dist << endl;
@@ -202,7 +220,7 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		double dt = now_time - pre_time;
 		// cout << "dist_buffer_point pre: " << dist_buffer_point << endl;
 		// double delta_y = dt * raw_vel_msg.linear_x;
-		dist_buffer_point += dt * raw_vel_msg.linear_x;
+		dist_buffer_point -= dt * std::abs(raw_vel_msg.linear_x);
 		pre_time = now_time;
 		double dist_y = dist_buffer_point;
 		cout << "raw_vel.linear_x: " << raw_vel_msg.linear_x << endl;
@@ -216,10 +234,14 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		else
 		{
 			double translate_velocity = dist_y;
-			if (std::abs(translate_velocity) > max_translation_) {
-				translate_velocity = max_translation_;
+			if(drive_back)
+			{
+				translate_velocity *= -1;
 			}
-			servo_vel->linear.x = -translate_velocity;
+			if (std::abs(translate_velocity) > max_translation_) {
+				translate_velocity = std::copysign(max_translation_, translate_velocity);
+			}
+			servo_vel->linear.x = translate_velocity;
 			cout << "linear.x: " << translate_velocity << endl;
 		}
 		break;
@@ -241,9 +263,9 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		else
 		{
 			bound_rotation(dist_yaw);
-			if(std::abs(dist_yaw) < 0.1) // 0.1 => 0.8 => raw_vel output 0
+			if(std::abs(dist_yaw) < 0.12) // 0.1 => 0.8 => raw_vel output 0
 			{
-				dist_yaw = std::copysign(0.1, dist_yaw);
+				dist_yaw = std::copysign(0.12, dist_yaw);
 			}
 			servo_vel->angular.z = dist_yaw;
 		}
@@ -491,6 +513,9 @@ double buffer_goal_point_y = 0.0;
 double buffer_goal_point_theta = 0;
 double robot_angle_to_buffer_point_yaw;
 double robot_current_yaw;
+double robot_current_yaw_positive;
+bool drive_back = false;
+double theta_positive, theta_negative;
 };
 
 }  // namespace irobot_create_nodes

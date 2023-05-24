@@ -112,7 +112,7 @@ public:
 	geometry_msgs::msg::Twist pub_vel_msg;
 
 	double max_rotation = 0.2;
-	double min_rotation = 0.1;
+	double min_rotation = 0.12;
 	double max_linear = 0.1;
 	double min_linear = 0.05;
 	
