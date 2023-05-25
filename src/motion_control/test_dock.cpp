@@ -31,7 +31,8 @@ TestDock::TestDock(std::string name, GoalRect goal_rect) : Node(name)
     // --ros-args -p test_count:=10
     this->declare_parameter<int>("test_count", 5);
     this->get_parameter_or<int>("test_count", test_count, 5);
-    cout << endl << "test_count: " << test_count << endl << endl;
+    RCLCPP_INFO(this->get_logger(), "test_count: %d", test_count);
+    // cout << endl << "test_count: " << test_count << endl << endl;
     this->goal_rect = goal_rect;
 
     __th_process_ = std::make_shared<std::thread>(std::bind(&TestDock::run, this));

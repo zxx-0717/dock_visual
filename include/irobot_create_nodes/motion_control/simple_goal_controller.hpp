@@ -428,9 +428,9 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 	}
 	case NavigateStates::GOAL_ANGLE:
 	{
-		RCLCPP_DEBUG(logger_, "***********************************: %f");
-		RCLCPP_DEBUG(logger_, "***********************************: %f");
-		RCLCPP_DEBUG(logger_, "------------- GOAL_ANGLE -------------: %f");
+		RCLCPP_DEBUG(logger_, "***********************************");
+		RCLCPP_DEBUG(logger_, "***********************************");
+		RCLCPP_DEBUG(logger_, "------------- GOAL_ANGLE -------------");
 		// std::cout << "***********************************\n";
 		// std::cout << "***********************************\n";
 		// std::cout << "------------- GOAL_ANGLE -------------\n";
@@ -520,7 +520,7 @@ double diff_angle(const GoalPoint & goal_pt, const tf2::Vector3 & cur_position, 
 	double result = angles::shortest_angular_distance(cur_angle, atan2_value);
 
 	RCLCPP_DEBUG(logger_, "------caculate diff-------");
-	RCLCPP_DEBUG(logger_, "gp.x: %, gp.y: %f, cur.x: %f, cur.y: %f",
+	RCLCPP_DEBUG(logger_, "gp.x: %f, gp.y: %f, cur.x: %f, cur.y: %f",
 	             goal_pt.x, goal_pt.y, cur_position.getX(), cur_position.getY());
 	RCLCPP_DEBUG(logger_, "y       => %f", y);
 	RCLCPP_DEBUG(logger_, "x       => %f", x);
