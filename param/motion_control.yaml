@@ -1,0 +1,21 @@
+motion_control:
+  ros__parameters:
+    min_rotation: 0.12
+    max_rotation: 0.2
+    min_translation: 0.02
+    max_translation: 0.2
+    angle_to_goal_angle_converged: 0.10
+    go_to_goal_angle_too_far: 0.15
+    go_to_goal_apply_rotation_angle: 0.10 # when angle_dist > this value,apply rotation
+    goal_angle_converged: 0.15
+    dist_goal_converged: 0.10
+    dist_docked: 0.32
+    distance_low_speed: 0.10
+    translate_low_speed: 0.02
+    rotation_low_speed: 0.05
+    first_goal_distance: 0.0
+    second_goal_distance: 0.5
+    buffer_goal_distance: 1.0
+    camera_horizontal_view: 64.0 // degree
+    localization_converged_time: 2 // wait (n) seconds for coordinates to be converged
+
