@@ -84,14 +84,15 @@ void reset()
 // \return empty optional if no goal or velocity command to get to next goal point
 BehaviorsScheduler::optional_output_t get_velocity_for_position(
 	const tf2::Transform & current_pose, bool sees_dock, bool is_docked,
-	capella_ros_msg::msg::Velocities raw_vel_msg, rclcpp::Clock::SharedPtr clock_)
+	capella_ros_msg::msg::Velocities raw_vel_msg, rclcpp::Clock::SharedPtr clock_, rclcpp::Logger logger_)
 {
 	time_start = std::chrono::high_resolution_clock::now();
 	BehaviorsScheduler::optional_output_t servo_vel;
 	const std::lock_guard<std::mutex> lock(mutex_);
 	if (is_docked)
 	{
-		std::cout << "*************** is docked *************" << std::endl << std::endl;
+		RCLCPP_INFO(logger_, "*************** is docked *************");
+		// std::cout << "*************** is docked *************" << std::endl << std::endl;
 		goal_points_.clear();
 		first_sees_dock = true;
 	}
@@ -112,7 +113,8 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 	switch (navigate_state_) {
 	case NavigateStates::LOOKUP_ARUCO_MARKER:
 	{
-		std::cout << "------------- LOOKUP_ARUCO_MARKER -------------\n";
+		RCLCPP_DEBUG(logger_, "------------- LOOKUP_ARUCO_MARKER -------------");
+		// std::cout << "------------- LOOKUP_ARUCO_MARKER -------------\n";
 		servo_vel = geometry_msgs::msg::Twist();
 		if (sees_dock)
 		{
@@ -127,26 +129,32 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 				double robot_x = current_pose.getOrigin().getX();
 				double robot_y = current_pose.getOrigin().getY();
 				double theta = std::atan2(std::abs(robot_y), std::abs(robot_x) - 0.92);
-				cout << "robot_x: " << robot_x << endl;
-				cout << "robot_y: " << robot_y << endl;
-				cout << "theta: " << theta << endl;
-				cout << "thr_angle_diff: " << thre_angle_diff << endl;
-				if (theta < thre_angle_diff && std::abs(robot_x) > (0.32 + 0.1 + 0.7)) // 0.7 <= 0.5 + 0.2(x_error)
+				RCLCPP_DEBUG(logger_, "robot_x: %f", robot_x);
+				RCLCPP_DEBUG(logger_, "robot_y: %f", robot_y);
+				RCLCPP_DEBUG(logger_, "theta: %f", theta);
+				RCLCPP_DEBUG(logger_, "thr_angle_diff: %f", thre_angle_diff);
+				// cout << "robot_x: " << robot_x << endl;
+				// cout << "robot_y: " << robot_y << endl;
+				// cout << "theta: " << theta << endl;
+				// cout << "thr_angle_diff: " << thre_angle_diff << endl;
+				if (theta < thre_angle_diff && std::abs(robot_x) > (0.32 + 0.1 + 0.7))                                                                                                                                                                                                                                         // 0.7 <= 0.5 + 0.2(x_error)
 				{
 					navigate_state_ = NavigateStates::ANGLE_TO_GOAL;
 				}
 				else
 				{
-					dist_buffer_point = std::hypot(robot_x - buffer_goal_point_x, robot_y - buffer_goal_point_y);
+					dist_buffer_point = std::hypot(robot_x - buffer_goal_point_x,
+					                               robot_y - buffer_goal_point_y);
 					robot_current_yaw = tf2::getYaw(current_pose.getRotation());
-					robot_angle_to_buffer_point_yaw = std::atan2(buffer_goal_point_y - robot_y, buffer_goal_point_x - robot_x);
-					
+					robot_angle_to_buffer_point_yaw = std::atan2(buffer_goal_point_y - robot_y,
+					                                             buffer_goal_point_x - robot_x);
+
 					// decide drive back or not
 					theta_positive = angles::shortest_angular_distance(
 						angles::normalize_angle(robot_current_yaw + M_PI),
-						robot_angle_to_buffer_point_yaw
-					);
-					theta_negative = angles::shortest_angular_distance(robot_current_yaw, robot_angle_to_buffer_point_yaw);
+						robot_angle_to_buffer_point_yaw);
+					theta_negative = angles::shortest_angular_distance(robot_current_yaw,
+					                                                   robot_angle_to_buffer_point_yaw);
 					if (std::abs(theta_positive) < std::abs(theta_negative))
 					{
 						drive_back = false;
@@ -157,18 +165,22 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 						drive_back = true;
 						dist_buffer_point_yaw = theta_negative;
 					}
-					
-					cout << "robot_current_yaw: " << robot_current_yaw << endl;
-					cout << "robot_angle_to_buffer_point_yaw: " << robot_angle_to_buffer_point_yaw << endl;
-					cout << "theta_negative: " << theta_negative << endl;
-					cout << "theta_positive: " << theta_positive << endl;
-					cout << "dist_buffer_point: " << dist_buffer_point << endl;
-					cout << "dist_buffer_point_yaw: " << dist_buffer_point_yaw << endl;
+
+					RCLCPP_DEBUG(logger_, "robot_current_yaw: %f", robot_current_yaw);
+					RCLCPP_DEBUG(logger_, "robot_angle_to_buffer_point_yaw: %f", robot_angle_to_buffer_point_yaw);
+					RCLCPP_DEBUG(logger_, "theta_negative: %f", theta_negative);
+					RCLCPP_DEBUG(logger_, "theta_positive: %f", theta_positive);
+					RCLCPP_DEBUG(logger_, "dist_buffer_point: %f", dist_buffer_point);
+					RCLCPP_DEBUG(logger_, "dist_buffer_point_yaw: %f", dist_buffer_point_yaw);
+					// cout << "robot_current_yaw: " << robot_current_yaw << endl;
+					// cout << "robot_angle_to_buffer_point_yaw: " << robot_angle_to_buffer_point_yaw << endl;
+					// cout << "theta_negative: " << theta_negative << endl;
+					// cout << "theta_positive: " << theta_positive << endl;
+					// cout << "dist_buffer_point: " << dist_buffer_point << endl;
+					// cout << "dist_buffer_point_yaw: " << dist_buffer_point_yaw << endl;
 					pre_time = clock_->now().seconds();
 					navigate_state_ = NavigateStates::ANGLE_TO_BUFFER_POINT;
 				}
-
-
 			}
 		}
 		else
@@ -179,22 +191,27 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 	}
 	case NavigateStates::ANGLE_TO_BUFFER_POINT:
 	{
-		std::cout << "------------- ANGLE_TO_BUFFER_POINT -------------\n";
+		RCLCPP_DEBUG(logger_, "------------- ANGLE_TO_BUFFER_POINT -------------");
+		// std::cout << "------------- ANGLE_TO_BUFFER_POINT -------------\n";
 		servo_vel = geometry_msgs::msg::Twist();
 		now_time = clock_->now().seconds();
 		double dt = now_time - pre_time;
-		// cout << "now_time: " << now_time << endl;
-		// cout << "pre_time: " << pre_time << endl;
-		cout << "dt: " << dt << endl;
-		cout << "raw_angular.z: " << raw_vel_msg.angular_z << endl;
-		cout << "delta_angular: " << raw_vel_msg.angular_z * dt << endl;
-		cout << "dist_buffer_point_yaw pre: " << dist_buffer_point_yaw << endl;
+
+		RCLCPP_DEBUG(logger_, "dt: %f", dt);
+		RCLCPP_DEBUG(logger_, "raw_angular.z: %f", raw_vel_msg.angular_z);
+		RCLCPP_DEBUG(logger_, "delta_angular: %f", raw_vel_msg.angular_z * dt);
+		RCLCPP_DEBUG(logger_, "dist_buffer_point_yaw pre: %f", dist_buffer_point_yaw);
+		// cout << "dt: " << dt << endl;
+		// cout << "raw_angular.z: " << raw_vel_msg.angular_z << endl;
+		// cout << "delta_angular: " << raw_vel_msg.angular_z * dt << endl;
+		// cout << "dist_buffer_point_yaw pre: " << dist_buffer_point_yaw << endl;
 		dist_buffer_point_yaw -= raw_vel_msg.angular_z * dt;
-		robot_current_yaw += raw_vel_msg.angular_z * dt;		
-		cout << "dist_buffer_point_yaw now: " << dist_buffer_point_yaw << endl;
-		// double angle_dist = angles::shortest_angular_distance(dist_buffer_point_yaw, -M_PI * 0.5);
+		robot_current_yaw += raw_vel_msg.angular_z * dt;
+		RCLCPP_DEBUG(logger_, "dist_buffer_point_yaw now: %f", dist_buffer_point_yaw);
+		// cout << "dist_buffer_point_yaw now: " << dist_buffer_point_yaw << endl;
 		double angle_dist = dist_buffer_point_yaw;
-		cout << "angle_dist: " << angle_dist << endl;
+		RCLCPP_DEBUG(logger_, "angle_dist: %f", angle_dist);
+		// cout << "angle_dist: " << angle_dist << endl;
 		pre_time = now_time;
 		if(std::abs(angle_dist) < 0.05)
 		{
@@ -203,18 +220,20 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		else
 		{
 			bound_rotation(angle_dist);
-			if(std::abs(angle_dist) < 0.12) // 0.1 => 0.8 => raw_vel output 0
+			if(std::abs(angle_dist) < 0.12)                                                                                                                                                                                             // 0.1 => 0.8 => raw_vel output 0
 			{
 				angle_dist = std::copysign(0.12, angle_dist);
 			}
 			servo_vel->angular.z = angle_dist;
-			std::cout << "angular.z: " << angle_dist << endl;
+			RCLCPP_DEBUG(logger_, "angular.z: %f", angle_dist);
+			// std::cout << "angular.z: " << angle_dist << endl;
 		}
 		break;
 	}
 	case NavigateStates::MOVE_TO_BUFFER_POINT:
 	{
-		std::cout << "------------- MOVE_TO_BUFFER_POINT -------------\n";
+		RCLCPP_DEBUG(logger_, "------------- MOVE_TO_BUFFER_POINT -------------");
+		// std::cout << "------------- MOVE_TO_BUFFER_POINT -------------\n";
 		servo_vel = geometry_msgs::msg::Twist();
 		now_time = clock_->now().seconds();
 		double dt = now_time - pre_time;
@@ -223,10 +242,14 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		dist_buffer_point -= dt * std::abs(raw_vel_msg.linear_x);
 		pre_time = now_time;
 		double dist_y = dist_buffer_point;
-		cout << "raw_vel.linear_x: " << raw_vel_msg.linear_x << endl;
-		cout << "dt: " << dt << endl;
-		cout << "dist_buffer_point now: " << dist_buffer_point << endl;
-		cout << "dist_y: " << dist_y << endl;
+		RCLCPP_DEBUG(logger_, "raw_vel.linear_x: %f", raw_vel_msg.linear_x);
+		RCLCPP_DEBUG(logger_, "dt: %f", dt);
+		RCLCPP_DEBUG(logger_, "dist_buffer_point now: %f", dist_buffer_point);
+		RCLCPP_DEBUG(logger_, "dist_y: %f", dist_y);
+		// cout << "raw_vel.linear_x: " << raw_vel_msg.linear_x << endl;
+		// cout << "dt: " << dt << endl;
+		// cout << "dist_buffer_point now: " << dist_buffer_point << endl;
+		// cout << "dist_y: " << dist_y << endl;
 		if (std::abs(dist_y) < 0.05)
 		{
 			navigate_state_ = NavigateStates::ANGLE_TO_X_POSITIVE_ORIENTATION;
@@ -242,13 +265,15 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 				translate_velocity = std::copysign(max_translation_, translate_velocity);
 			}
 			servo_vel->linear.x = translate_velocity;
-			cout << "linear.x: " << translate_velocity << endl;
+			RCLCPP_DEBUG(logger_, "linear.x: : %f", translate_velocity);
+			// cout << "linear.x: " << translate_velocity << endl;
 		}
 		break;
 	}
 	case NavigateStates::ANGLE_TO_X_POSITIVE_ORIENTATION:
 	{
-		std::cout << "------------- ANGLE_TO_X_POSITIVE_ORIENTATION -------------\n";
+		RCLCPP_DEBUG(logger_, "------------- ANGLE_TO_X_POSITIVE_ORIENTATION -------------");
+		// std::cout << "------------- ANGLE_TO_X_POSITIVE_ORIENTATION -------------\n";
 		servo_vel = geometry_msgs::msg::Twist();
 		now_time = clock_->now().seconds();
 		double dt = now_time - pre_time;
@@ -263,7 +288,7 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		else
 		{
 			bound_rotation(dist_yaw);
-			if(std::abs(dist_yaw) < 0.12) // 0.1 => 0.8 => raw_vel output 0
+			if(std::abs(dist_yaw) < 0.12)                                                                                                                                                                                             // 0.1 => 0.8 => raw_vel output 0
 			{
 				dist_yaw = std::copysign(0.12, dist_yaw);
 			}
@@ -273,16 +298,22 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 	}
 	case NavigateStates::ANGLE_TO_GOAL:
 	{
-		std::cout << "------------- ANGLE_TO_GOAL -------------\n";
+		RCLCPP_DEBUG(logger_, "------------- ANGLE_TO_GOAL -------------");
+		// std::cout << "------------- ANGLE_TO_GOAL -------------\n";
 		const GoalPoint & gp = goal_points_.front();
 
-		std::cout << "goal  => "
-		          << " x: " << gp.x << " y: " << gp.y
-		          << " yaw: " << gp.theta << std::endl;
-		std::cout << "robot => "
-		        // << " x: " << current_pose.getOrigin().getX()
-		        // << " y: " << current_pose.getOrigin().getY()
-		          << " yaw: " << current_angle << std::endl;
+		RCLCPP_DEBUG(logger_, "goal =>  x: %f, y: %f, yaw: %f",
+		             gp.x, gp.y, gp.theta);
+		RCLCPP_DEBUG(logger_, "robot =>  x: %f, y: %f, yaw: %f",
+		             current_pose.getOrigin().getX(), current_pose.getOrigin().getY(),
+		             current_angle);
+		// std::cout << "goal  => "
+		//           << " x: " << gp.x << " y: " << gp.y
+		//           << " yaw: " << gp.theta << std::endl;
+		// std::cout << "robot => "
+		//           << " x: " << current_pose.getOrigin().getX()
+		//           << " y: " << current_pose.getOrigin().getY()
+		//           << " yaw: " << current_angle << std::endl;
 
 		double delta_y, delta_x;
 		delta_y = std::abs(gp.y - current_position.getY());
@@ -291,22 +322,28 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		if (dist_to_goal <= gp.radius || delta_y < DIS_ERROR) {
 			servo_vel = geometry_msgs::msg::Twist();
 			navigate_state_ = NavigateStates::GO_TO_GOAL_POSITION;
-		} else {
-			double ang = diff_angle(gp, current_position, current_angle);
+		}
+		else
+		{
+			double ang = diff_angle(gp, current_position, current_angle, logger_);
 			double ang_save = ang;
-			std::cout << "diff 1 angle: " << ang << std::endl;
+			RCLCPP_DEBUG(logger_, "diff 1 angle: %f", ang);
+			// std::cout << "diff 1 angle: " << ang << std::endl;
 			if (gp.drive_backwards) {
 				// Angle is 180 from travel direction
 				// ang = angles::normalize_angle(ang + M_PI);
 				// std::cout << "norm angle: " << ang << std::endl;
 			}
 			bound_rotation(ang);
-			std::cout << "bound angle: " << ang << std::endl;
-			std::cout << "--------------------------------\n";
+			RCLCPP_DEBUG(logger_, "bound angle: %f", ang);
+			// std::cout << "bound angle: " << ang << std::endl;
+			RCLCPP_DEBUG(logger_, "--------------------------------");
+			// std::cout << "--------------------------------\n";
 			servo_vel = geometry_msgs::msg::Twist();
 			if (std::abs(ang_save) < TO_GOAL_ANGLE_CONVERGED) {
 				navigate_state_ = NavigateStates::GO_TO_GOAL_POSITION;
-				std::cout << " ******** change to state GO_TO_GOAL_POSITION ******** \n";
+				RCLCPP_DEBUG(logger_, " ******** change to state GO_TO_GOAL_POSITION ******** ");
+				// std::cout << " ******** change to state GO_TO_GOAL_POSITION ******** \n";
 			} else {
 				servo_vel->angular.z = ang;
 			}
@@ -315,22 +352,29 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 	}
 	case NavigateStates::GO_TO_GOAL_POSITION:
 	{
-		std::cout << "------------- GO_TO_GOAL_POSITION -------------\n";
+		RCLCPP_DEBUG(logger_, "------------- GO_TO_GOAL_POSITION -------------");
+		// std::cout << "------------- GO_TO_GOAL_POSITION -------------\n";
 		const GoalPoint & gp = goal_points_.front();
-		std::cout << "goal  => "
-		          << " x: " << gp.x << " y: " << gp.y
-		          << " yaw: " << gp.theta << std::endl;
-		std::cout << "robot => "
-		        // << " x: " << current_pose.getOrigin().getX()
-		        // << " y: " << current_pose.getOrigin().getY()
-		          << " yaw: " << current_angle << std::endl;
+		RCLCPP_DEBUG(logger_, "goal =>  x: %f, y: %f, yaw: %f",
+		             gp.x, gp.y, gp.theta);
+		RCLCPP_DEBUG(logger_, "robot =>  x: %f, y: %f, yaw: %f",
+		             current_pose.getOrigin().getX(), current_pose.getOrigin().getY(),
+		             current_angle);
+		// std::cout << "goal  => "
+		//           << " x: " << gp.x << " y: " << gp.y
+		//           << " yaw: " << gp.theta << std::endl;
+		// std::cout << "robot => "
+		//         << " x: " << current_pose.getOrigin().getX()
+		//         << " y: " << current_pose.getOrigin().getY()
+		//           << " yaw: " << current_angle << std::endl;
 		double delta_y, delta_x;
 		delta_y = std::abs(gp.y - current_position.getY());
 		delta_x = std::abs(gp.x - current_position.getX());
 		double dist_to_goal = std::hypot(delta_x, delta_y);
-		double ang = diff_angle(gp, current_position, current_angle);
+		double ang = diff_angle(gp, current_position, current_angle, logger_);
 
-		std::cout << "diff 2 angle: " << ang << std::endl;
+		RCLCPP_DEBUG(logger_, "diff 2 angle: %f", ang);
+		// std::cout << "diff 2 angle: " << ang << std::endl;
 		double abs_ang = std::abs(ang);
 		if (gp.drive_backwards) {
 			// Angle is 180 from travel direction
@@ -340,11 +384,13 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 		// If robot is close enough to goal, move to final stage
 		if (dist_to_goal < goal_points_.front().radius) {
 			navigate_state_ = NavigateStates::GOAL_ANGLE;
-			std::cout << "******** change to state GOAL_ANGLE ********  \n";
+			RCLCPP_DEBUG(logger_, " ******** change to state GOAL_ANGLE ******** ");
+			// std::cout << "******** change to state GOAL_ANGLE ********  \n";
 			// If robot angle has deviated too much from path, reset
 		} else if (abs_ang > GO_TO_GOAL_ANGLE_TOO_FAR && delta_y > DIS_ERROR && (delta_x + delta_y) > DIS_ERROR2) {
 			navigate_state_ = NavigateStates::ANGLE_TO_GOAL;
-			std::cout << "******** change to state ANGLE_TO_GOAL ********  \n";
+			RCLCPP_DEBUG(logger_, " ******** change to state ANGLE_TO_GOAL ******** ");
+			// std::cout << "******** change to state ANGLE_TO_GOAL ********  \n";
 			// If niether of above conditions met, drive towards goal
 		} else {
 			double translate_velocity = dist_to_goal;
@@ -359,18 +405,21 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 				translate_velocity = -NEAR_LINEAR_X;
 			}
 			servo_vel->linear.x = translate_velocity;
-			std::cout << "linear_x: " << translate_velocity << std::endl;
+			RCLCPP_DEBUG(logger_, " linear_x: %f", translate_velocity);
+			// std::cout << "linear_x: " << translate_velocity << std::endl;
 			double angle_dist = angles::shortest_angular_distance(current_angle, 0);
 			if(std::abs(current_position.getX()) < NEAR_POSITION_X && std::abs(angle_dist) > NEAR_ANGULAR)
 			{
 				servo_vel->angular.z = angle_dist;
-				std::cout << "angle_: " << angle_dist << std::endl;
+				RCLCPP_DEBUG(logger_, "angle_: %f", angle_dist);
+				// std::cout << "angle_: " << angle_dist << std::endl;
 			} else
 			{
 				if (abs_ang > GO_TO_GOAL_APPLY_ROTATION_ANGLE) {
 					bound_rotation(ang);
 					servo_vel->angular.z = ang;
-					std::cout << "angle__: " << ang << std::endl;
+					RCLCPP_DEBUG(logger_, "angle__: %f", ang);
+					// std::cout << "angle__: " << ang << std::endl;
 				}
 			}
 
@@ -379,30 +428,41 @@ BehaviorsScheduler::optional_output_t get_velocity_for_position(
 	}
 	case NavigateStates::GOAL_ANGLE:
 	{
-		std::cout << "***********************************\n";
-		std::cout << "***********************************\n";
-		std::cout << "------------- GOAL_ANGLE -------------\n";
+		RCLCPP_DEBUG(logger_, "***********************************: %f");
+		RCLCPP_DEBUG(logger_, "***********************************: %f");
+		RCLCPP_DEBUG(logger_, "------------- GOAL_ANGLE -------------: %f");
+		// std::cout << "***********************************\n";
+		// std::cout << "***********************************\n";
+		// std::cout << "------------- GOAL_ANGLE -------------\n";
 		const GoalPoint & gp = goal_points_.front();
-		std::cout << "goal  => "
-		          << " x: " << gp.x << " y: " << gp.y
-		          << " yaw: " << gp.theta << std::endl;
-		std::cout << "robot => "
-		          << " x: " << current_pose.getOrigin().getX()
-		          << " y: " << current_pose.getOrigin().getY()
-		          << " yaw: " << current_angle << std::endl;
+		RCLCPP_DEBUG(logger_, "goal =>  x: %f, y: %f, yaw: %f",
+		             gp.x, gp.y, gp.theta);
+		RCLCPP_DEBUG(logger_, "robot =>  x: %f, y: %f, yaw: %f",
+		             current_pose.getOrigin().getX(), current_pose.getOrigin().getY(),
+		             current_angle);
+		// std::cout << "goal  => "
+		//           << " x: " << gp.x << " y: " << gp.y
+		//           << " yaw: " << gp.theta << std::endl;
+		// std::cout << "robot => "
+		//           << " x: " << current_pose.getOrigin().getX()
+		//           << " y: " << current_pose.getOrigin().getY()
+		//           << " yaw: " << current_angle << std::endl;
 		double ang = angles::shortest_angular_distance(current_angle, gp.theta);
 		bound_rotation(ang);
-		std::cout << "diff 3 angle: " << ang << std::endl;
+		RCLCPP_DEBUG(logger_, "diff 3 angle: %f", ang);
+		// std::cout << "diff 3 angle: " << ang << std::endl;
 		if (std::abs(ang) > GOAL_ANGLE_CONVERGED) {
 			servo_vel = geometry_msgs::msg::Twist();
 			servo_vel->angular.z = ang;
 		} else {
 			goal_points_.pop_front();
-			std::cout << "============ pop goal============" << std::endl;
+			RCLCPP_DEBUG(logger_, "============ pop goal============");
+			// std::cout << "============ pop goal============" << std::endl;
 			if (goal_points_.size() > 0) {
 				servo_vel = geometry_msgs::msg::Twist();
 				navigate_state_ = NavigateStates::ANGLE_TO_GOAL;
-				std::cout << "******** change to state ANGLE_TO_GOAL ********  \n";
+				RCLCPP_DEBUG(logger_, "******** change to state ANGLE_TO_GOAL ******** ");
+				// std::cout << "******** change to state ANGLE_TO_GOAL ********  \n";
 			}
 		}
 		break;
@@ -450,7 +510,7 @@ void bound_rotation(double & rotation_velocity)
 	}
 }
 
-double diff_angle(const GoalPoint & goal_pt, const tf2::Vector3 & cur_position, double cur_angle)
+double diff_angle(const GoalPoint & goal_pt, const tf2::Vector3 & cur_position, double cur_angle, rclcpp::Logger logger_)
 {
 
 	double y = goal_pt.y - cur_position.getY();
@@ -459,16 +519,22 @@ double diff_angle(const GoalPoint & goal_pt, const tf2::Vector3 & cur_position, 
 
 	double result = angles::shortest_angular_distance(cur_angle, atan2_value);
 
-	std::cout << "------caculate diff-------\n";
-
-	std::cout << " gp.x: " << goal_pt.x << " gp.y: " << goal_pt.y << std::endl
-	          << " cur.x: " << cur_position.getX() << " cur.y: " << cur_position.getY()<< std::endl;
-
-	std::cout << "y       => " << y << std::endl;
-	std::cout << "x       => " << x << std::endl;
-	std::cout << "atan2   => " << atan2_value << std::endl;
-	std::cout << "cur_ang => " << cur_angle << std::endl;
-	std::cout << "dist    => " << result << std::endl;
+	RCLCPP_DEBUG(logger_, "------caculate diff-------");
+	RCLCPP_DEBUG(logger_, "gp.x: %, gp.y: %f, cur.x: %f, cur.y: %f",
+	             goal_pt.x, goal_pt.y, cur_position.getX(), cur_position.getY());
+	RCLCPP_DEBUG(logger_, "y       => %f", y);
+	RCLCPP_DEBUG(logger_, "x       => %f", x);
+	RCLCPP_DEBUG(logger_, "atan2   => %f", atan2_value);
+	RCLCPP_DEBUG(logger_, "cur_ang => %f", cur_angle);
+	RCLCPP_DEBUG(logger_, "dist    => %f", result);
+	// std::cout << "------caculate diff-------\n";
+	// std::cout << " gp.x: " << goal_pt.x << " gp.y: " << goal_pt.y << std::endl
+	//           << " cur.x: " << cur_position.getX() << " cur.y: " << cur_position.getY()<< std::endl;
+	// std::cout << "y       => " << y << std::endl;
+	// std::cout << "x       => " << x << std::endl;
+	// std::cout << "atan2   => " << atan2_value << std::endl;
+	// std::cout << "cur_ang => " << cur_angle << std::endl;
+	// std::cout << "dist    => " << result << std::endl;
 
 	return result;
 }

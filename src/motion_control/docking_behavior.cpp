@@ -160,8 +160,8 @@ void DockingBehavior::handle_dock_servo_accepted(
 	}
 	// If robot is farther than 0.5 from dock, put offset point 0.5 in front of dock,
 	// otherwise put in line with robot's current distance away from the dock
-	const tf2::Vector3 & robot_position = robot_pose.getOrigin();
-	const tf2::Vector3 & dock_position = dock_pose.getOrigin();
+	// const tf2::Vector3 & robot_position = robot_pose.getOrigin();
+	// const tf2::Vector3 & dock_position = dock_pose.getOrigin();
 	// double dist_offset = std::hypot(
 	// 	dock_position.getX() - robot_position.getX(),
 	// 	dock_position.getY() - robot_position.getY());
@@ -170,13 +170,9 @@ void DockingBehavior::handle_dock_servo_accepted(
 	// if (dist_offset > max_goal_offset) {
 	double dist_offset = max_goal_offset;
 	// }
-	RCLCPP_INFO(logger_, "dist_offset: %f", dist_offset);
+	RCLCPP_DEBUG(logger_, "dist_offset: %f", dist_offset);
 	tf2::Transform dock_offset(tf2::Transform::getIdentity());
 	tf2::Quaternion dock_rotation;
-
-	std::cout << "dock_pose => x: " <<  dock_pose.getOrigin().getX()
-	          << ", y: " << dock_pose.getOrigin().getY()
-	          << ", yaw: " << tf2::getYaw(dock_pose.getRotation()) << std::endl;
 
 	dock_rotation.setRPY(0, 0, 0);
 	dock_offset.setOrigin(tf2::Vector3(-dist_offset, 0, 0));
@@ -197,7 +193,7 @@ void DockingBehavior::handle_dock_servo_accepted(
 	data.apply_backup_limits = false;
 
 	const bool ret = behavior_scheduler_->set_behavior(data);
-	RCLCPP_INFO(logger_, "ret: %d", ret);
+	RCLCPP_DEBUG(logger_, "set behavior: %s", ret ? "true" : "false");
 	if (!ret) {
 		// for some reason we couldn't set the new behavior, treat this as a goal being cancelled
 		RCLCPP_WARN(logger_, "Dock Servo behavior failed to start");
@@ -237,20 +233,20 @@ BehaviorsScheduler::optional_output_t DockingBehavior::execute_dock_servo(
 		robot_pose = last_robot_pose_;
 	}
 	servo_cmd = goal_controller_.get_velocity_for_position(robot_pose, sees_dock_, is_docked_,
-	                                                       raw_vel_msg, clock_);
+	                                                       raw_vel_msg, clock_, logger_);
 	if(this->is_docked_)
 	{
-		RCLCPP_INFO(logger_, "zero cmd time => sec: %f", this->clock_.get()->now().seconds());
+		RCLCPP_DEBUG(logger_, "zero cmd time => sec: %f", this->clock_.get()->now().seconds());
 	}
 	if (!servo_cmd || exceeded_runtime) {
 		auto result = std::make_shared<irobot_create_msgs::action::Dock::Result>();
 		if (is_docked_) {
 			result->is_docked = true;
-			RCLCPP_INFO(logger_, "Dock Servo Goal Succeeded");
+			RCLCPP_INFO(logger_, "Dock Servo Goal Succeeded\n");
 			goal_handle->succeed(result);
 		} else {
 			result->is_docked = false;
-			RCLCPP_INFO(logger_, "Dock Servo Goal Aborted");
+			RCLCPP_INFO(logger_, "Dock Servo Goal Aborted\n");
 			goal_handle->abort(result);
 		}
 		goal_controller_.reset();
@@ -374,7 +370,7 @@ BehaviorsScheduler::optional_output_t DockingBehavior::execute_undock(
 		robot_pose = last_robot_pose_;
 	}
 	servo_cmd = goal_controller_.get_velocity_for_position(robot_pose, sees_dock_,
-	                                                       is_docked_,  raw_vel_msg, clock_);
+	                                                       is_docked_,  raw_vel_msg, clock_, logger_);
 
 	bool exceeded_runtime = false;
 	if (clock_->now() - action_start_time_ > max_action_runtime_) {
@@ -411,9 +407,9 @@ void DockingBehavior::charge_state_callback(capella_ros_service_interfaces::msg:
 	if(!this->is_docked_ && msg->has_contact)
 	{
 		rclcpp::Time contact_time = this->clock_.get()->now();
-		RCLCPP_INFO(logger_, "First receive contact msg => sec: %f, nanosec: %ld ",
+		RCLCPP_DEBUG(logger_, "First receive contact msg => sec: %f, nanosec: %ld ",
 		            contact_time.seconds(), contact_time.nanoseconds() % 1000000000);
-		RCLCPP_INFO(logger_, "First send contact msg    => sec: %d, nanosec: %d ",
+		RCLCPP_DEBUG(logger_, "First send contact msg    => sec: %d, nanosec: %d ",
 		            msg->stamp.sec, msg->stamp.nanosec);
 	}
 	this->is_docked_ = msg->has_contact;
