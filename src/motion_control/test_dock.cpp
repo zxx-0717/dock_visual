@@ -29,7 +29,7 @@ TestDock::TestDock(std::string name, GoalRect goal_rect) : Node(name)
 
     cmd_vel_pub_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
     // --ros-args -p test_count:=10
-    this->declare_parameter<int>("test_count", 5);
+    this->declare_parameter<int>("test_count", 4);
     this->get_parameter_or<int>("test_count", test_count, 5);
     RCLCPP_INFO(this->get_logger(), "test_count: %d", test_count);
     // cout << endl << "test_count: " << test_count << endl << endl;
@@ -298,7 +298,7 @@ DockStatus TestDock::start_docking()
     {
 	RCLCPP_INFO(this->get_logger(), "********** undock **********");
 	this->pub_vel_msg = geometry_msgs::msg::Twist();
-	this->pub_vel_msg.linear.x = 0.10;
+	this->pub_vel_msg.linear.x = max_linear;
 	timer_pub_vel = this->create_wall_timer(100ms, std::bind(&TestDock::timer_pub_vel_callback, this));
 	double now_time, pre_time, dt;
 	pre_time = this->now().seconds();

@@ -107,12 +107,12 @@ rclcpp_components_register_node(motion_control_lib
   EXECUTABLE motion_control)
 
 # test_dock_susscess_rate
-add_executable(test_dock_node src/test_dock_node.cpp src/motion_control/test_dock.cpp)
-target_include_directories(test_dock_node PUBLIC include)
-ament_target_dependencies(test_dock_node
+add_executable(test_dock src/test_dock_node.cpp src/motion_control/test_dock.cpp)
+target_include_directories(test_dock PUBLIC include)
+ament_target_dependencies(test_dock
   ${dependencies}
 )
-install(TARGETS test_dock_node 
+install(TARGETS test_dock 
   DESTINATION lib/${PROJECT_NAME})
 
 # DockingBehavior server

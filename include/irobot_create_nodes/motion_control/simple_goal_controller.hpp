@@ -561,7 +561,7 @@ int64_t time_cost;
 
 double DIS_ERROR = 0.05;
 double DIS_ERROR2 = 0.3;
-double NEAR_POSITION_X = 0.32 + 0.10;
+double NEAR_POSITION_X = 0.32 + 0.20;
 double NEAR_ANGULAR = 0.05;
 double NEAR_LINEAR_X = 0.02;
 

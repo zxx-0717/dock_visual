@@ -184,7 +184,7 @@ void DockingBehavior::handle_dock_servo_accepted(
 	// face_dock.setRotation(dock_rotation);
 	// dock_path.emplace_back(dock_pose * dock_offset * face_dock, 0.1, true);
 	dock_path.emplace_back(dock_pose, 0.1, true);
-	goal_controller_.initialize_goal(dock_path, 0.15, 0.05);
+	goal_controller_.initialize_goal(dock_path, 0.15, 0.10);
 	// Setup behavior to override other commanded motion
 	BehaviorsScheduler::BehaviorsData data;
 	data.run_func = std::bind(&DockingBehavior::execute_dock_servo, this, goal_handle, _1);
@@ -327,7 +327,7 @@ void DockingBehavior::handle_undock_accepted(
 	face_away_dock.setRotation(undock_rotation);
 	tf2::Transform undocked_goal = undock_offset * face_away_dock;
 	undock_path.emplace_back(undocked_goal, 0.05, false);
-	goal_controller_.initialize_goal(undock_path, M_PI / 4.0, 0.15);
+	goal_controller_.initialize_goal(undock_path, M_PI / 4.0, 0.10);
 
 	BehaviorsScheduler::BehaviorsData data;
 	data.run_func = std::bind(&DockingBehavior::execute_undock, this, goal_handle, _1);

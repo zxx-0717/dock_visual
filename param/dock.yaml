@@ -18,4 +18,9 @@ motion_control:
     buffer_goal_distance: 1.0
     camera_horizontal_view: 64.0 // degree
     localization_converged_time: 2 // wait (n) seconds for coordinates to be converged
+    motion_control_log_level: 'info'
 
+/test_dock:
+  ros__parameters:
+    test_count: 1
+    test_log_level: 'info'
